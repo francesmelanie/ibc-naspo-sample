@@ -1,5 +1,4 @@
 import { useState, type FormEvent } from "react";
-import { Mail, Phone, ArrowRight, Check } from "lucide-react";
 import { fadeUp, motion, staggerContainer, viewportOnce } from "@/lib/motion";
 import { contact, inquiryTypes } from "@/data/publicSectorContent";
 import { SectionHeader } from "./SectionHeader";
@@ -48,13 +47,13 @@ export function ContactSection() {
             <motion.ul variants={staggerContainer(0.04)} className="mt-6 space-y-3">
               <motion.li variants={fadeUp}>
                 <a href={`mailto:${contact.email}`} className="inline-flex items-center gap-3 text-sm font-medium hover:text-primary transition-colors">
-                  <Mail className="h-4 w-4 text-primary" strokeWidth={1.6} />
+                  <span className="text-primary" aria-hidden="true">@</span>
                   {contact.email}
                 </a>
               </motion.li>
               <motion.li variants={fadeUp}>
                 <a href={`tel:${contact.phone.replace(/[^0-9+]/g, "")}`} className="inline-flex items-center gap-3 text-sm font-medium hover:text-primary transition-colors">
-                  <Phone className="h-4 w-4 text-primary" strokeWidth={1.6} />
+                  <span className="text-primary" aria-hidden="true">+</span>
                   {contact.phone}
                 </a>
               </motion.li>
@@ -124,7 +123,7 @@ export function ContactSection() {
                 type="submit"
                 className="inline-flex items-center gap-2 rounded-full bg-foreground px-5 py-2.5 text-sm font-medium text-background hover:bg-primary transition-colors"
               >
-                {submitted ? (<><Check className="h-4 w-4" /> Sent</>) : (<>Send inquiry <ArrowRight className="h-4 w-4" /></>)}
+                {submitted ? "✓ Sent" : "Send inquiry →"}
               </button>
             </div>
           </motion.form>
