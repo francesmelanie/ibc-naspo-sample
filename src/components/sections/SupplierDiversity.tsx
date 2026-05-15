@@ -1,4 +1,3 @@
-import { Check } from "lucide-react";
 import { fadeUp, motion, staggerContainer, viewportOnce } from "@/lib/motion";
 import { supplierDiversityBlocks, certificationLabels } from "@/data/publicSectorContent";
 
@@ -60,7 +59,7 @@ export function SupplierDiversity() {
                 variants={fadeUp}
                 className="flex items-center gap-3 py-3.5 text-sm font-medium text-foreground/90"
               >
-                <Check className="h-4 w-4 text-primary" strokeWidth={2.5} />
+                <span className="text-primary" aria-hidden="true">✓</span>
                 {b}
               </motion.li>
             ))}
