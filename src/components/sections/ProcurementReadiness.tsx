@@ -25,7 +25,7 @@ export function ProcurementReadiness() {
               className="flex items-center gap-3 py-3.5 [&:nth-child(2)]:sm:border-t-0 first:border-t-0"
             >
               <span className="shrink-0 text-primary" aria-hidden="true">✓</span>
-              <span className="text-sm text-foreground/85">{item}</span>
+              <span className="mt-8 border-l-2 border-primary pl-5 font-display font-medium text-foreground/90 leading-snug text-xl">{item}</span>
             </motion.li>
           ))}
         </motion.ul>
