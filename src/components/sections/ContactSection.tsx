@@ -115,10 +115,7 @@ export function ContactSection() {
               />
             </div>
 
-            <div className="mt-7 flex flex-wrap items-center justify-between gap-4">
-              <p className="text-xs text-muted-foreground">
-                Opens your email client addressed to {contact.email}.
-              </p>
+            <div className="mt-7 flex flex-wrap items-center justify-end gap-4">
               <button
                 type="submit"
                 className="inline-flex items-center gap-2 rounded-full bg-foreground px-5 py-2.5 text-sm font-medium text-background hover:bg-primary transition-colors"
