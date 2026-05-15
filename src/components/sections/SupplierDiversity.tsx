@@ -5,80 +5,67 @@ import { supplierDiversityBlocks, certificationLabels } from "@/data/publicSecto
 
 export function SupplierDiversity() {
   return (
-    <section className="py-20 md:py-28 bg-gradient-wash">
+    <section className="ibc-section">
       <div className="ibc-container">
         <motion.div
           initial="hidden"
           whileInView="show"
           viewport={viewportOnce}
-          variants={staggerContainer(0.08)}
-          className="rounded-3xl border border-border bg-card p-8 md:p-12 shadow-card overflow-hidden relative"
+          variants={staggerContainer(0.06)}
+          className="grid gap-12 lg:grid-cols-[1fr_1fr] lg:gap-20 items-start"
         >
-          <div
-            aria-hidden
-            className="pointer-events-none absolute -right-32 -top-32 h-72 w-72 rounded-full bg-gradient-brand opacity-10 blur-3xl"
-          />
-          <div className="grid gap-10 lg:grid-cols-[1fr_1fr] relative">
-            <div>
-              <motion.span
-                variants={fadeUp}
-                className="text-xs font-semibold uppercase tracking-[0.18em] text-primary"
-              >
-                Supplier Diversity
-              </motion.span>
-              <motion.h2
-                variants={fadeUp}
-                className="mt-3 text-3xl sm:text-4xl font-bold tracking-tight"
-              >
-                Supplier diversity & partner network
-              </motion.h2>
-              <motion.p
-                variants={fadeUp}
-                className="mt-5 text-lg text-muted-foreground leading-relaxed"
-              >
-                As an M/WBE-certified firm, IBC brings supplier diversity value alongside practical
-                operational capability. We support agencies, prime contractors, and partner
-                organizations with flexible teams, specialized expertise, and scalable delivery
-                models.
-              </motion.p>
-            </div>
-            <motion.ul variants={staggerContainer(0.05)} className="grid gap-2.5">
-              {supplierDiversityBlocks.map((b) => (
-                <motion.li
-                  key={b}
-                  variants={fadeUp}
-                  className="flex items-center gap-3 text-sm font-medium text-foreground/90"
-                >
-                  <span className="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-gradient-brand text-primary-foreground">
-                    <Check className="h-3.5 w-3.5" strokeWidth={3} />
+          <div>
+            <motion.span
+              variants={fadeUp}
+              className="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-primary"
+            >
+              <span className="h-px w-6 bg-primary/60" />
+              Supplier Diversity
+            </motion.span>
+            <motion.h2
+              variants={fadeUp}
+              className="mt-4 text-3xl sm:text-[2.25rem] font-semibold tracking-tight leading-[1.15]"
+            >
+              Supplier diversity & partner network
+            </motion.h2>
+            <motion.p
+              variants={fadeUp}
+              className="mt-5 text-base md:text-lg text-muted-foreground leading-relaxed"
+            >
+              As an M/WBE-certified firm, IBC brings supplier diversity value alongside practical
+              operational capability — supporting agencies, primes, and partners with flexible
+              teams and scalable delivery.
+            </motion.p>
+
+            <motion.div variants={fadeUp} className="mt-8">
+              <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">
+                Certifications
+              </div>
+              <div className="mt-3 flex flex-wrap gap-x-6 gap-y-2">
+                {certificationLabels.map((c) => (
+                  <span key={c} className="text-sm font-medium text-foreground/85">
+                    {c}
                   </span>
-                  {b}
-                </motion.li>
-              ))}
-            </motion.ul>
+                ))}
+              </div>
+              <p className="mt-3 text-xs text-muted-foreground italic">
+                Badges to be confirmed by IBC leadership before publication.
+              </p>
+            </motion.div>
           </div>
 
-          <motion.div
-            variants={fadeUp}
-            className="mt-10 pt-8 border-t border-border/70 relative"
-          >
-            <div className="text-xs font-semibold uppercase tracking-[0.15em] text-muted-foreground mb-4">
-              Certifications
-            </div>
-            <div className="flex flex-wrap gap-2.5">
-              {certificationLabels.map((c) => (
-                <span
-                  key={c}
-                  className="inline-flex items-center rounded-full border border-border bg-secondary/60 px-4 py-1.5 text-xs font-semibold text-foreground/85"
-                >
-                  {c}
-                </span>
-              ))}
-            </div>
-            <p className="mt-4 text-xs text-muted-foreground italic">
-              Certification badges to be confirmed by IBC leadership before publication.
-            </p>
-          </motion.div>
+          <motion.ul variants={staggerContainer(0.04)} className="divide-y divide-border/70 border-y border-border/70">
+            {supplierDiversityBlocks.map((b) => (
+              <motion.li
+                key={b}
+                variants={fadeUp}
+                className="flex items-center gap-3 py-3.5 text-sm font-medium text-foreground/90"
+              >
+                <Check className="h-4 w-4 text-primary" strokeWidth={2.5} />
+                {b}
+              </motion.li>
+            ))}
+          </motion.ul>
         </motion.div>
       </div>
     </section>

@@ -4,37 +4,38 @@ import { whyIbcCards } from "@/data/publicSectorContent";
 
 export function WhyIBC() {
   return (
-    <section className="py-20 md:py-28">
+    <section className="ibc-section">
       <div className="ibc-container">
-        <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-start">
+        <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20 items-start">
           <motion.div
             initial="hidden"
             whileInView="show"
             viewport={viewportOnce}
-            variants={staggerContainer(0.1)}
+            variants={staggerContainer(0.06)}
           >
             <motion.span
               variants={fadeUp}
-              className="text-xs font-semibold uppercase tracking-[0.18em] text-primary"
+              className="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-primary"
             >
+              <span className="h-px w-6 bg-primary/60" />
               Why IBC
             </motion.span>
             <motion.h2
               variants={fadeUp}
-              className="mt-3 text-3xl sm:text-4xl font-bold tracking-tight leading-tight"
+              className="mt-4 text-3xl sm:text-[2.25rem] font-semibold tracking-tight leading-[1.15]"
             >
               When execution matters more than plans.
             </motion.h2>
-            <motion.p variants={fadeUp} className="mt-5 text-lg text-muted-foreground leading-relaxed">
+            <motion.p variants={fadeUp} className="mt-5 text-base md:text-lg text-muted-foreground leading-relaxed">
               Programs do not fail because strategy is missing. They fail when execution breaks
               down. IBC operates in that space — embedding with teams, stabilizing delivery,
               resolving issues in real time, and aligning strategy, operations, and technology.
             </motion.p>
             <motion.p
               variants={fadeUp}
-              className="mt-6 inline-block rounded-xl border-l-2 border-primary pl-4 text-base font-medium text-foreground/90 italic"
+              className="mt-8 border-l-2 border-primary pl-5 text-lg font-display font-medium text-foreground/90 leading-snug"
             >
-              Most firms advise. Some implement. We stabilize and deliver.
+              Most firms advise. Some implement. <span className="text-gradient-brand">We stabilize and deliver.</span>
             </motion.p>
           </motion.div>
 
@@ -42,20 +43,22 @@ export function WhyIBC() {
             initial="hidden"
             whileInView="show"
             viewport={viewportOnce}
-            variants={staggerContainer(0.08)}
-            className="grid sm:grid-cols-2 gap-4"
+            variants={staggerContainer(0.05)}
+            className="divide-y divide-border/70"
           >
             {whyIbcCards.map((c, i) => (
               <motion.li
                 key={c.title}
                 variants={fadeUp}
-                className="rounded-2xl border border-border bg-card p-6 shadow-soft hover:shadow-card-hover transition-shadow"
+                className="grid grid-cols-[auto_1fr] gap-6 py-5 first:pt-0"
               >
-                <div className="font-display text-xs font-semibold text-primary tracking-widest">
+                <div className="font-display text-sm font-semibold text-primary tabular-nums pt-0.5">
                   0{i + 1}
                 </div>
-                <h3 className="mt-3 text-lg font-semibold">{c.title}</h3>
-                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{c.description}</p>
+                <div>
+                  <h3 className="text-base font-semibold">{c.title}</h3>
+                  <p className="mt-1.5 text-sm text-muted-foreground leading-relaxed">{c.description}</p>
+                </div>
               </motion.li>
             ))}
           </motion.ul>
