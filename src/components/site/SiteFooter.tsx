@@ -1,11 +1,11 @@
-import { IbcLogo } from "./IbcLogo";
+import monogram from "@/assets/ibc-monogram.svg";
 
 export function SiteFooter() {
   return (
     <footer className="border-t border-border/70 mt-16">
       <div className="ibc-container py-12 grid gap-10 md:grid-cols-3">
         <div className="space-y-3">
-          <IbcLogo />
+          <img src={monogram} alt="Innovative Business Concepts" className="h-12 w-auto" />
           <p className="text-sm text-muted-foreground max-w-xs leading-relaxed">
             A boutique, minority &amp; woman-owned management consulting firm delivering bespoke
             solutions for public-sector programs.
