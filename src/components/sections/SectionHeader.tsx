@@ -26,12 +26,12 @@ export function SectionHeader({ eyebrow, title, intro, align = "left" }: Props) 
       )}
       <motion.h2
         variants={fadeUp}
-        className="mt-4 text-3xl sm:text-[2.25rem] font-semibold tracking-tight leading-[1.15]"
+        className="mt-3 sm:mt-4 text-2xl sm:text-[2.25rem] font-semibold tracking-tight leading-[1.2] sm:leading-[1.15]"
       >
         {title}
       </motion.h2>
       {intro && (
-        <motion.p variants={fadeUp} className="mt-4 text-base md:text-lg text-muted-foreground leading-relaxed">
+        <motion.p variants={fadeUp} className="mt-3 sm:mt-4 text-sm sm:text-base md:text-lg text-muted-foreground leading-relaxed">
           {intro}
         </motion.p>
       )}

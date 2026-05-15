@@ -118,7 +118,7 @@ export function ContactSection() {
             <div className="mt-7 flex flex-wrap items-center justify-end gap-4">
               <button
                 type="submit"
-                className="inline-flex items-center gap-2 rounded-full bg-foreground px-5 py-2.5 text-sm font-medium text-background hover:bg-primary transition-colors"
+                className="inline-flex items-center gap-2 rounded-full bg-foreground px-4 py-2 sm:px-5 sm:py-2.5 text-xs sm:text-sm font-medium text-background hover:bg-primary transition-colors"
               >
                 {submitted ? "✓ Sent" : "Send inquiry →"}
               </button>

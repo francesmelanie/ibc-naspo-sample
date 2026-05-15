@@ -21,7 +21,7 @@ export function PublicSectorHero() {
           </motion.div>
           <motion.h1
             variants={fadeUp}
-            className="mt-5 text-4xl sm:text-5xl lg:text-[3.75rem] font-semibold leading-[1.05] tracking-tight"
+            className="mt-4 text-[1.75rem] sm:text-5xl lg:text-[3.75rem] font-semibold leading-[1.1] sm:leading-[1.05] tracking-tight"
           >
             Execution support for{" "}
             <span className="text-gradient-brand">public-sector programs</span>{" "}
@@ -29,16 +29,16 @@ export function PublicSectorHero() {
           </motion.h1>
           <motion.p
             variants={fadeUp}
-            className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground"
+            className="mt-4 sm:mt-6 max-w-2xl text-sm sm:text-lg leading-relaxed text-muted-foreground"
           >
             Innovative Business Concepts (IBC) supports local, state, and public-sector partners with
             embedded delivery, program management, staffing, logistics, data and reporting,
             client support, and operational coordination.
           </motion.p>
-          <motion.div variants={fadeUp} className="mt-8 flex flex-wrap items-center gap-5">
+          <motion.div variants={fadeUp} className="mt-6 sm:mt-8 flex flex-wrap items-center gap-3 sm:gap-5">
             <a
               href="#contact"
-              className="inline-flex items-center gap-2 rounded-full bg-foreground px-5 py-3 text-sm font-medium text-background hover:bg-primary transition-colors"
+              className="inline-flex items-center gap-2 rounded-full bg-foreground px-4 py-2.5 sm:px-5 sm:py-3 text-xs sm:text-sm font-medium text-background hover:bg-primary transition-colors"
             >
               Connect with us
               <span aria-hidden="true">→</span>
@@ -46,7 +46,7 @@ export function PublicSectorHero() {
             <a
               href={capabilityStatementHref}
               download
-              className="inline-flex items-center gap-2 rounded-full border border-foreground/80 px-5 py-3 text-sm font-medium text-foreground hover:bg-foreground hover:text-background transition-colors"
+              className="inline-flex items-center gap-2 rounded-full border border-foreground/80 px-4 py-2.5 sm:px-5 sm:py-3 text-xs sm:text-sm font-medium text-foreground hover:bg-foreground hover:text-background transition-colors"
             >
               <span aria-hidden="true">↓</span>
               Capability Statement
