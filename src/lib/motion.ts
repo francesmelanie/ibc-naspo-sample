@@ -16,6 +16,7 @@ const staticElement = (tag: string) => {
 
 export const motion = {
   a: staticElement("a"),
+  dl: staticElement("dl"),
   div: staticElement("div"),
   form: staticElement("form"),
   h1: staticElement("h1"),
