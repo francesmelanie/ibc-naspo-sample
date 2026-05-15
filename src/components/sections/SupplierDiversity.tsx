@@ -46,9 +46,6 @@ export function SupplierDiversity() {
                   </span>
                 ))}
               </div>
-              <p className="mt-3 text-xs text-muted-foreground italic">
-                Badges to be confirmed by IBC leadership before publication.
-              </p>
             </motion.div>
           </div>
 
