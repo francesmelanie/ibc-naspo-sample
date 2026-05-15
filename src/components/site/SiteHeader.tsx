@@ -25,7 +25,7 @@ export function SiteHeader() {
           : "bg-transparent"
       }`}
     >
-      <div className="ibc-container flex items-center justify-between py-2 md:py-2.5">
+      <div className="ibc-container flex items-center justify-between py-1 md:py-1.5">
         <a href="/" className="flex items-center" aria-label="Innovative Business Concepts">
           <img src={logoMain} alt="Innovative Business Concepts" className="h-16 md:h-20 w-auto" />
         </a>
