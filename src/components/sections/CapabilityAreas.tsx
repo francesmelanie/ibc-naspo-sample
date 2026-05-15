@@ -18,13 +18,13 @@ export function CapabilityAreas() {
           variants={staggerContainer(0.04)}
           className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4"
         >
-          {capabilities.map(({ title, description, icon: Icon }) => (
+          {capabilities.map(({ title, description }, i) => (
             <motion.li
               key={title}
               variants={fadeUp}
               className="rounded-2xl border border-border/70 bg-card p-6 hover:border-primary/40 transition-colors"
             >
-              <Icon className="h-5 w-5 text-primary" strokeWidth={1.6} />
+              <div className="font-display text-xs font-semibold text-primary tabular-nums">{String(i + 1).padStart(2, "0")}</div>
               <h3 className="mt-4 text-sm font-semibold">{title}</h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{description}</p>
             </motion.li>
