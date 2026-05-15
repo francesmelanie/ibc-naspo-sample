@@ -1,6 +1,4 @@
-import { motion } from "framer-motion";
-import { ArrowRight, Download } from "lucide-react";
-import { fadeUp, staggerContainer } from "@/lib/motion";
+import { fadeUp, motion, staggerContainer } from "@/lib/motion";
 import { heroStats, capabilityStatementHref } from "@/data/publicSectorContent";
 import { WaveAccent } from "@/components/site/WaveAccent";
 
@@ -43,7 +41,7 @@ export function PublicSectorHero() {
               download
               className="inline-flex items-center gap-2 rounded-full bg-foreground px-5 py-3 text-sm font-medium text-background hover:bg-primary transition-colors"
             >
-              <Download className="h-4 w-4" />
+              <span aria-hidden="true">↓</span>
               Capability Statement
             </a>
             <a
@@ -51,7 +49,7 @@ export function PublicSectorHero() {
               className="inline-flex items-center gap-1.5 text-sm font-medium text-foreground/80 hover:text-primary transition-colors"
             >
               Contact public-sector team
-              <ArrowRight className="h-4 w-4" />
+              <span aria-hidden="true">→</span>
             </a>
           </motion.div>
         </motion.div>

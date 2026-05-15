@@ -1,12 +1,11 @@
 import { useState, type FormEvent } from "react";
-import { motion } from "framer-motion";
-import { Mail, Phone, ArrowRight, Check } from "lucide-react";
-import { fadeUp, staggerContainer, viewportOnce } from "@/lib/motion";
+import { fadeUp, motion, staggerContainer, viewportOnce } from "@/lib/motion";
 import { contact, inquiryTypes } from "@/data/publicSectorContent";
 import { SectionHeader } from "./SectionHeader";
 
 export function ContactSection() {
   const [submitted, setSubmitted] = useState(false);
+  const [inquiryType, setInquiryType] = useState(inquiryTypes[0]);
 
   function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -48,13 +47,13 @@ export function ContactSection() {
             <motion.ul variants={staggerContainer(0.04)} className="mt-6 space-y-3">
               <motion.li variants={fadeUp}>
                 <a href={`mailto:${contact.email}`} className="inline-flex items-center gap-3 text-sm font-medium hover:text-primary transition-colors">
-                  <Mail className="h-4 w-4 text-primary" strokeWidth={1.6} />
+                  <span className="text-primary" aria-hidden="true">@</span>
                   {contact.email}
                 </a>
               </motion.li>
               <motion.li variants={fadeUp}>
                 <a href={`tel:${contact.phone.replace(/[^0-9+]/g, "")}`} className="inline-flex items-center gap-3 text-sm font-medium hover:text-primary transition-colors">
-                  <Phone className="h-4 w-4 text-primary" strokeWidth={1.6} />
+                  <span className="text-primary" aria-hidden="true">+</span>
                   {contact.phone}
                 </a>
               </motion.li>
@@ -81,21 +80,27 @@ export function ContactSection() {
               <Field label="Role / Title" name="role" />
               <Field label="Email" name="email" type="email" required />
               <Field label="Phone" name="phone" type="tel" />
-              <div className="flex flex-col gap-1.5">
+              <div className="flex flex-col gap-2 sm:col-span-2">
                 <label className="text-[11px] font-semibold uppercase tracking-[0.14em] text-muted-foreground">
                   Inquiry type
                 </label>
-                <select
-                  name="inquiryType"
-                  required
-                  defaultValue=""
-                  className="border-b border-input bg-transparent py-2 text-sm focus:border-primary focus:outline-none"
-                >
-                  <option value="" disabled>Select…</option>
+                <input type="hidden" name="inquiryType" value={inquiryType} />
+                <div className="flex flex-wrap gap-2">
                   {inquiryTypes.map((t) => (
-                    <option key={t} value={t}>{t}</option>
+                    <button
+                      key={t}
+                      type="button"
+                      onClick={() => setInquiryType(t)}
+                      className={`rounded-full border px-3 py-1.5 text-xs font-medium transition-colors ${
+                        inquiryType === t
+                          ? "border-primary bg-primary text-primary-foreground"
+                          : "border-border/80 text-foreground/75 hover:border-primary/50"
+                      }`}
+                    >
+                      {t}
+                    </button>
                   ))}
-                </select>
+                </div>
               </div>
             </div>
             <div className="mt-6 flex flex-col gap-1.5">
@@ -118,7 +123,7 @@ export function ContactSection() {
                 type="submit"
                 className="inline-flex items-center gap-2 rounded-full bg-foreground px-5 py-2.5 text-sm font-medium text-background hover:bg-primary transition-colors"
               >
-                {submitted ? (<><Check className="h-4 w-4" /> Sent</>) : (<>Send inquiry <ArrowRight className="h-4 w-4" /></>)}
+                {submitted ? "✓ Sent" : "Send inquiry →"}
               </button>
             </div>
           </motion.form>
