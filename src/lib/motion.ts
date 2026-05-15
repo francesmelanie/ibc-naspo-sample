@@ -30,5 +30,5 @@ export const motion = {
 
 export const fadeUp = {};
 export const fadeIn = {};
-export const staggerContainer = () => ({});
+export const staggerContainer = (..._args: unknown[]) => ({});
 export const viewportOnce = {};
