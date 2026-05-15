@@ -16,7 +16,7 @@ export function CapabilityAreas() {
           whileInView="show"
           viewport={viewportOnce}
           variants={staggerContainer(0.04)}
-          className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-4"
+          className="mt-10 stack-cards md:grid md:gap-3 sm:grid-cols-2 lg:grid-cols-4"
         >
           {capabilities.map(({ title, description }, i) => (
             <motion.li

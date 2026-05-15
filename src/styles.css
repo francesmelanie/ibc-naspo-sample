@@ -157,6 +157,14 @@
   @media (min-width: 768px) {
     .ibc-section { padding-block: 3.25rem; }
   }
+  /* Mobile-only sticky card stack effect */
+  @media (max-width: 767px) {
+    .stack-cards { display: flex; flex-direction: column; gap: 0.75rem; }
+    .stack-cards > * {
+      position: sticky;
+      top: 4.5rem;
+    }
+  }
   .ibc-rule {
     height: 1px;
     background: linear-gradient(to right, transparent, var(--ibc-border-gray), transparent);
