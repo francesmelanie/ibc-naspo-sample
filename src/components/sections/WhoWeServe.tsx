@@ -18,7 +18,7 @@ export function WhoWeServe() {
           variants={staggerContainer(0.04)}
           className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 justify-center"
         >
-          {audiences.map(({ title, description, icon: Icon }, i) => (
+          {audiences.map(({ title, description }, i) => (
             <motion.li
               key={title}
               variants={fadeUp}
@@ -32,7 +32,7 @@ export function WhoWeServe() {
                   : ""
               }`}
             >
-              <Icon className="h-5 w-5 text-primary" strokeWidth={1.6} />
+              <div className="font-display text-xs font-semibold text-primary tabular-nums">/ {String(i + 1).padStart(2, "0")}</div>
               <h3 className="mt-4 text-base font-semibold">{title}</h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{description}</p>
             </motion.li>
