@@ -1,24 +1,34 @@
-import type { Variants } from "framer-motion";
+import { createElement } from "react";
 
-export const fadeUp: Variants = {
-  hidden: { opacity: 0, y: 12 },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.45, ease: [0.22, 0.61, 0.36, 1] },
-  },
+type StaticMotionProps = Record<string, unknown> & {
+  initial?: unknown;
+  animate?: unknown;
+  whileInView?: unknown;
+  viewport?: unknown;
+  variants?: unknown;
+  transition?: unknown;
 };
 
-export const fadeIn: Variants = {
-  hidden: { opacity: 0 },
-  show: { opacity: 1, transition: { duration: 0.4 } },
+const staticElement = (tag: string) => {
+  return ({ initial, animate, whileInView, viewport, variants, transition, ...props }: StaticMotionProps) =>
+    createElement(tag, props);
 };
 
-export const staggerContainer = (stagger = 0.05, delay = 0): Variants => ({
-  hidden: {},
-  show: {
-    transition: { staggerChildren: stagger, delayChildren: delay },
-  },
-});
+export const motion = {
+  a: staticElement("a"),
+  div: staticElement("div"),
+  form: staticElement("form"),
+  h1: staticElement("h1"),
+  h2: staticElement("h2"),
+  h3: staticElement("h3"),
+  li: staticElement("li"),
+  ol: staticElement("ol"),
+  p: staticElement("p"),
+  span: staticElement("span"),
+  ul: staticElement("ul"),
+};
 
-export const viewportOnce = { once: true, amount: 0.15 } as const;
+export const fadeUp = {};
+export const fadeIn = {};
+export const staggerContainer = () => ({});
+export const viewportOnce = {};
