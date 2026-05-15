@@ -25,9 +25,9 @@ export function SiteHeader() {
           : "bg-transparent"
       }`}
     >
-      <div className="ibc-container flex items-center justify-between py-4 md:py-5">
+      <div className="ibc-container flex items-center justify-between py-2 md:py-2.5">
         <a href="/" className="flex items-center" aria-label="Innovative Business Concepts">
-          <img src={logoMain} alt="Innovative Business Concepts" className="h-14 md:h-16 w-auto" />
+          <img src={logoMain} alt="Innovative Business Concepts" className="h-16 md:h-20 w-auto" />
         </a>
         <nav className="hidden lg:flex items-center gap-10">
           {navLinks.map((l) => (
