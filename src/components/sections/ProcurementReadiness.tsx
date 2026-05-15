@@ -1,4 +1,3 @@
-import { Check } from "lucide-react";
 import { fadeUp, motion, staggerContainer, viewportOnce } from "@/lib/motion";
 import { procurementReadiness } from "@/data/publicSectorContent";
 import { SectionHeader } from "./SectionHeader";
@@ -25,7 +24,7 @@ export function ProcurementReadiness() {
               variants={fadeUp}
               className="flex items-center gap-3 py-3.5 [&:nth-child(2)]:sm:border-t-0 first:border-t-0"
             >
-              <Check className="h-4 w-4 shrink-0 text-primary" strokeWidth={2.5} />
+              <span className="shrink-0 text-primary" aria-hidden="true">✓</span>
               <span className="text-sm text-foreground/85">{item}</span>
             </motion.li>
           ))}
