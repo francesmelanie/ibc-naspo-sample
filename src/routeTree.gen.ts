@@ -9,8 +9,15 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as PublicSectorCooperativeContractingRouteImport } from './routes/public-sector-cooperative-contracting'
 import { Route as IndexRouteImport } from './routes/index'
 
+const PublicSectorCooperativeContractingRoute =
+  PublicSectorCooperativeContractingRouteImport.update({
+    id: '/public-sector-cooperative-contracting',
+    path: '/public-sector-cooperative-contracting',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -19,28 +26,39 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/public-sector-cooperative-contracting': typeof PublicSectorCooperativeContractingRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/public-sector-cooperative-contracting': typeof PublicSectorCooperativeContractingRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/public-sector-cooperative-contracting': typeof PublicSectorCooperativeContractingRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/public-sector-cooperative-contracting'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/public-sector-cooperative-contracting'
+  id: '__root__' | '/' | '/public-sector-cooperative-contracting'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  PublicSectorCooperativeContractingRoute: typeof PublicSectorCooperativeContractingRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/public-sector-cooperative-contracting': {
+      id: '/public-sector-cooperative-contracting'
+      path: '/public-sector-cooperative-contracting'
+      fullPath: '/public-sector-cooperative-contracting'
+      preLoaderRoute: typeof PublicSectorCooperativeContractingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -53,7 +71,19 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  PublicSectorCooperativeContractingRoute:
+    PublicSectorCooperativeContractingRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
