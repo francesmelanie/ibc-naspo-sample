@@ -72,9 +72,9 @@ export function ContactSection() {
             whileInView="show"
             viewport={viewportOnce}
             variants={staggerContainer(0.03)}
-            className="border border-border/70 bg-card rounded-xl p-7 md:p-8"
+            className="border border-border/70 bg-card rounded-xl p-4 sm:p-7 md:p-8"
           >
-            <div className="grid gap-5 sm:grid-cols-2">
+            <div className="grid gap-3 sm:gap-5 sm:grid-cols-2">
               <Field label="Full name" name="name" required />
               <Field label="Organization" name="organization" required />
               <Field label="Role / Title" name="role" />
