@@ -100,9 +100,9 @@
   --gradient-hero: radial-gradient(1200px 600px at 80% -10%, oklch(0.722 0.149 226.4 / 0.12), transparent 60%),
                    radial-gradient(900px 500px at 0% 10%, oklch(0.494 0.214 295.5 / 0.10), transparent 60%);
 
-  --shadow-card: 0 1px 2px oklch(0.244 0.052 273.4 / 0.04), 0 8px 24px oklch(0.244 0.052 273.4 / 0.06);
-  --shadow-card-hover: 0 2px 4px oklch(0.244 0.052 273.4 / 0.05), 0 16px 40px oklch(0.244 0.052 273.4 / 0.10);
-  --shadow-soft: 0 1px 2px oklch(0.244 0.052 273.4 / 0.04), 0 4px 16px oklch(0.244 0.052 273.4 / 0.05);
+  --shadow-card: 0 1px 0 oklch(0.244 0.052 273.4 / 0.025);
+  --shadow-card-hover: 0 1px 0 oklch(0.244 0.052 273.4 / 0.04), 0 6px 18px oklch(0.244 0.052 273.4 / 0.04);
+  --shadow-soft: 0 1px 0 oklch(0.244 0.052 273.4 / 0.02);
 }
 
 @layer base {
@@ -147,11 +147,19 @@
   .ibc-container {
     margin-inline: auto;
     width: 100%;
-    max-width: 1200px;
+    max-width: 1180px;
     padding-inline: 1.25rem;
   }
   @media (min-width: 768px) {
     .ibc-container { padding-inline: 2rem; }
+  }
+  .ibc-section { padding-block: 4rem; }
+  @media (min-width: 768px) {
+    .ibc-section { padding-block: 5.5rem; }
+  }
+  .ibc-rule {
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--ibc-border-gray), transparent);
   }
 }
 

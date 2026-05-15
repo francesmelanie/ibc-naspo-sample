@@ -6,76 +6,77 @@ import { WaveAccent } from "@/components/site/WaveAccent";
 
 export function PublicSectorHero() {
   return (
-    <section className="relative overflow-hidden bg-gradient-hero pt-12 pb-20 md:pt-20 md:pb-28">
-      <WaveAccent className="pointer-events-none absolute inset-0 h-full w-full opacity-70" />
+    <section className="relative overflow-hidden bg-gradient-hero pt-10 pb-16 md:pt-16 md:pb-24">
+      <WaveAccent className="pointer-events-none absolute inset-0 h-full w-full opacity-60" />
       <div className="ibc-container relative">
-        <div className="grid gap-12 lg:grid-cols-[1.15fr_1fr] lg:gap-16 items-center">
-          <motion.div
-            initial="hidden"
-            animate="show"
-            variants={staggerContainer(0.12)}
-          >
-            <motion.div variants={fadeUp}>
-              <span className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.12em] text-primary">
-                <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-                Public Sector & Cooperative Contracting
-              </span>
-            </motion.div>
-            <motion.h1
-              variants={fadeUp}
-              className="mt-6 text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.05] tracking-tight"
-            >
-              Execution support for{" "}
-              <span className="text-gradient-brand">public-sector programs</span>{" "}
-              that cannot afford to fail.
-            </motion.h1>
-            <motion.p
-              variants={fadeUp}
-              className="mt-6 text-lg leading-relaxed text-muted-foreground max-w-xl"
-            >
-              Innovative Business Concepts supports local, state, and public-sector partners with
-              embedded delivery, program management, staffing, logistics, data and reporting,
-              client support, and operational coordination for high-visibility programs.
-            </motion.p>
-            <motion.div variants={fadeUp} className="mt-8 flex flex-wrap gap-3">
-              <a
-                href={capabilityStatementHref}
-                download
-                className="inline-flex items-center gap-2 rounded-full bg-gradient-brand px-6 py-3.5 text-sm font-semibold text-primary-foreground shadow-card hover:shadow-card-hover transition-shadow"
-              >
-                <Download className="h-4 w-4" />
-                Download Capability Statement
-              </a>
-              <a
-                href="#contact"
-                className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-6 py-3.5 text-sm font-semibold text-foreground hover:border-primary hover:text-primary transition-colors"
-              >
-                Contact Public Sector Team
-                <ArrowRight className="h-4 w-4" />
-              </a>
-            </motion.div>
+        <motion.div
+          initial="hidden"
+          animate="show"
+          variants={staggerContainer(0.08)}
+          className="max-w-4xl"
+        >
+          <motion.div variants={fadeUp}>
+            <span className="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-primary">
+              <span className="h-px w-8 bg-primary/60" />
+              Public Sector & Cooperative Contracting
+            </span>
           </motion.div>
-
-          <motion.ul
-            initial="hidden"
-            animate="show"
-            variants={staggerContainer(0.1, 0.25)}
-            className="grid grid-cols-2 gap-4"
+          <motion.h1
+            variants={fadeUp}
+            className="mt-5 text-4xl sm:text-5xl lg:text-[3.75rem] font-semibold leading-[1.05] tracking-tight"
           >
-            {heroStats.map((s) => (
-              <motion.li
-                key={s.stat}
-                variants={fadeUp}
-                className="rounded-2xl border border-border/70 bg-card/90 backdrop-blur-sm p-5 shadow-soft"
-              >
-                <div className="font-display text-2xl font-bold text-gradient-brand">
-                  {s.stat}
-                </div>
-                <div className="mt-1.5 text-sm text-muted-foreground leading-snug">{s.label}</div>
-              </motion.li>
-            ))}
-          </motion.ul>
-        </div>
+            Execution support for{" "}
+            <span className="text-gradient-brand">public-sector programs</span>{" "}
+            that cannot afford to fail.
+          </motion.h1>
+          <motion.p
+            variants={fadeUp}
+            className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground"
+          >
+            Innovative Business Concepts supports local, state, and public-sector partners with
+            embedded delivery, program management, staffing, logistics, data and reporting,
+            client support, and operational coordination.
+          </motion.p>
+          <motion.div variants={fadeUp} className="mt-8 flex flex-wrap items-center gap-5">
+            <a
+              href={capabilityStatementHref}
+              download
+              className="inline-flex items-center gap-2 rounded-full bg-foreground px-5 py-3 text-sm font-medium text-background hover:bg-primary transition-colors"
+            >
+              <Download className="h-4 w-4" />
+              Capability Statement
+            </a>
+            <a
+              href="#contact"
+              className="inline-flex items-center gap-1.5 text-sm font-medium text-foreground/80 hover:text-primary transition-colors"
+            >
+              Contact public-sector team
+              <ArrowRight className="h-4 w-4" />
+            </a>
+          </motion.div>
+        </motion.div>
+
+        <motion.dl
+          initial="hidden"
+          animate="show"
+          variants={staggerContainer(0.06, 0.2)}
+          className="mt-16 grid grid-cols-2 md:grid-cols-4 border-t border-border/70"
+        >
+          {heroStats.map((s) => (
+            <motion.div
+              key={s.stat}
+              variants={fadeUp}
+              className="border-b border-border/70 md:border-b-0 md:border-r last:border-r-0 px-1 py-5 md:px-6"
+            >
+              <dt className="font-display text-xl md:text-2xl font-semibold text-gradient-brand">
+                {s.stat}
+              </dt>
+              <dd className="mt-1 text-xs md:text-sm text-muted-foreground leading-snug">
+                {s.label}
+              </dd>
+            </motion.div>
+          ))}
+        </motion.dl>
       </div>
     </section>
   );

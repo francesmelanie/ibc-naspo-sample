@@ -5,7 +5,7 @@ import { SectionHeader } from "./SectionHeader";
 
 export function CapabilityAreas() {
   return (
-    <section className="relative py-20 md:py-28 bg-gradient-wash">
+    <section className="ibc-section bg-gradient-wash">
       <div className="ibc-container">
         <SectionHeader
           eyebrow="Capabilities"
@@ -16,21 +16,17 @@ export function CapabilityAreas() {
           initial="hidden"
           whileInView="show"
           viewport={viewportOnce}
-          variants={staggerContainer(0.05)}
-          className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4"
+          variants={staggerContainer(0.04)}
+          className="mt-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-border/70 border border-border/70"
         >
           {capabilities.map(({ title, description, icon: Icon }) => (
             <motion.li
               key={title}
               variants={fadeUp}
-              whileHover={{ y: -4 }}
-              transition={{ type: "spring", stiffness: 260, damping: 22 }}
-              className="rounded-2xl border border-border bg-card p-6 shadow-soft hover:shadow-card-hover hover:border-primary/40 transition-all h-full"
+              className="bg-card p-6 hover:bg-secondary/40 transition-colors"
             >
-              <span className="grid h-10 w-10 place-items-center rounded-lg bg-primary/8 text-primary">
-                <Icon className="h-5 w-5" />
-              </span>
-              <h3 className="mt-4 text-base font-semibold">{title}</h3>
+              <Icon className="h-5 w-5 text-primary" strokeWidth={1.6} />
+              <h3 className="mt-4 text-sm font-semibold">{title}</h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{description}</p>
             </motion.li>
           ))}

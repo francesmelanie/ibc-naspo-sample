@@ -5,40 +5,39 @@ import { SectionHeader } from "./SectionHeader";
 
 export function ExperienceHighlights() {
   return (
-    <section className="py-20 md:py-28">
+    <section className="ibc-section">
       <div className="ibc-container">
         <SectionHeader
           eyebrow="Experience"
           title="Experience in critical public-sector environments"
-          intro="IBC has supported high-pressure public-sector initiatives involving emergency response, public health support, multi-agency coordination, public-facing digital platforms, and operational stabilization."
+          intro="IBC has supported high-pressure initiatives involving emergency response, public health, multi-agency coordination, public-facing digital platforms, and operational stabilization."
         />
-        <motion.ul
+        <motion.ol
           initial="hidden"
           whileInView="show"
           viewport={viewportOnce}
-          variants={staggerContainer(0.07)}
-          className="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-3"
+          variants={staggerContainer(0.05)}
+          className="mt-10 divide-y divide-border/70 border-y border-border/70"
         >
-          {experienceHighlights.map(({ title, description, icon: Icon }) => (
+          {experienceHighlights.map(({ title, description, icon: Icon }, i) => (
             <motion.li
               key={title}
               variants={fadeUp}
-              whileHover={{ y: -4 }}
-              transition={{ type: "spring", stiffness: 260, damping: 22 }}
-              className="group relative overflow-hidden rounded-2xl border border-border bg-card p-6 shadow-soft hover:shadow-card-hover hover:border-primary/40 transition-all"
+              className="grid grid-cols-[auto_1fr_auto] items-start gap-6 py-6 group hover:bg-secondary/30 transition-colors px-1"
             >
-              <span
-                aria-hidden
-                className="pointer-events-none absolute -right-10 -top-10 h-32 w-32 rounded-full bg-gradient-brand opacity-0 blur-3xl transition-opacity group-hover:opacity-20"
-              />
-              <span className="grid h-11 w-11 place-items-center rounded-xl bg-gradient-brand-soft text-primary">
-                <Icon className="h-5 w-5" />
+              <span className="font-display text-xs font-semibold text-muted-foreground tabular-nums pt-1">
+                / {String(i + 1).padStart(2, "0")}
               </span>
-              <h3 className="mt-4 text-base font-semibold">{title}</h3>
-              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{description}</p>
+              <div>
+                <h3 className="text-base md:text-lg font-semibold">{title}</h3>
+                <p className="mt-1.5 text-sm text-muted-foreground leading-relaxed max-w-2xl">
+                  {description}
+                </p>
+              </div>
+              <Icon className="h-5 w-5 text-primary/70 group-hover:text-primary transition-colors" strokeWidth={1.6} />
             </motion.li>
           ))}
-        </motion.ul>
+        </motion.ol>
       </div>
     </section>
   );

@@ -14,24 +14,25 @@ export function SectionHeader({ eyebrow, title, intro, align = "left" }: Props) 
       initial="hidden"
       whileInView="show"
       viewport={viewportOnce}
-      variants={staggerContainer(0.08)}
+      variants={staggerContainer(0.06)}
       className={`max-w-3xl ${align === "center" ? "mx-auto text-center" : ""}`}
     >
       {eyebrow && (
         <motion.div variants={fadeUp}>
-          <span className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">
+          <span className="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-primary">
+            <span className="h-px w-6 bg-primary/60" />
             {eyebrow}
           </span>
         </motion.div>
       )}
       <motion.h2
         variants={fadeUp}
-        className="mt-3 text-3xl sm:text-4xl font-bold tracking-tight"
+        className="mt-4 text-3xl sm:text-[2.25rem] font-semibold tracking-tight leading-[1.15]"
       >
         {title}
       </motion.h2>
       {intro && (
-        <motion.p variants={fadeUp} className="mt-4 text-lg text-muted-foreground leading-relaxed">
+        <motion.p variants={fadeUp} className="mt-4 text-base md:text-lg text-muted-foreground leading-relaxed">
           {intro}
         </motion.p>
       )}
