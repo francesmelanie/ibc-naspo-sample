@@ -153,9 +153,9 @@
   @media (min-width: 768px) {
     .ibc-container { padding-inline: 2rem; }
   }
-  .ibc-section { padding-block: 2.75rem; }
+  .ibc-section { padding-block: 1.5rem; }
   @media (min-width: 768px) {
-    .ibc-section { padding-block: 4rem; }
+    .ibc-section { padding-block: 3.25rem; }
   }
   .ibc-rule {
     height: 1px;
