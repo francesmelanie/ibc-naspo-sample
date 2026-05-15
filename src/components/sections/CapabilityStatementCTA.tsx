@@ -1,4 +1,3 @@
-import { Download, FileText, ArrowRight } from "lucide-react";
 import { fadeUp, motion, staggerContainer, viewportOnce } from "@/lib/motion";
 import { capabilityStatementHref } from "@/data/publicSectorContent";
 
@@ -15,7 +14,7 @@ export function CapabilityStatementCTA() {
         >
           <div>
             <motion.div variants={fadeUp} className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-primary">
-              <FileText className="h-3.5 w-3.5" />
+              <span aria-hidden="true">□</span>
               Capability Statement
             </motion.div>
             <motion.h2
@@ -35,9 +34,9 @@ export function CapabilityStatementCTA() {
             download
             className="group inline-flex items-center gap-2 rounded-full bg-foreground px-5 py-3 text-sm font-medium text-background hover:bg-primary transition-colors justify-self-start md:justify-self-end"
           >
-            <Download className="h-4 w-4" />
+            <span aria-hidden="true">↓</span>
             Download PDF
-            <ArrowRight className="h-4 w-4 -ml-0.5 opacity-0 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all" />
+            <span aria-hidden="true" className="-ml-0.5 opacity-0 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all">→</span>
           </motion.a>
         </motion.div>
       </div>
