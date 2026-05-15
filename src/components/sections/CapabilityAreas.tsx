@@ -17,13 +17,13 @@ export function CapabilityAreas() {
           whileInView="show"
           viewport={viewportOnce}
           variants={staggerContainer(0.04)}
-          className="mt-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-border/70 border border-border/70"
+          className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4"
         >
           {capabilities.map(({ title, description, icon: Icon }) => (
             <motion.li
               key={title}
               variants={fadeUp}
-              className="bg-card p-6 hover:bg-secondary/40 transition-colors"
+              className="rounded-2xl border border-border/70 bg-card p-6 hover:border-primary/40 transition-colors"
             >
               <Icon className="h-5 w-5 text-primary" strokeWidth={1.6} />
               <h3 className="mt-4 text-sm font-semibold">{title}</h3>
