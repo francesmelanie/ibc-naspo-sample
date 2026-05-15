@@ -1,6 +1,5 @@
-import { motion } from "framer-motion";
 import { ArrowRight, Download } from "lucide-react";
-import { fadeUp, staggerContainer } from "@/lib/motion";
+import { fadeUp, motion, staggerContainer } from "@/lib/motion";
 import { heroStats, capabilityStatementHref } from "@/data/publicSectorContent";
 import { WaveAccent } from "@/components/site/WaveAccent";
 

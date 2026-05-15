@@ -1,5 +1,4 @@
-import { motion } from "framer-motion";
-import { fadeUp, staggerContainer, viewportOnce } from "@/lib/motion";
+import { fadeUp, motion, staggerContainer, viewportOnce } from "@/lib/motion";
 import { audiences } from "@/data/publicSectorContent";
 import { SectionHeader } from "./SectionHeader";
 

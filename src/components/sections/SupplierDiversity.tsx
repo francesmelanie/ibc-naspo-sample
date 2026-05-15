@@ -1,6 +1,5 @@
-import { motion } from "framer-motion";
 import { Check } from "lucide-react";
-import { fadeUp, staggerContainer, viewportOnce } from "@/lib/motion";
+import { fadeUp, motion, staggerContainer, viewportOnce } from "@/lib/motion";
 import { supplierDiversityBlocks, certificationLabels } from "@/data/publicSectorContent";
 
 export function SupplierDiversity() {

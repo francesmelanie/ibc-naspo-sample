@@ -1,6 +1,5 @@
-import { motion } from "framer-motion";
 import { Download, FileText, ArrowRight } from "lucide-react";
-import { fadeUp, staggerContainer, viewportOnce } from "@/lib/motion";
+import { fadeUp, motion, staggerContainer, viewportOnce } from "@/lib/motion";
 import { capabilityStatementHref } from "@/data/publicSectorContent";
 
 export function CapabilityStatementCTA() {

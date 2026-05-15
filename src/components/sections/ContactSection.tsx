@@ -1,7 +1,6 @@
 import { useState, type FormEvent } from "react";
-import { motion } from "framer-motion";
 import { Mail, Phone, ArrowRight, Check } from "lucide-react";
-import { fadeUp, staggerContainer, viewportOnce } from "@/lib/motion";
+import { fadeUp, motion, staggerContainer, viewportOnce } from "@/lib/motion";
 import { contact, inquiryTypes } from "@/data/publicSectorContent";
 import { SectionHeader } from "./SectionHeader";
 
