@@ -46,7 +46,7 @@ export function PublicSectorHero() {
             <a
               href={capabilityStatementHref}
               download
-              className="inline-flex items-center gap-1.5 text-sm font-medium text-foreground/80 hover:text-primary transition-colors"
+              className="inline-flex items-center gap-2 rounded-full border border-foreground/80 px-5 py-3 text-sm font-medium text-foreground hover:bg-foreground hover:text-background transition-colors"
             >
               <span aria-hidden="true">↓</span>
               Capability Statement
