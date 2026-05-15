@@ -27,7 +27,7 @@ export function SiteHeader() {
     >
       <div className="ibc-container flex items-center justify-between py-4 md:py-5">
         <a href="/" className="flex items-center" aria-label="Innovative Business Concepts">
-          <img src={logoMain} alt="Innovative Business Concepts" className="h-9 md:h-10 w-auto" />
+          <img src={logoMain} alt="Innovative Business Concepts" className="h-14 md:h-16 w-auto" />
         </a>
         <nav className="hidden lg:flex items-center gap-10">
           {navLinks.map((l) => (
