@@ -44,7 +44,7 @@ export function WhyIBC() {
             whileInView="show"
             viewport={viewportOnce}
             variants={staggerContainer(0.05)}
-            className="divide-y divide-border/70"
+            className="divide-y divide-border/70 lg:mt-[8.5rem]"
           >
             {whyIbcCards.map((c, i) => (
               <motion.li

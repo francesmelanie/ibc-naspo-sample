@@ -54,7 +54,7 @@ export function SupplierDiversity() {
             </motion.div>
           </div>
 
-          <motion.ul variants={staggerContainer(0.04)} className="divide-y divide-border/70 border-y border-border/70">
+          <motion.ul variants={staggerContainer(0.04)} className="divide-y divide-border/70 border-y border-border/70 lg:mt-[8.5rem]">
             {supplierDiversityBlocks.map((b) => (
               <motion.li
                 key={b}
