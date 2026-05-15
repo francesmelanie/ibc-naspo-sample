@@ -90,6 +90,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:title", content: "Public Sector & Cooperative Contracting | Innovative Business Concepts" },
+      { name: "twitter:title", content: "Public Sector & Cooperative Contracting | Innovative Business Concepts" },
+      { name: "description", content: "Innovative BC Home is a website showcasing business solutions and services." },
+      { property: "og:description", content: "Innovative BC Home is a website showcasing business solutions and services." },
+      { name: "twitter:description", content: "Innovative BC Home is a website showcasing business solutions and services." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/f2fd54ca-0586-4a53-bc2e-f2cd6f1540d8/id-preview-6733908a--98363004-4277-4b30-91d7-6c79436a501f.lovable.app-1778856726938.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/f2fd54ca-0586-4a53-bc2e-f2cd6f1540d8/id-preview-6733908a--98363004-4277-4b30-91d7-6c79436a501f.lovable.app-1778856726938.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
