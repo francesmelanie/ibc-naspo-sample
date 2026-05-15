@@ -6,6 +6,7 @@ import { SectionHeader } from "./SectionHeader";
 
 export function ContactSection() {
   const [submitted, setSubmitted] = useState(false);
+  const [inquiryType, setInquiryType] = useState(inquiryTypes[0]);
 
   function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -80,21 +81,27 @@ export function ContactSection() {
               <Field label="Role / Title" name="role" />
               <Field label="Email" name="email" type="email" required />
               <Field label="Phone" name="phone" type="tel" />
-              <div className="flex flex-col gap-1.5">
+              <div className="flex flex-col gap-2 sm:col-span-2">
                 <label className="text-[11px] font-semibold uppercase tracking-[0.14em] text-muted-foreground">
                   Inquiry type
                 </label>
-                <select
-                  name="inquiryType"
-                  required
-                  defaultValue=""
-                  className="border-b border-input bg-transparent py-2 text-sm focus:border-primary focus:outline-none"
-                >
-                  <option value="" disabled>Select…</option>
+                <input type="hidden" name="inquiryType" value={inquiryType} />
+                <div className="flex flex-wrap gap-2">
                   {inquiryTypes.map((t) => (
-                    <option key={t} value={t}>{t}</option>
+                    <button
+                      key={t}
+                      type="button"
+                      onClick={() => setInquiryType(t)}
+                      className={`rounded-full border px-3 py-1.5 text-xs font-medium transition-colors ${
+                        inquiryType === t
+                          ? "border-primary bg-primary text-primary-foreground"
+                          : "border-border/80 text-foreground/75 hover:border-primary/50"
+                      }`}
+                    >
+                      {t}
+                    </button>
                   ))}
-                </select>
+                </div>
               </div>
             </div>
             <div className="mt-6 flex flex-col gap-1.5">
