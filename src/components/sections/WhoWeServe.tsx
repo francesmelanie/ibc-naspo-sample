@@ -17,13 +17,21 @@ export function WhoWeServe() {
           whileInView="show"
           viewport={viewportOnce}
           variants={staggerContainer(0.04)}
-          className="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 border-t border-border/70 border-l border-border/70"
+          className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 justify-center"
         >
-          {audiences.map(({ title, description, icon: Icon }) => (
+          {audiences.map(({ title, description, icon: Icon }, i) => (
             <motion.li
               key={title}
               variants={fadeUp}
-              className="border-b border-r border-border/70 p-6 hover:bg-secondary/40 transition-colors"
+              className={`rounded-2xl border border-border/70 bg-card p-6 hover:border-primary/40 transition-colors ${
+                i === audiences.length - 1 && audiences.length % 3 === 1
+                  ? "lg:col-start-2"
+                  : ""
+              } ${
+                i === audiences.length - 1 && audiences.length % 2 === 1
+                  ? "sm:max-lg:col-span-2 sm:max-lg:max-w-md sm:max-lg:mx-auto sm:max-lg:w-full"
+                  : ""
+              }`}
             >
               <Icon className="h-5 w-5 text-primary" strokeWidth={1.6} />
               <h3 className="mt-4 text-base font-semibold">{title}</h3>
