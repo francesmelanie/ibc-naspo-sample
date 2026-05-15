@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import logoMain from "@/assets/ibc-logo-main.png";
+import logoMain from "@/assets/ibc-logo-secondary-light.png";
 
 const navLinks = [
   { label: "Our Core Competencies", href: "https://innovativebc.io/#competencies" },
@@ -27,7 +27,7 @@ export function SiteHeader() {
     >
       <div className="ibc-container flex items-center justify-between py-1 md:py-1.5">
         <a href="/" className="flex items-center" aria-label="Innovative Business Concepts">
-          <img src={logoMain} alt="Innovative Business Concepts" className="h-16 md:h-20 w-auto" />
+          <img src={logoMain} alt="Innovative Business Concepts" className="h-9 md:h-12 w-auto" />
         </a>
         <nav className="hidden lg:flex items-center gap-10">
           {navLinks.map((l) => (
