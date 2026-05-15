@@ -31,7 +31,7 @@ export function PublicSectorHero() {
             variants={fadeUp}
             className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground"
           >
-            Innovative Business Concepts supports local, state, and public-sector partners with
+            Innovative Business Concepts (IBC) supports local, state, and public-sector partners with
             embedded delivery, program management, staffing, logistics, data and reporting,
             client support, and operational coordination.
           </motion.p>
