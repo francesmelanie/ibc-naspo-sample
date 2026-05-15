@@ -19,11 +19,11 @@ export function CapabilityStatementCTA() {
             </motion.div>
             <motion.h2
               variants={fadeUp}
-              className="mt-3 text-2xl md:text-3xl font-semibold tracking-tight max-w-2xl"
+              className="mt-3 text-xl sm:text-2xl md:text-3xl font-semibold tracking-tight max-w-2xl"
             >
               Download the public-sector capability statement.
             </motion.h2>
-            <motion.p variants={fadeUp} className="mt-3 max-w-xl text-sm md:text-base text-muted-foreground">
+            <motion.p variants={fadeUp} className="mt-2 sm:mt-3 max-w-xl text-xs sm:text-sm md:text-base text-muted-foreground">
               A one-page overview of IBC's public-sector capabilities, procurement readiness,
               and contact information.
             </motion.p>
@@ -32,7 +32,7 @@ export function CapabilityStatementCTA() {
             variants={fadeUp}
             href={capabilityStatementHref}
             download
-            className="group inline-flex items-center gap-2 rounded-full bg-foreground px-5 py-3 text-sm font-medium text-background hover:bg-primary transition-colors justify-self-start md:justify-self-end"
+            className="group inline-flex items-center gap-2 rounded-full bg-foreground px-4 py-2.5 sm:px-5 sm:py-3 text-xs sm:text-sm font-medium text-background hover:bg-primary transition-colors justify-self-start md:justify-self-end"
           >
             <span aria-hidden="true">↓</span>
             Download PDF
