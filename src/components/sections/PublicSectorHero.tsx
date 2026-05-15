@@ -37,19 +37,19 @@ export function PublicSectorHero() {
           </motion.p>
           <motion.div variants={fadeUp} className="mt-8 flex flex-wrap items-center gap-5">
             <a
+              href="#contact"
+              className="inline-flex items-center gap-2 rounded-full bg-foreground px-5 py-3 text-sm font-medium text-background hover:bg-primary transition-colors"
+            >
+              Connect with us
+              <span aria-hidden="true">→</span>
+            </a>
+            <a
               href={capabilityStatementHref}
               download
-              className="inline-flex items-center gap-2 rounded-full bg-foreground px-5 py-3 text-sm font-medium text-background hover:bg-primary transition-colors"
+              className="inline-flex items-center gap-1.5 text-sm font-medium text-foreground/80 hover:text-primary transition-colors"
             >
               <span aria-hidden="true">↓</span>
               Capability Statement
-            </a>
-            <a
-              href="#contact"
-              className="inline-flex items-center gap-1.5 text-sm font-medium text-foreground/80 hover:text-primary transition-colors"
-            >
-              Contact public-sector team
-              <span aria-hidden="true">→</span>
             </a>
           </motion.div>
         </motion.div>
