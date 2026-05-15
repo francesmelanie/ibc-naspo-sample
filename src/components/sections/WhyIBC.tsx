@@ -52,7 +52,7 @@ export function WhyIBC() {
                 variants={fadeUp}
                 className="grid grid-cols-[auto_1fr] gap-6 py-5 first:pt-0"
               >
-                <div className="font-display text-sm font-semibold text-primary tabular-nums pt-0.5">
+                <div className="font-display text-xs font-semibold text-primary tabular-nums pt-2">
                   0{i + 1}
                 </div>
                 <div>
