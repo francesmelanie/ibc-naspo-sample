@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import logoMain from "@/assets/ibc-logo-main.svg";
+import logoMain from "@/assets/ibc-logo-main.png";
 
 const navLinks = [
   { label: "Our Core Competencies", href: "https://innovativebc.io/#competencies" },
