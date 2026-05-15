@@ -16,7 +16,7 @@ export function WhoWeServe() {
           whileInView="show"
           viewport={viewportOnce}
           variants={staggerContainer(0.04)}
-          className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 justify-center"
+          className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-3 justify-center"
         >
           {audiences.map(({ title, description }, i) => (
             <motion.li
