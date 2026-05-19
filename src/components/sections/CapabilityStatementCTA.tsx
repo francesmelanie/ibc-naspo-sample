@@ -37,7 +37,6 @@ export function CapabilityStatementCTA() {
           >
             <span aria-hidden="true">↓</span>
             Download PDF
-            <span aria-hidden="true" className="-ml-0.5 opacity-0 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all">→</span>
           </motion.a>
         </motion.div>
       </div>
