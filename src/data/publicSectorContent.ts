@@ -19,7 +19,7 @@ export const capabilities = [
   { title: "Emergency Response Operations", description: "Public health response, surge operations, and emergency staffing coordination." },
   { title: "Program & Project Management", description: "Operational coordination, reporting, stakeholder management, and deployment oversight." },
   { title: "Staffing & Workforce Coordination", description: "Scalable staffing for temporary, surge, and field-based operations." },
-  { title: "Logistics & Site Operations", description: "Multi-site coordination, supply distribution, operational tracking, and deployment logistics." },
+  { title: "Logistics & Site Operations", description: "Multi-site coordination, operational tracking, and deployment logistics." },
   { title: "Data Collection & Reporting", description: "Operational reporting, program tracking, compliance documentation, and data coordination." },
   { title: "Client & Community Support", description: "Intake coordination, multilingual support, outreach, and service navigation." },
   { title: "Call Center & Help Desk Support", description: "Inbound support, appointment coordination, escalation routing, and information services." },
