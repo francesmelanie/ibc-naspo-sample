@@ -1,4 +1,4 @@
-import { heroStats } from "@/data/publicSectorContent";
+import { heroStats, capabilityStatementHref } from "@/data/publicSectorContent";
 import { WaveAccent } from "@/components/site/WaveAccent";
 
 export function PublicSectorHero() {
@@ -48,6 +48,16 @@ export function PublicSectorHero() {
               >
                 →
               </span>
+            </a>
+            <a
+              href={capabilityStatementHref}
+              download
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full border border-foreground/80 px-4 py-2.5 sm:px-5 sm:py-3 text-xs sm:text-sm font-medium text-foreground hover:bg-foreground hover:text-background transition-colors"
+            >
+              <span aria-hidden="true">↓</span>
+              Capability Statement
             </a>
           </div>
         </div>
