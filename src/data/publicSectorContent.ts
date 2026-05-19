@@ -33,7 +33,7 @@ export const procurementReadiness = [
   "Scalable staffing deployment models",
   "Subcontractor and partner coordination",
   "Operational reporting support",
-  "Public-sector invoicing and documentation",
+  "Public-sector invoicing and documentation processes",
   "Surge capacity planning",
   "Cross-functional deployment support",
 ];
