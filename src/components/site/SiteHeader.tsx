@@ -5,6 +5,7 @@ const navLinks = [
   { label: "Our Core Competencies", href: "https://innovativebc.io/#competencies" },
   { label: "Our Recent Work", href: "https://innovativebc.io/#work" },
   { label: "About Us", href: "https://innovativebc.io/#about" },
+  { label: "Cooperative Contracting", href: "/public-sector-cooperative-contracting" },
 ];
 
 export function SiteHeader() {
