@@ -1,4 +1,5 @@
 import { useState, type FormEvent } from "react";
+import { Mail, Phone } from "lucide-react";
 import { fadeUp, motion, staggerContainer, viewportOnce } from "@/lib/motion";
 import { contact, inquiryTypes } from "@/data/publicSectorContent";
 import { SectionHeader } from "./SectionHeader";
@@ -47,13 +48,13 @@ export function ContactSection() {
             <motion.ul variants={staggerContainer(0.04)} className="mt-6 space-y-3">
               <motion.li variants={fadeUp}>
                 <a href={`mailto:${contact.email}`} className="inline-flex items-center gap-3 text-sm font-medium hover:text-primary transition-colors">
-                  <span className="text-primary" aria-hidden="true">@</span>
+                  <Mail className="h-4 w-4 text-primary" aria-hidden="true" />
                   {contact.email}
                 </a>
               </motion.li>
               <motion.li variants={fadeUp}>
                 <a href={`tel:${contact.phone.replace(/[^0-9+]/g, "")}`} className="inline-flex items-center gap-3 text-sm font-medium hover:text-primary transition-colors">
-                  <span className="text-primary" aria-hidden="true">+</span>
+                  <Phone className="h-4 w-4 text-primary" aria-hidden="true" />
                   {contact.phone}
                 </a>
               </motion.li>
