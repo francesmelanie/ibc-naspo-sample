@@ -44,7 +44,7 @@ function PublicSectorPage() {
       <main className="flex-1">
         <PublicSectorHero />
         <OperationalCallout />
-        <WhoWeServe />
+        
         <CapabilityAreas />
         <ProcurementReadiness />
         <ExperienceHighlights />
