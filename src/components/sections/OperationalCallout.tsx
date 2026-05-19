@@ -61,7 +61,7 @@ export function OperationalCallout() {
                 >
                   <p.icon className="h-5 w-5 text-background/80 group-hover:text-background transition-colors" />
                   <p className="mt-3 text-xs sm:text-sm font-medium leading-snug whitespace-normal sm:whitespace-pre-line">
-                    {p.label.replace("\n", " ")}
+                    {p.label}
                   </p>
                 </motion.div>
               ))}
