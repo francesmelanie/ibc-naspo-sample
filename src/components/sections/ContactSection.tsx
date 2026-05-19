@@ -60,10 +60,6 @@ export function ContactSection() {
               </motion.li>
             </motion.ul>
 
-            <motion.p variants={fadeUp} className="mt-8 text-sm text-muted-foreground leading-relaxed max-w-sm">
-              IBC supports public-sector and cooperative contracting opportunities requiring
-              responsive onboarding, transparent reporting, and scalable operational support.
-            </motion.p>
           </motion.div>
 
           {/* Form */}
