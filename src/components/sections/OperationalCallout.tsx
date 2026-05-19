@@ -27,7 +27,7 @@ export function OperationalCallout() {
               <span className="h-px w-8 bg-background/40" />
               What we do
             </span>
-            <h2 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-semibold leading-[1.1] tracking-tight">
+            <h2 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-semibold leading-[1.1] tracking-tight text-white">
               Supporting government agencies through{" "}
               <span className="text-gradient-brand">scalable operational services.</span>
             </h2>
