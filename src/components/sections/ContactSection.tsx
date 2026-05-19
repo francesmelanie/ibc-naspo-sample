@@ -1,25 +1,25 @@
 import { useState, type FormEvent } from "react";
 import { Mail, Phone } from "lucide-react";
 import { fadeUp, motion, staggerContainer, viewportOnce } from "@/lib/motion";
-import { contact, inquiryTypes } from "@/data/publicSectorContent";
+import { contact } from "@/data/publicSectorContent";
 import { SectionHeader } from "./SectionHeader";
 
 export function ContactSection() {
   const [submitted, setSubmitted] = useState(false);
-  const [inquiryType, setInquiryType] = useState(inquiryTypes[0]);
 
   function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const fd = new FormData(e.currentTarget);
     const subject = encodeURIComponent(
-      `[Public Sector Inquiry] ${fd.get("inquiryType") ?? "General"} — ${fd.get("organization") ?? ""}`,
+      `[Public Sector Inquiry] ${fd.get("organization") ?? ""}`,
     );
     const body = encodeURIComponent(
-      `Name: ${fd.get("name")}\nOrganization: ${fd.get("organization")}\nRole: ${fd.get("role")}\nEmail: ${fd.get("email")}\nPhone: ${fd.get("phone")}\nInquiry Type: ${fd.get("inquiryType")}\n\nMessage:\n${fd.get("message")}`,
+      `Name: ${fd.get("name")}\nOrganization: ${fd.get("organization")}\nRole: ${fd.get("role")}\nEmail: ${fd.get("email")}\n\nMessage:\n${fd.get("message")}`,
     );
     window.location.href = `mailto:${contact.email}?subject=${subject}&body=${body}`;
     setSubmitted(true);
   }
+
 
   return (
     <section id="contact" className="ibc-section bg-gradient-wash">
@@ -60,10 +60,6 @@ export function ContactSection() {
               </motion.li>
             </motion.ul>
 
-            <motion.p variants={fadeUp} className="mt-8 text-sm text-muted-foreground leading-relaxed max-w-sm">
-              IBC supports public-sector and cooperative contracting opportunities requiring
-              responsive onboarding, transparent reporting, and scalable operational support.
-            </motion.p>
           </motion.div>
 
           {/* Form */}
@@ -80,29 +76,6 @@ export function ContactSection() {
               <Field label="Organization" name="organization" required />
               <Field label="Role / Title" name="role" />
               <Field label="Email" name="email" type="email" required />
-              <Field label="Phone" name="phone" type="tel" />
-              <div className="flex flex-col gap-2 sm:col-span-2">
-                <label className="text-[11px] font-semibold uppercase tracking-[0.14em] text-muted-foreground">
-                  Inquiry type
-                </label>
-                <input type="hidden" name="inquiryType" value={inquiryType} />
-                <div className="flex flex-wrap gap-2">
-                  {inquiryTypes.map((t) => (
-                    <button
-                      key={t}
-                      type="button"
-                      onClick={() => setInquiryType(t)}
-                      className={`rounded-full border px-3 py-1.5 text-xs font-medium transition-colors ${
-                        inquiryType === t
-                          ? "border-primary bg-primary text-primary-foreground"
-                          : "border-border/80 text-foreground/75 hover:border-primary/50"
-                      }`}
-                    >
-                      {t}
-                    </button>
-                  ))}
-                </div>
-              </div>
             </div>
             <div className="mt-6 flex flex-col gap-1.5">
               <label className="text-[11px] font-semibold uppercase tracking-[0.14em] text-muted-foreground">
