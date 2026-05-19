@@ -10,6 +10,7 @@ import { SupplierDiversity } from "@/components/sections/SupplierDiversity";
 import { CapabilityStatementCTA } from "@/components/sections/CapabilityStatementCTA";
 import { ContactSection } from "@/components/sections/ContactSection";
 import { CooperativeParticipation } from "@/components/sections/CooperativeParticipation";
+import { OperationalCallout } from "@/components/sections/OperationalCallout";
 
 export const Route = createFileRoute("/public-sector-cooperative-contracting")({
   head: () => ({
