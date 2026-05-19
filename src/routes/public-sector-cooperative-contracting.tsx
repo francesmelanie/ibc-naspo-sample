@@ -49,8 +49,8 @@ function PublicSectorPage() {
         <SectionReveal><ExperienceHighlights /></SectionReveal>
         <SectionReveal><SupplierDiversity /></SectionReveal>
         <SectionReveal><CapabilityStatementCTA /></SectionReveal>
-        <SectionReveal><ContactSection /></SectionReveal>
         <SectionReveal><CooperativeParticipation /></SectionReveal>
+        <SectionReveal><ContactSection /></SectionReveal>
       </main>
       <SiteFooter />
     </div>
