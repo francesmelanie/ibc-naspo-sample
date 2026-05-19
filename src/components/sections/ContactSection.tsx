@@ -76,29 +76,6 @@ export function ContactSection() {
               <Field label="Organization" name="organization" required />
               <Field label="Role / Title" name="role" />
               <Field label="Email" name="email" type="email" required />
-              <Field label="Phone" name="phone" type="tel" />
-              <div className="flex flex-col gap-2 sm:col-span-2">
-                <label className="text-[11px] font-semibold uppercase tracking-[0.14em] text-muted-foreground">
-                  Inquiry type
-                </label>
-                <input type="hidden" name="inquiryType" value={inquiryType} />
-                <div className="flex flex-wrap gap-2">
-                  {inquiryTypes.map((t) => (
-                    <button
-                      key={t}
-                      type="button"
-                      onClick={() => setInquiryType(t)}
-                      className={`rounded-full border px-3 py-1.5 text-xs font-medium transition-colors ${
-                        inquiryType === t
-                          ? "border-primary bg-primary text-primary-foreground"
-                          : "border-border/80 text-foreground/75 hover:border-primary/50"
-                      }`}
-                    >
-                      {t}
-                    </button>
-                  ))}
-                </div>
-              </div>
             </div>
             <div className="mt-6 flex flex-col gap-1.5">
               <label className="text-[11px] font-semibold uppercase tracking-[0.14em] text-muted-foreground">
