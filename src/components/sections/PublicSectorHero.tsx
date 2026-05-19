@@ -6,10 +6,6 @@ export function PublicSectorHero() {
   return (
     <section className="relative overflow-hidden bg-gradient-hero pt-14 pb-20 md:pt-24 md:pb-32">
       <WaveAccent className="pointer-events-none absolute inset-0 h-full w-full opacity-60" />
-      {/* Decorative glows */}
-      <div className="pointer-events-none absolute -top-32 -left-32 h-[480px] w-[480px] rounded-full bg-primary/25 blur-[120px]" />
-      <div className="pointer-events-none absolute -bottom-40 right-[-10%] h-[520px] w-[520px] rounded-full bg-accent/20 blur-[140px]" />
-      <div className="pointer-events-none absolute inset-0 [background-image:linear-gradient(to_right,hsl(var(--foreground)/0.06)_1px,transparent_1px),linear-gradient(to_bottom,hsl(var(--foreground)/0.06)_1px,transparent_1px)] [background-size:48px_48px] [mask-image:radial-gradient(ellipse_at_center,black_40%,transparent_75%)]" />
       <div className="ibc-container relative">
         <motion.div
           initial="hidden"
