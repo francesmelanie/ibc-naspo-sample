@@ -24,8 +24,9 @@ export function CapabilityStatementCTA() {
               Download the public-sector capability statement.
             </motion.h2>
             <motion.p variants={fadeUp} className="mt-2 sm:mt-3 max-w-xl text-xs sm:text-sm md:text-base text-muted-foreground">
-              A one-page overview of IBC's public-sector capabilities, procurement readiness,
-              and contact information.
+              A concise two-page overview of IBC's core capabilities, cooperative procurement
+              readiness, NAICS and PSC codes, certifications, and points of contact — formatted
+              for procurement reviewers and contracting teams.
             </motion.p>
           </div>
           <motion.a
