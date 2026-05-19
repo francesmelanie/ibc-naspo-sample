@@ -7,7 +7,7 @@ import { CapabilityAreas } from "@/components/sections/CapabilityAreas";
 import { ProcurementReadiness } from "@/components/sections/ProcurementReadiness";
 import { ExperienceHighlights } from "@/components/sections/ExperienceHighlights";
 import { SupplierDiversity } from "@/components/sections/SupplierDiversity";
-
+import { CapabilityStatementCTA } from "@/components/sections/CapabilityStatementCTA";
 import { ContactSection } from "@/components/sections/ContactSection";
 import { CooperativeParticipation } from "@/components/sections/CooperativeParticipation";
 import { OperationalCallout } from "@/components/sections/OperationalCallout";
