@@ -1,8 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/site/SiteHeader";
 import { SiteFooter } from "@/components/site/SiteFooter";
+import { SectionReveal } from "@/components/site/SectionReveal";
 import { PublicSectorHero } from "@/components/sections/PublicSectorHero";
-import { WhoWeServe } from "@/components/sections/WhoWeServe";
 import { CapabilityAreas } from "@/components/sections/CapabilityAreas";
 import { ProcurementReadiness } from "@/components/sections/ProcurementReadiness";
 import { ExperienceHighlights } from "@/components/sections/ExperienceHighlights";
@@ -43,15 +43,14 @@ function PublicSectorPage() {
       <SiteHeader />
       <main className="flex-1">
         <PublicSectorHero />
-        <OperationalCallout />
-        
-        <CapabilityAreas />
-        <ProcurementReadiness />
-        <ExperienceHighlights />
-        <SupplierDiversity />
-        <CapabilityStatementCTA />
-        <ContactSection />
-        <CooperativeParticipation />
+        <SectionReveal><OperationalCallout /></SectionReveal>
+        <SectionReveal><CapabilityAreas /></SectionReveal>
+        <SectionReveal><ProcurementReadiness /></SectionReveal>
+        <SectionReveal><ExperienceHighlights /></SectionReveal>
+        <SectionReveal><SupplierDiversity /></SectionReveal>
+        <SectionReveal><CapabilityStatementCTA /></SectionReveal>
+        <SectionReveal><ContactSection /></SectionReveal>
+        <SectionReveal><CooperativeParticipation /></SectionReveal>
       </main>
       <SiteFooter />
     </div>
