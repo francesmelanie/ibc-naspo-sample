@@ -36,6 +36,8 @@ export function CapabilityStatementCTA() {
             variants={fadeUp}
             href={capabilityStatementHref}
             download
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-2 rounded-full bg-background px-5 py-3 text-xs sm:text-sm font-medium text-foreground hover:bg-background/90 transition-colors justify-self-start md:justify-self-end"
           >
             <span aria-hidden="true">↓</span>
