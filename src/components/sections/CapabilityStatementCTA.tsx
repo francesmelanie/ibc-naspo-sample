@@ -17,7 +17,7 @@ export function CapabilityStatementCTA() {
             <span className="h-px w-6 bg-background/40" />
             Capability Statement
           </div>
-          <h2 className="mt-4 text-3xl md:text-5xl font-semibold tracking-tight leading-tight">
+          <h2 className="mt-4 text-3xl md:text-5xl font-semibold tracking-tight leading-tight text-white">
             A trusted public-sector{" "}
             <span className="text-gradient-brand">cooperative contractor.</span>
           </h2>
