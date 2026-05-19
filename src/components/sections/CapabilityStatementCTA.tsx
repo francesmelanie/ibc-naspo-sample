@@ -13,8 +13,12 @@ export function CapabilityStatementCTA() {
       />
       <div className="ibc-container relative grid gap-8 md:grid-cols-[1fr_auto] md:items-end">
         <div>
-          <h2 className="text-3xl md:text-5xl font-semibold tracking-tight leading-tight">
-            Partner with a trusted public-sector{" "}
+          <div className="flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.18em] text-background/70">
+            <span className="h-px w-6 bg-background/40" />
+            Capability Statement
+          </div>
+          <h2 className="mt-4 text-3xl md:text-5xl font-semibold tracking-tight leading-tight">
+            A trusted public-sector{" "}
             <span className="text-gradient-brand">cooperative contractor.</span>
           </h2>
           <p className="mt-5 max-w-2xl text-base md:text-lg text-background/75 leading-relaxed">
