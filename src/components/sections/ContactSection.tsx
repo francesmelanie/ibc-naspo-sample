@@ -24,9 +24,9 @@ export function ContactSection() {
     <section id="contact" className="ibc-section bg-gradient-wash">
       <div className="ibc-container">
         <SectionHeader
-          eyebrow="Contact"
-          title="Start a public-sector or cooperative contracting conversation"
-          intro="For procurement inquiries, teaming opportunities, or program support, contact the IBC team."
+          eyebrow="Contact Us"
+          title="Public Sector & Cooperative Contracting Inquiries"
+          intro="For partnership opportunities, cooperative contracting discussions, or public-sector operational support inquiries, please contact:"
         />
 
         <div className="mt-10 grid gap-10 lg:grid-cols-[0.85fr_1.15fr]">
