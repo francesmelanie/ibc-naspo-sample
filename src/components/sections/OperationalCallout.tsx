@@ -15,19 +15,15 @@ export function OperationalCallout() {
       <div className="pointer-events-none absolute -bottom-40 -left-20 h-[420px] w-[420px] rounded-full bg-accent/20 blur-[140px]" />
 
       <div className="ibc-container relative py-14 md:py-20">
-        <div className="grid gap-10 md:gap-14 md:grid-cols-12 items-start">
+        <div className="grid gap-10 md:gap-14 md:grid-cols-12 items-stretch">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.6 }}
-            className="md:col-span-5"
+            className="md:col-span-5 flex"
           >
-            <span className="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-background/60">
-              <span className="h-px w-8 bg-background/40" />
-              What we do
-            </span>
-            <h2 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-semibold leading-[1.1] tracking-tight text-white">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold leading-[1.1] tracking-tight text-white">
               Supporting government agencies through{" "}
               <span className="text-gradient-brand">scalable operational services.</span>
             </h2>
@@ -38,16 +34,20 @@ export function OperationalCallout() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="md:col-span-7 space-y-6"
+            className="md:col-span-7 flex flex-col justify-between gap-6"
           >
-            <p className="text-base sm:text-lg leading-relaxed text-background/80">
-              Innovative Business Concepts (IBC) supports public-sector agencies, emergency
-              response initiatives, and community-based operational programs.
-            </p>
-            <p className="text-sm sm:text-base leading-relaxed text-background/60">
-              Built for cooperative purchasing environments, multi-site deployments, subcontractor
-              coordination, and rapid operational mobilization.
-            </p>
+            <div className="space-y-5">
+              <p className="text-base sm:text-lg leading-relaxed text-background/80">
+                Innovative Business Concepts (IBC) supports public-sector agencies, emergency
+                response initiatives, and community-based operational programs through scalable
+                staffing, program management, logistics coordination, and field support services.
+              </p>
+              <p className="text-sm sm:text-base leading-relaxed text-background/60">
+                IBC is structured to support cooperative purchasing environments, multi-site
+                deployments, subcontractor coordination, and rapid operational mobilization across
+                public-sector initiatives.
+              </p>
+            </div>
 
             <div className="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-3">
               {pillars.map((p, i) => (
