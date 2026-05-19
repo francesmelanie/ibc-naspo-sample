@@ -1,4 +1,4 @@
-import { heroStats } from "@/data/publicSectorContent";
+import { heroStats, capabilityStatementHref } from "@/data/publicSectorContent";
 import { WaveAccent } from "@/components/site/WaveAccent";
 
 export function PublicSectorHero() {
