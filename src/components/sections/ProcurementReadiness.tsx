@@ -7,9 +7,9 @@ export function ProcurementReadiness() {
     <section className="ibc-section bg-gradient-wash">
       <div className="ibc-container">
         <SectionHeader
-          eyebrow="Procurement Readiness"
-          title="Built for procurement-ready delivery"
-          intro="IBC supports public-sector buyers, prime contractors, and cooperative procurement opportunities through structured onboarding, contract coordination, reporting discipline, and partner alignment."
+          eyebrow="Cooperative Contracting"
+          title="Cooperative Contracting & Procurement Readiness"
+          intro="IBC supports public-sector procurement environments through structured operational and administrative processes designed to support scalable deployments and contract compliance requirements."
         />
         <motion.ul
           initial="hidden"
