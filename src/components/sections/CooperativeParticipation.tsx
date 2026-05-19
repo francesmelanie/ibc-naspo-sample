@@ -18,10 +18,17 @@ export function CooperativeParticipation() {
             <span className="h-px w-6 bg-primary/60" />
             Cooperative Purchasing
           </motion.div>
-          <motion.p variants={fadeUp} className="text-sm sm:text-base text-muted-foreground leading-relaxed max-w-3xl">
-            IBC is actively expanding participation in cooperative purchasing and public-sector
-            partnership opportunities across state, local, and multi-jurisdiction programs.
-          </motion.p>
+          <motion.div variants={fadeUp} className="space-y-4 text-sm sm:text-base text-muted-foreground leading-relaxed max-w-3xl">
+            <p>
+              IBC is actively expanding participation within public-sector and cooperative purchasing
+              ecosystems to support scalable government operational services and multi-jurisdiction
+              procurement opportunities.
+            </p>
+            <p>
+              IBC monitors and pursues opportunities aligned with emergency response support,
+              operational staffing, program management, and public-sector service delivery initiatives.
+            </p>
+          </motion.div>
         </motion.div>
       </div>
     </section>
