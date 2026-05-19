@@ -65,10 +65,10 @@ export const certificationLabels = [
 ];
 
 export const contact = {
-  lead: "Janki Patel",
+  lead: "Gowtham Baskaran",
   role: "Public Sector Lead",
-  phone: "+1 (732) 620 6290",
-  email: "janki@innovativebc.io",
+  phone: "+1 (973) 452 9800",
+  email: "procure@innovativebc.io",
   website: "innovativebc.io",
   linkedin: "linkedin.com/company/innovativebusinessconcepts",
 };
