@@ -28,16 +28,15 @@ export function CapabilityStatementCTA() {
               <span className="text-gradient-brand">cooperative contractor.</span>
             </motion.h2>
             <motion.p variants={fadeUp} className="mt-4 max-w-xl text-sm sm:text-base leading-relaxed text-background/75">
-              IBC delivers scalable operational support to government agencies, emergency response
-              initiatives, and cooperative purchasing programs. Download our brochure to learn more
-              about our capabilities, certifications, and how we partner with public-sector buyers.
+              Download our brochure to learn more about our capabilities, certifications, and how
+              we partner with public-sector buyers.
             </motion.p>
           </div>
           <motion.a
             variants={fadeUp}
             href={capabilityStatementHref}
             download
-            className="inline-flex items-center gap-2 rounded-full bg-background px-5 py-3 text-xs sm:text-sm font-medium text-foreground hover:bg-primary hover:text-primary-foreground transition-colors justify-self-start md:justify-self-end"
+            className="inline-flex items-center gap-2 rounded-full bg-background px-5 py-3 text-xs sm:text-sm font-medium text-foreground hover:bg-background/90 transition-colors justify-self-start md:justify-self-end"
           >
             <span aria-hidden="true">↓</span>
             Download PDF
