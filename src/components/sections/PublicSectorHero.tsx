@@ -4,31 +4,29 @@ import { WaveAccent } from "@/components/site/WaveAccent";
 
 export function PublicSectorHero() {
   return (
-    <section className="relative overflow-hidden bg-gradient-hero pt-10 pb-16 md:pt-16 md:pb-24">
+    <section className="relative overflow-hidden bg-gradient-hero pt-14 pb-20 md:pt-24 md:pb-32">
       <WaveAccent className="pointer-events-none absolute inset-0 h-full w-full opacity-60" />
+      {/* Decorative glows */}
+      <div className="pointer-events-none absolute -top-32 -left-32 h-[480px] w-[480px] rounded-full bg-primary/25 blur-[120px]" />
+      <div className="pointer-events-none absolute -bottom-40 right-[-10%] h-[520px] w-[520px] rounded-full bg-accent/20 blur-[140px]" />
+      <div className="pointer-events-none absolute inset-0 [background-image:linear-gradient(to_right,hsl(var(--foreground)/0.06)_1px,transparent_1px),linear-gradient(to_bottom,hsl(var(--foreground)/0.06)_1px,transparent_1px)] [background-size:48px_48px] [mask-image:radial-gradient(ellipse_at_center,black_40%,transparent_75%)]" />
       <div className="ibc-container relative">
         <motion.div
           initial="hidden"
           animate="show"
           variants={staggerContainer(0.08)}
-          className="max-w-4xl"
+          className="max-w-5xl"
         >
-          <motion.div variants={fadeUp}>
-            <span className="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-primary">
-              <span className="h-px w-8 bg-primary/60" />
-              Public Sector & Cooperative Contracting
-            </span>
-          </motion.div>
           <motion.h1
             variants={fadeUp}
-            className="mt-4 text-[1.75rem] sm:text-5xl lg:text-[3.75rem] font-semibold leading-[1.1] sm:leading-[1.05] tracking-tight"
+            className="text-[2.25rem] sm:text-6xl lg:text-[5rem] font-semibold leading-[1.05] sm:leading-[1.02] tracking-tight"
           >
             Public Sector &{" "}
             <span className="text-gradient-brand">Cooperative Contracting</span>
           </motion.h1>
           <motion.p
             variants={fadeUp}
-            className="mt-4 sm:mt-6 max-w-2xl text-sm sm:text-lg leading-relaxed text-muted-foreground"
+            className="mt-5 sm:mt-8 max-w-3xl text-base sm:text-xl lg:text-2xl leading-relaxed text-muted-foreground"
           >
             Scalable operational support services for government agencies, emergency response
             initiatives, and cooperative purchasing environments.
