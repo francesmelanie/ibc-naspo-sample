@@ -1,12 +1,12 @@
 export const heroStats = [
   { stat: "25+ Years", label: "Government consulting experience" },
-  { stat: "30+ Programs", label: "Enterprise initiatives delivered" },
-  { stat: "NYC & NYS", label: "Trusted in high-visibility programs" },
-  { stat: "M/WBE-Certified", label: "Supplier diversity value" },
+  { stat: "30+ Programs", label: "Public-sector initiatives supported" },
+  { stat: "Multi-Site", label: "Deployment and coordination model" },
+  { stat: "WOSB / MBE", label: "Woman-owned, minority-owned" },
 ];
 
 export const audiences = [
-  { title: "State Agencies", description: "Statewide programs, oversight, and execution support." },
+  { title: "State Agencies", description: "Statewide programs, oversight, and operational support." },
   { title: "Local Government", description: "City and county agencies running public-facing services." },
   { title: "Public Health Programs", description: "Population health, vaccination, and clinical operations." },
   { title: "Human Services Programs", description: "Intake, case management, and service delivery." },
@@ -16,58 +16,51 @@ export const audiences = [
 ];
 
 export const capabilities = [
-  { title: "Emergency Response", description: "Rapid operational coordination for urgent, high-visibility initiatives." },
-  { title: "Program Management", description: "Oversight, planning, stakeholder coordination, and execution tracking." },
-  { title: "Staffing & Workforce Deployment", description: "Flexible staffing support for programs requiring scalable teams." },
-  { title: "Logistics & Field Operations", description: "Coordination across locations, teams, vendors, and service delivery points." },
-  { title: "Data, Reporting & Transparency", description: "Reporting workflows, dashboards, executive visibility, and performance tracking." },
-  { title: "Client / Constituent Support", description: "High-touch support for public-facing programs and service populations." },
-  { title: "Call Center Support", description: "Support models for intake, inquiries, escalation, and service coordination." },
-  { title: "Multi-Site Operations", description: "Coordination across distributed teams, sites, agencies, and vendors." },
-];
-
-export const whyIbcCards = [
-  { title: "Embedded with Leadership", description: "We sit alongside program leaders, not in advisory silos." },
-  { title: "Real-Time Issue Resolution", description: "Issues get unblocked in the moment, not in next month's report." },
-  { title: "Strategy + Operations + Technology Aligned", description: "We connect the layers most firms keep separate." },
-  { title: "War Room Execution Model", description: "A focused, cross-functional model proven under pressure." },
+  { title: "Emergency Response Operations", description: "Public health response, surge operations, and emergency staffing coordination." },
+  { title: "Program & Project Management", description: "Operational coordination, reporting, stakeholder management, and deployment oversight." },
+  { title: "Staffing & Workforce Coordination", description: "Scalable staffing for temporary, surge, and field-based operations." },
+  { title: "Logistics & Site Operations", description: "Multi-site coordination, supply distribution, operational tracking, and deployment logistics." },
+  { title: "Data Collection & Reporting", description: "Operational reporting, program tracking, compliance documentation, and data coordination." },
+  { title: "Client & Community Support", description: "Intake coordination, multilingual support, outreach, and service navigation." },
+  { title: "Call Center & Help Desk Support", description: "Inbound support, appointment coordination, escalation routing, and information services." },
+  { title: "Field Operations Support", description: "On-site coordination, mobile operations, registration support, and field deployment assistance." },
 ];
 
 export const procurementReadiness = [
   "Contract administration support",
-  "Onboarding and implementation planning",
-  "Status reporting and performance tracking",
-  "Documentation and compliance support",
-  "Scalable staffing and deployment coordination",
+  "Rapid onboarding processes",
+  "Multi-site operational coordination",
+  "Scalable staffing deployment models",
   "Subcontractor and partner coordination",
-  "Stakeholder communication and escalation",
-  "Multi-workstream coordination",
-  "Issue tracking and resolution workflows",
-  "Closeout support and lessons learned documentation",
+  "Operational reporting support",
+  "Public-sector invoicing and documentation",
+  "Surge capacity planning",
+  "Cross-functional deployment support",
 ];
 
 export const experienceHighlights = [
-  { title: "COVID-19 Response — NYC", description: "Large-scale vaccination operations, emergency coordination, and rapid system deployment." },
-  { title: "Immigrant & Asylum Program Setup", description: "Intake, case management, and operational scaling under urgent conditions." },
-  { title: "Public-Facing Digital Platforms", description: "Implementation management of systems serving large populations under tight timelines." },
-  { title: "Multi-Agency Data Ecosystems", description: "Real-time reporting, data sharing, and cross-agency coordination." },
-  { title: "Program Turnaround Engagements", description: "Stabilizing delayed and high-risk initiatives." },
+  { title: "Emergency Response & Public Health Operations", description: "Support for large-scale public health response, vaccination operations, and emergency coordination." },
+  { title: "Multi-Site Operational Coordination", description: "Coordination across distributed teams, sites, agencies, and vendors under compressed timelines." },
+  { title: "Rapid Deployment Staffing Support", description: "Scaled staffing for surge initiatives and time-critical public-facing programs." },
+  { title: "Client-Facing Community Operations", description: "Intake, navigation, and multilingual support for service populations." },
+  { title: "Operational Reporting & Coordination", description: "Reporting structures, dashboards, and transparency support for program oversight." },
+  { title: "Cross-Agency Collaboration", description: "Coordination across agencies, primes, and operational stakeholders." },
+  { title: "Field-Based Operational Support", description: "On-site, mobile, and deployment support across multiple jurisdictions." },
 ];
 
 export const supplierDiversityBlocks = [
-  "M/WBE-certified firm",
-  "Woman-owned positioning",
-  "Public-sector partner support",
-  "Subcontractor coordination",
-  "Flexible teaming models",
-  "Scalable staffing and implementation support",
+  "Woman-owned and minority-owned small business",
+  "Scalable strategic partner network",
+  "Specialized staffing and surge support",
+  "Subcontractor and partner coordination",
+  "Multi-jurisdiction program coordination",
+  "Continuously expanding cooperative footprint",
 ];
 
 export const certificationLabels = [
-  "M/WBE Certified",
-  "WBENC Women-Owned",
-  "SBA WOSB",
-  "NYC MWBE",
+  "WOSB — Woman-Owned Small Business",
+  "MBE — Minority-Owned Business Enterprise",
+  "NYC M/WBE",
   "Port Authority NY & NJ MWBE",
 ];
 

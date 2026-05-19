@@ -24,15 +24,24 @@ export function SupplierDiversity() {
               variants={fadeUp}
               className="mt-4 text-3xl sm:text-[2.25rem] font-semibold tracking-tight leading-[1.15]"
             >
-              Supplier diversity & partner network
+              Strategic partner & supplier network
             </motion.h2>
             <motion.p
               variants={fadeUp}
               className="mt-5 text-base md:text-lg text-muted-foreground leading-relaxed"
             >
-              As an M/WBE-certified firm, IBC brings supplier diversity value alongside practical
-              operational capability — supporting agencies, primes, and partners with flexible
-              teams and scalable delivery.
+              IBC maintains a scalable network of strategic partners and operational support resources
+              to assist with specialized staffing, surge operations, field deployment, and multi-jurisdiction
+              program coordination. This collaborative approach supports operational flexibility while
+              enabling responsiveness to varying public-sector program requirements.
+            </motion.p>
+            <motion.p
+              variants={fadeUp}
+              className="mt-4 text-base md:text-lg text-muted-foreground leading-relaxed"
+            >
+              As a woman-owned and minority-owned small business (WOSB / MBE), IBC is continuously
+              expanding its cooperative purchasing footprint and partner network to support
+              public-sector buyers and prime contractors.
             </motion.p>
 
             <motion.div variants={fadeUp} className="mt-8">

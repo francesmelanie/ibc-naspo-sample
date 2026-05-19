@@ -4,12 +4,12 @@ import { SiteFooter } from "@/components/site/SiteFooter";
 import { PublicSectorHero } from "@/components/sections/PublicSectorHero";
 import { WhoWeServe } from "@/components/sections/WhoWeServe";
 import { CapabilityAreas } from "@/components/sections/CapabilityAreas";
-import { WhyIBC } from "@/components/sections/WhyIBC";
 import { ProcurementReadiness } from "@/components/sections/ProcurementReadiness";
 import { ExperienceHighlights } from "@/components/sections/ExperienceHighlights";
 import { SupplierDiversity } from "@/components/sections/SupplierDiversity";
 import { CapabilityStatementCTA } from "@/components/sections/CapabilityStatementCTA";
 import { ContactSection } from "@/components/sections/ContactSection";
+import { CooperativeParticipation } from "@/components/sections/CooperativeParticipation";
 
 export const Route = createFileRoute("/public-sector-cooperative-contracting")({
   head: () => ({
@@ -20,7 +20,7 @@ export const Route = createFileRoute("/public-sector-cooperative-contracting")({
       {
         name: "description",
         content:
-          "IBC supports public-sector agencies and partners with program management, emergency response, staffing, logistics, data and reporting, client support, and procurement-ready delivery.",
+          "IBC supports public-sector agencies and cooperative purchasing programs with scalable staffing, program management, logistics, reporting, and field operations support.",
       },
       {
         property: "og:title",
@@ -29,7 +29,7 @@ export const Route = createFileRoute("/public-sector-cooperative-contracting")({
       {
         property: "og:description",
         content:
-          "Embedded delivery and procurement-ready execution for public-sector programs that cannot afford to fail.",
+          "Scalable operational support services for government agencies, emergency response initiatives, and cooperative purchasing environments.",
       },
     ],
   }),
@@ -44,12 +44,12 @@ function PublicSectorPage() {
         <PublicSectorHero />
         <WhoWeServe />
         <CapabilityAreas />
-        <WhyIBC />
         <ProcurementReadiness />
         <ExperienceHighlights />
         <SupplierDiversity />
         <CapabilityStatementCTA />
         <ContactSection />
+        <CooperativeParticipation />
       </main>
       <SiteFooter />
     </div>
