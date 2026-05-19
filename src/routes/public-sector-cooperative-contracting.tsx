@@ -1,8 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/site/SiteHeader";
 import { SiteFooter } from "@/components/site/SiteFooter";
+import { SectionReveal } from "@/components/site/SectionReveal";
 import { PublicSectorHero } from "@/components/sections/PublicSectorHero";
-import { WhoWeServe } from "@/components/sections/WhoWeServe";
 import { CapabilityAreas } from "@/components/sections/CapabilityAreas";
 import { ProcurementReadiness } from "@/components/sections/ProcurementReadiness";
 import { ExperienceHighlights } from "@/components/sections/ExperienceHighlights";
