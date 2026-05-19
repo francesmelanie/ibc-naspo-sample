@@ -1,4 +1,4 @@
-import { heroStats, capabilityStatementHref } from "@/data/publicSectorContent";
+import { capabilityStatementHref } from "@/data/publicSectorContent";
 import { WaveAccent } from "@/components/site/WaveAccent";
 
 export function PublicSectorHero() {
@@ -62,22 +62,6 @@ export function PublicSectorHero() {
           </div>
         </div>
 
-        <dl className="mt-16 grid grid-cols-2 md:grid-cols-4 border-t border-border/70">
-          {heroStats.map((s, i) => (
-            <div
-              key={s.stat}
-              className="ibc-reveal border-b border-border/70 md:border-b-0 md:border-r last:border-r-0 px-1 py-5 md:px-6"
-              style={{ animationDelay: `${520 + i * 90}ms` }}
-            >
-              <dt className="font-display text-xl md:text-2xl font-semibold text-gradient-brand">
-                {s.stat}
-              </dt>
-              <dd className="mt-1 text-xs md:text-sm text-muted-foreground leading-snug">
-                {s.label}
-              </dd>
-            </div>
-          ))}
-        </dl>
       </div>
     </section>
   );
