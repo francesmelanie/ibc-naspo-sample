@@ -23,18 +23,15 @@ export function PublicSectorHero() {
             variants={fadeUp}
             className="mt-4 text-[1.75rem] sm:text-5xl lg:text-[3.75rem] font-semibold leading-[1.1] sm:leading-[1.05] tracking-tight"
           >
-            Scalable operational support for{" "}
-            <span className="text-gradient-brand">government agencies</span>{" "}
-            and cooperative purchasing programs.
+            Public Sector &{" "}
+            <span className="text-gradient-brand">Cooperative Contracting</span>
           </motion.h1>
           <motion.p
             variants={fadeUp}
             className="mt-4 sm:mt-6 max-w-2xl text-sm sm:text-lg leading-relaxed text-muted-foreground"
           >
-            Innovative Business Concepts (IBC) supports public-sector agencies, emergency response
-            initiatives, and community-based operational programs through scalable staffing, program
-            management, logistics coordination, and field support services — built for cooperative
-            purchasing environments, multi-site deployments, and rapid operational mobilization.
+            Scalable operational support services for government agencies, emergency response
+            initiatives, and cooperative purchasing environments.
           </motion.p>
           <motion.div variants={fadeUp} className="mt-6 sm:mt-8 flex flex-wrap items-center gap-3 sm:gap-5">
             <a
