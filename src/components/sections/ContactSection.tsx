@@ -1,25 +1,25 @@
 import { useState, type FormEvent } from "react";
 import { Mail, Phone } from "lucide-react";
 import { fadeUp, motion, staggerContainer, viewportOnce } from "@/lib/motion";
-import { contact, inquiryTypes } from "@/data/publicSectorContent";
+import { contact } from "@/data/publicSectorContent";
 import { SectionHeader } from "./SectionHeader";
 
 export function ContactSection() {
   const [submitted, setSubmitted] = useState(false);
-  const [inquiryType, setInquiryType] = useState(inquiryTypes[0]);
 
   function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const fd = new FormData(e.currentTarget);
     const subject = encodeURIComponent(
-      `[Public Sector Inquiry] ${fd.get("inquiryType") ?? "General"} — ${fd.get("organization") ?? ""}`,
+      `[Public Sector Inquiry] ${fd.get("organization") ?? ""}`,
     );
     const body = encodeURIComponent(
-      `Name: ${fd.get("name")}\nOrganization: ${fd.get("organization")}\nRole: ${fd.get("role")}\nEmail: ${fd.get("email")}\nPhone: ${fd.get("phone")}\nInquiry Type: ${fd.get("inquiryType")}\n\nMessage:\n${fd.get("message")}`,
+      `Name: ${fd.get("name")}\nOrganization: ${fd.get("organization")}\nRole: ${fd.get("role")}\nEmail: ${fd.get("email")}\n\nMessage:\n${fd.get("message")}`,
     );
     window.location.href = `mailto:${contact.email}?subject=${subject}&body=${body}`;
     setSubmitted(true);
   }
+
 
   return (
     <section id="contact" className="ibc-section bg-gradient-wash">
