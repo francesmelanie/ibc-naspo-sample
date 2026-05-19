@@ -2,7 +2,7 @@ import { motion } from "@/lib/motion";
 import { Users, Layers, Truck, Network } from "lucide-react";
 
 const pillars = [
-  { icon: Users, label: "Scalable staffing" },
+  { icon: Users, label: "Scalable\nstaffing" },
   { icon: Layers, label: "Program management" },
   { icon: Truck, label: "Logistics coordination" },
   { icon: Network, label: "Field support services" },
