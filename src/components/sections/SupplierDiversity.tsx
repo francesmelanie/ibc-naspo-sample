@@ -69,13 +69,13 @@ export function SupplierDiversity() {
           </motion.div>
           <motion.ul
             variants={staggerContainer(0.05)}
-            className="mt-5 flex flex-wrap items-center gap-3 sm:gap-4"
+            className="mt-5 flex flex-nowrap sm:flex-wrap items-center gap-2 sm:gap-4"
           >
             {certifications.map((c) => (
               <motion.li
                 key={c.alt}
                 variants={fadeUp}
-                className="flex items-center justify-center rounded-lg border border-border/70 bg-card px-3 py-2 h-14 w-28 sm:h-16 sm:w-32 hover:border-primary/40 transition-all"
+                className="flex-1 sm:flex-none flex items-center justify-center rounded-lg border border-border/70 bg-card p-1 sm:px-3 sm:py-2 h-12 sm:h-16 sm:w-32 hover:border-primary/40 transition-all"
               >
                 <img
                   src={c.src}

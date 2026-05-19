@@ -60,7 +60,7 @@ export function OperationalCallout() {
                   className="group rounded-2xl border border-background/15 bg-background/5 backdrop-blur p-4 hover:bg-background/10 hover:border-background/30 transition-colors"
                 >
                   <p.icon className="h-5 w-5 text-background/80 group-hover:text-background transition-colors" />
-                  <p className="mt-3 text-xs sm:text-sm font-medium leading-snug whitespace-pre-line">
+                  <p className="mt-3 text-xs sm:text-sm font-medium leading-snug whitespace-normal sm:whitespace-pre-line">
                     {p.label}
                   </p>
                 </motion.div>
