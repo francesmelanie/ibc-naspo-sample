@@ -50,7 +50,26 @@ export function SupplierDiversity() {
             className="mt-4 text-base md:text-lg text-muted-foreground leading-relaxed"
           >
             This collaborative approach supports operational flexibility while enabling
-            responsiveness to varying public-sector program requirements.
+            responsiveness to varying public-sector program requirements and rapid-response
+            operational needs.
+          </motion.p>
+          <motion.p
+            variants={fadeUp}
+            className="mt-4 text-base md:text-lg text-muted-foreground leading-relaxed"
+          >
+            IBC continues to expand its partner ecosystem to support scalable multi-jurisdictional
+            deployments and cooperative procurement initiatives. We welcome partnership discussions with
+            businesses of all sizes seeking collaborative opportunities in public-sector operations,
+            emergency response support, staffing, program management, logistics, and related service areas.
+          </motion.p>
+          <motion.p
+            variants={fadeUp}
+            className="mt-4 text-base md:text-lg text-muted-foreground leading-relaxed"
+          >
+            IBC also encourages participation from Minority-Owned Business Enterprises (MBEs),
+            Women-Owned Business Enterprises (WBEs/MWBEs), small businesses, and other diverse supplier
+            organizations interested in supporting public-sector initiatives through strategic partnership
+            opportunities.
           </motion.p>
         </motion.div>
 
