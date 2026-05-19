@@ -1,5 +1,17 @@
 import { fadeUp, motion, staggerContainer, viewportOnce } from "@/lib/motion";
-import { supplierDiversityBlocks, certificationLabels } from "@/data/publicSectorContent";
+import portAuthority from "@/assets/certs/port-authority-mwbe.png";
+import nycMwbe from "@/assets/certs/nyc-mwbe.png";
+import womenOwned from "@/assets/certs/women-owned.png";
+import wbenc from "@/assets/certs/wbenc.png";
+import sbaWosb from "@/assets/certs/sba-wosb.png";
+
+const certifications = [
+  { src: sbaWosb, alt: "SBA Certified Woman-Owned Small Business (WOSB)" },
+  { src: wbenc, alt: "Certified WBENC — Women's Business Enterprise" },
+  { src: womenOwned, alt: "Women Owned" },
+  { src: nycMwbe, alt: "New York City M/WBE" },
+  { src: portAuthority, alt: "The Port Authority of NY & NJ — MWBE Certified" },
+];
 
 export function SupplierDiversity() {
   return (
@@ -10,63 +22,67 @@ export function SupplierDiversity() {
           whileInView="show"
           viewport={viewportOnce}
           variants={staggerContainer(0.06)}
-          className="grid gap-12 lg:grid-cols-[1fr_1fr] lg:gap-20 items-start"
+          className="max-w-3xl"
         >
-          <div>
-            <motion.span
-              variants={fadeUp}
-              className="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-primary"
-            >
-              <span className="h-px w-6 bg-primary/60" />
-              Supplier Diversity
-            </motion.span>
-            <motion.h2
-              variants={fadeUp}
-              className="mt-4 text-3xl sm:text-[2.25rem] font-semibold tracking-tight leading-[1.15]"
-            >
-              Strategic partner & supplier network
-            </motion.h2>
-            <motion.p
-              variants={fadeUp}
-              className="mt-5 text-base md:text-lg text-muted-foreground leading-relaxed"
-            >
-              IBC maintains a scalable network of strategic partners and operational support resources
-              to assist with specialized staffing, surge operations, field deployment, and multi-jurisdiction
-              program coordination. This collaborative approach supports operational flexibility while
-              enabling responsiveness to varying public-sector program requirements.
-            </motion.p>
-            <motion.p
-              variants={fadeUp}
-              className="mt-4 text-base md:text-lg text-muted-foreground leading-relaxed"
-            >
-              As a woman-owned and minority-owned small business (WOSB / MBE), IBC is continuously
-              expanding its cooperative purchasing footprint and partner network to support
-              public-sector buyers and prime contractors.
-            </motion.p>
+          <motion.span
+            variants={fadeUp}
+            className="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-primary"
+          >
+            <span className="h-px w-6 bg-primary/60" />
+            Supplier Diversity
+          </motion.span>
+          <motion.h2
+            variants={fadeUp}
+            className="mt-4 text-3xl sm:text-[2.25rem] font-semibold tracking-tight leading-[1.15]"
+          >
+            Strategic partner & supplier network
+          </motion.h2>
+          <motion.p
+            variants={fadeUp}
+            className="mt-5 text-base md:text-lg text-muted-foreground leading-relaxed"
+          >
+            IBC maintains a scalable network of strategic partners and operational support resources
+            to assist with specialized staffing, surge operations, field deployment support, and
+            multi-jurisdiction program coordination.
+          </motion.p>
+          <motion.p
+            variants={fadeUp}
+            className="mt-4 text-base md:text-lg text-muted-foreground leading-relaxed"
+          >
+            This collaborative approach supports operational flexibility while enabling
+            responsiveness to varying public-sector program requirements.
+          </motion.p>
+        </motion.div>
 
-            <motion.div variants={fadeUp} className="mt-8">
-              <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">
-                Certifications
-              </div>
-              <div className="mt-3 flex flex-wrap gap-x-6 gap-y-2">
-                {certificationLabels.map((c) => (
-                  <span key={c} className="text-sm font-medium text-foreground/85">
-                    {c}
-                  </span>
-                ))}
-              </div>
-            </motion.div>
-          </div>
-
-          <motion.ul variants={staggerContainer(0.04)} className="divide-y divide-border/70 border-y border-border/70 lg:mt-[8.5rem]">
-            {supplierDiversityBlocks.map((b) => (
+        <motion.div
+          initial="hidden"
+          whileInView="show"
+          viewport={viewportOnce}
+          variants={staggerContainer(0.05)}
+          className="mt-12"
+        >
+          <motion.div
+            variants={fadeUp}
+            className="text-[11px] font-semibold uppercase tracking-[0.18em] text-muted-foreground"
+          >
+            Certifications
+          </motion.div>
+          <motion.ul
+            variants={staggerContainer(0.05)}
+            className="mt-5 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4"
+          >
+            {certifications.map((c) => (
               <motion.li
-                key={b}
+                key={c.alt}
                 variants={fadeUp}
-                className="flex items-center gap-3 py-3.5 text-sm font-medium text-foreground/90"
+                className="flex items-center justify-center rounded-xl border border-border/70 bg-card px-4 py-5 h-28 hover:border-primary/40 hover:shadow-sm transition-all"
               >
-                <span className="text-primary" aria-hidden="true">✓</span>
-                {b}
+                <img
+                  src={c.src}
+                  alt={c.alt}
+                  loading="lazy"
+                  className="max-h-full max-w-full object-contain"
+                />
               </motion.li>
             ))}
           </motion.ul>
