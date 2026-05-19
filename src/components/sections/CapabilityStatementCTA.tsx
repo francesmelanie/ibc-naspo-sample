@@ -3,27 +3,31 @@ import { capabilityStatementHref } from "@/data/publicSectorContent";
 
 export function CapabilityStatementCTA() {
   return (
-    <section className="ibc-section">
-      <div className="ibc-container">
+    <section className="relative overflow-hidden border-y border-border/60 bg-foreground text-background">
+      <div className="pointer-events-none absolute -top-32 -right-20 h-[420px] w-[420px] rounded-full bg-primary/30 blur-[140px]" />
+      <div className="pointer-events-none absolute -bottom-40 -left-20 h-[420px] w-[420px] rounded-full bg-accent/20 blur-[140px]" />
+
+      <div className="ibc-container relative py-14 md:py-20">
         <motion.div
           initial="hidden"
           whileInView="show"
           viewport={viewportOnce}
           variants={staggerContainer(0.07)}
-          className="border-y border-border/70 py-10 md:py-14 grid gap-8 md:grid-cols-[1fr_auto] md:items-center"
+          className="grid gap-8 md:grid-cols-[1fr_auto] md:items-center"
         >
           <div>
-            <motion.div variants={fadeUp} className="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-primary">
-              <span className="h-px w-6 bg-primary/60" />
+            <motion.div variants={fadeUp} className="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-background/70">
+              <span className="h-px w-6 bg-background/40" />
               Capability Statement
             </motion.div>
             <motion.h2
               variants={fadeUp}
-              className="mt-3 text-xl sm:text-2xl md:text-3xl font-semibold tracking-tight max-w-2xl"
+              className="mt-3 text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight leading-[1.15] max-w-2xl text-white"
             >
-              A trusted public-sector cooperative contractor.
+              A trusted public-sector{" "}
+              <span className="text-gradient-brand">cooperative contractor.</span>
             </motion.h2>
-            <motion.p variants={fadeUp} className="mt-2 sm:mt-3 max-w-xl text-xs sm:text-sm md:text-base text-muted-foreground">
+            <motion.p variants={fadeUp} className="mt-4 max-w-xl text-sm sm:text-base leading-relaxed text-background/75">
               IBC delivers scalable operational support to government agencies, emergency response
               initiatives, and cooperative purchasing programs. Download our brochure to learn more
               about our capabilities, certifications, and how we partner with public-sector buyers.
@@ -33,7 +37,7 @@ export function CapabilityStatementCTA() {
             variants={fadeUp}
             href={capabilityStatementHref}
             download
-            className="group inline-flex items-center gap-2 rounded-full bg-foreground px-4 py-2.5 sm:px-5 sm:py-3 text-xs sm:text-sm font-medium text-background hover:bg-primary transition-colors justify-self-start md:justify-self-end"
+            className="inline-flex items-center gap-2 rounded-full bg-background px-5 py-3 text-xs sm:text-sm font-medium text-foreground hover:bg-primary hover:text-primary-foreground transition-colors justify-self-start md:justify-self-end"
           >
             <span aria-hidden="true">↓</span>
             Download PDF
