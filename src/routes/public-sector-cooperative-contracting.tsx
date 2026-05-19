@@ -43,15 +43,14 @@ function PublicSectorPage() {
       <SiteHeader />
       <main className="flex-1">
         <PublicSectorHero />
-        <OperationalCallout />
-        
-        <CapabilityAreas />
-        <ProcurementReadiness />
-        <ExperienceHighlights />
-        <SupplierDiversity />
-        <CapabilityStatementCTA />
-        <ContactSection />
-        <CooperativeParticipation />
+        <SectionReveal><OperationalCallout /></SectionReveal>
+        <SectionReveal><CapabilityAreas /></SectionReveal>
+        <SectionReveal><ProcurementReadiness /></SectionReveal>
+        <SectionReveal><ExperienceHighlights /></SectionReveal>
+        <SectionReveal><SupplierDiversity /></SectionReveal>
+        <SectionReveal><CapabilityStatementCTA /></SectionReveal>
+        <SectionReveal><ContactSection /></SectionReveal>
+        <SectionReveal><CooperativeParticipation /></SectionReveal>
       </main>
       <SiteFooter />
     </div>
