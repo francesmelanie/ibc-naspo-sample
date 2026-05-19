@@ -1,6 +1,17 @@
-import { Mail, Phone } from "lucide-react";
 import monogram from "@/assets/ibc-monogram.svg";
-import { contact } from "@/data/publicSectorContent";
+
+const siteLinks = [
+  { label: "Our Core Competencies", href: "https://innovativebc.io/#competencies" },
+  { label: "Our Recent Work", href: "https://innovativebc.io/#work" },
+  { label: "About Us", href: "https://innovativebc.io/#about" },
+  { label: "Cooperative Contracting", href: "/public-sector-cooperative-contracting" },
+  { label: "Contact", href: "#contact" },
+];
+
+const companyLinks = [
+  { label: "innovativebc.io", href: "https://innovativebc.io" },
+  { label: "LinkedIn", href: "https://linkedin.com/company/innovativebusinessconcepts" },
+];
 
 export function SiteFooter() {
   return (
@@ -14,29 +25,23 @@ export function SiteFooter() {
           </p>
         </div>
         <div>
-          <h4 className="text-[11px] font-semibold uppercase tracking-[0.18em] text-muted-foreground mb-3">Contact</h4>
-          <ul className="space-y-2 text-sm text-muted-foreground">
-            <li className="text-foreground font-medium">{contact.lead}</li>
-            <li className="text-xs uppercase tracking-[0.14em] text-muted-foreground">{contact.role}</li>
-            <li>
-              <a href={`mailto:${contact.email}`} className="inline-flex items-center gap-2 hover:text-primary transition-colors">
-                <Mail className="h-3.5 w-3.5 text-primary" aria-hidden="true" />
-                {contact.email}
-              </a>
-            </li>
-            <li>
-              <a href={`tel:${contact.phone.replace(/[^0-9+]/g, "")}`} className="inline-flex items-center gap-2 hover:text-primary transition-colors">
-                <Phone className="h-3.5 w-3.5 text-primary" aria-hidden="true" />
-                {contact.phone}
-              </a>
-            </li>
+          <h4 className="text-[11px] font-semibold uppercase tracking-[0.18em] text-muted-foreground mb-3">Site Map</h4>
+          <ul className="space-y-1.5 text-sm text-muted-foreground">
+            {siteLinks.map((l) => (
+              <li key={l.href}>
+                <a href={l.href} className="hover:text-primary transition-colors">{l.label}</a>
+              </li>
+            ))}
           </ul>
         </div>
         <div>
           <h4 className="text-[11px] font-semibold uppercase tracking-[0.18em] text-muted-foreground mb-3">Company</h4>
           <ul className="space-y-1.5 text-sm text-muted-foreground">
-            <li><a href="https://innovativebc.io" className="hover:text-primary transition-colors">innovativebc.io</a></li>
-            <li><a href="https://linkedin.com/company/innovativebusinessconcepts" className="hover:text-primary transition-colors">LinkedIn</a></li>
+            {companyLinks.map((l) => (
+              <li key={l.href}>
+                <a href={l.href} className="hover:text-primary transition-colors">{l.label}</a>
+              </li>
+            ))}
           </ul>
         </div>
       </div>
