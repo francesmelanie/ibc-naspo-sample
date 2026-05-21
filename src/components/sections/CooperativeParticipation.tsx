@@ -21,8 +21,8 @@ export function CooperativeParticipation() {
           <motion.div variants={fadeUp} className="space-y-4 text-sm sm:text-base text-muted-foreground leading-relaxed max-w-3xl">
             <p>
               IBC is actively expanding participation within public-sector and cooperative purchasing
-              ecosystems to support scalable government operational services and multi-jurisdiction
-              procurement opportunities.
+              ecosystems including OMNIA Partners, NASPO ValuePoint, and Sourcewell to support
+              scalable government operational services and multi-jurisdiction procurement opportunities.
             </p>
             <p>
               IBC monitors and pursues opportunities aligned with emergency response support,
