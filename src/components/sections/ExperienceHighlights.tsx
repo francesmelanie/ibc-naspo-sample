@@ -25,7 +25,7 @@ export function ExperienceHighlights() {
               className="grid grid-cols-[auto_1fr] items-start gap-6 py-6 group hover:bg-secondary/30 transition-colors px-1"
             >
               <span className="font-display text-xs font-semibold text-muted-foreground tabular-nums pt-1">
-                / {String(i + 1).padStart(2, "0")}
+                {String(i + 1).padStart(2, "0")}
               </span>
               <div>
                 <h3 className="text-base md:text-lg font-semibold">{title}</h3>

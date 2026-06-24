@@ -15,7 +15,7 @@ export function CooperativeParticipation() {
             variants={fadeUp}
             className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-primary"
           >
-            <span className="h-px w-6 bg-primary/60" />
+            <span aria-hidden="true">—</span>
             Cooperative Purchasing
           </motion.div>
           <motion.div variants={fadeUp} className="space-y-4 text-sm sm:text-base text-muted-foreground leading-relaxed max-w-3xl">

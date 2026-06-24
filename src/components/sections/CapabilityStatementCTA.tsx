@@ -3,18 +3,10 @@ import { capabilityStatementHref } from "@/data/publicSectorContent";
 export function CapabilityStatementCTA() {
   return (
     <section className="relative isolate overflow-hidden bg-foreground text-background py-20 md:py-28">
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute -top-32 -left-24 h-[420px] w-[420px] rounded-full bg-primary/30 blur-[140px]"
-      />
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute -bottom-32 -right-20 h-[460px] w-[460px] rounded-full bg-accent/20 blur-[140px]"
-      />
       <div className="ibc-container relative grid gap-8 md:grid-cols-[1fr_auto] md:items-end">
         <div>
-          <div className="flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.18em] text-background/70">
-            <span className="h-px w-6 bg-background/40" />
+          <div className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-background/70">
+            <span aria-hidden="true">—</span>
             Capability Statement
           </div>
           <h2 className="mt-4 text-3xl md:text-5xl font-semibold tracking-tight leading-tight text-white">
