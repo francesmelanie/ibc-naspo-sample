@@ -263,19 +263,6 @@ export function ContactSection() {
                   </label>
                 </div>
 
-                <div className="mt-4">
-                  <div className="mb-1 flex justify-end text-xs text-muted-foreground">
-                    {messageLen} / 400
-                  </div>
-                  <textarea
-                    name="message"
-                    rows={4}
-                    maxLength={400}
-                    placeholder="Additional notes (optional)"
-                    onChange={(e) => setMessageLen(e.target.value.length)}
-                    className="w-full rounded-3xl border border-input bg-transparent px-5 py-4 text-sm placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 resize-y"
-                  />
-                </div>
               </>
             ) : (
               <>
