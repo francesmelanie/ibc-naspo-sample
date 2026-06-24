@@ -1,31 +1,75 @@
 import { useState, type FormEvent } from "react";
-import { Mail, Phone } from "lucide-react";
+import { Mail, Phone, Upload } from "lucide-react";
 import { fadeUp, motion, staggerContainer, viewportOnce } from "@/lib/motion";
 import { contact } from "@/data/publicSectorContent";
 import { SectionHeader } from "./SectionHeader";
 
 type InquiryType = "client" | "supplier";
 
+const INTEREST_AREAS = [
+  "Staffing",
+  "Consulting",
+  "Technology",
+  "Training",
+  "Operational Support",
+  "Emergency Response",
+  "Subcontracting",
+  "Teaming",
+  "Other",
+];
+
 export function ContactSection() {
   const [submitted, setSubmitted] = useState(false);
   const [inquiryType, setInquiryType] = useState<InquiryType>("client");
   const [messageLen, setMessageLen] = useState(0);
+  const [fileName, setFileName] = useState<string | null>(null);
+  const [interests, setInterests] = useState<string[]>([]);
 
   const isSupplier = inquiryType === "supplier";
+
+  function toggleInterest(area: string) {
+    setInterests((prev) =>
+      prev.includes(area) ? prev.filter((a) => a !== area) : [...prev, area],
+    );
+  }
 
   function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const fd = new FormData(e.currentTarget);
-    const prefix = isSupplier
-      ? "[Supplier / Partnership Inquiry]"
-      : "[Public-Sector Inquiry]";
-    const subject = encodeURIComponent(
-      `${prefix} ${fd.get("organization") ?? ""}`,
-    );
-    const body = encodeURIComponent(
-      `Inquiry Type: ${isSupplier ? "Supplier / Partnership" : "Client / Public-Sector"}\nName: ${fd.get("name")}\nOrganization: ${fd.get("organization")}\nRole: ${fd.get("role")}\nEmail: ${fd.get("email")}\n\nMessage:\n${fd.get("message")}`,
-    );
-    window.location.href = `mailto:${contact.email}?subject=${subject}&body=${body}`;
+    if (isSupplier) {
+      const subject = encodeURIComponent(
+        `[Supplier / Partnership Submission] ${fd.get("company") ?? ""}`,
+      );
+      const body = encodeURIComponent(
+        [
+          `Inquiry Type: Supplier / Partnership`,
+          `Company: ${fd.get("company")}`,
+          `Contact Name: ${fd.get("contact")}`,
+          `Email: ${fd.get("email")}`,
+          `Phone: ${fd.get("phone")}`,
+          `Website: ${fd.get("website")}`,
+          `Core Services: ${fd.get("services")}`,
+          `Certifications: ${fd.get("certifications")}`,
+          `NAICS Codes: ${fd.get("naics")}`,
+          `Geographic Coverage: ${fd.get("geography")}`,
+          `Public-Sector Experience: ${fd.get("experience")}`,
+          `Interest Areas: ${interests.join(", ")}`,
+          `Capability Statement: ${fileName ?? "Not attached"}`,
+          ``,
+          `Notes:`,
+          `${fd.get("message") ?? ""}`,
+        ].join("\n"),
+      );
+      window.location.href = `mailto:${contact.email}?subject=${subject}&body=${body}`;
+    } else {
+      const subject = encodeURIComponent(
+        `[Public-Sector Inquiry] ${fd.get("organization") ?? ""}`,
+      );
+      const body = encodeURIComponent(
+        `Inquiry Type: Public-Sector / Client\nName: ${fd.get("name")}\nOrganization: ${fd.get("organization")}\nRole: ${fd.get("role")}\nEmail: ${fd.get("email")}\n\nMessage:\n${fd.get("message")}`,
+      );
+      window.location.href = `mailto:${contact.email}?subject=${subject}&body=${body}`;
+    }
     setSubmitted(true);
   }
 
@@ -114,39 +158,122 @@ export function ContactSection() {
 
             <p className="mb-6 text-sm text-muted-foreground">
               {isSupplier
-                ? "Share your capabilities with our partner network — for MBE/WBE, small businesses, and strategic partners interested in supporting public-sector initiatives."
+                ? "Share your capabilities with our partner network. Open to MBE, WBE, SBE, DBE, SDVOB, veteran-owned, and other certified diverse and small businesses interested in teaming, subcontracting, staffing, or operational support."
                 : "For agencies, cooperatives, and public-sector teams exploring contracting, staffing, or program support."}
             </p>
 
-            <div className="grid gap-4 sm:grid-cols-2">
-              <PillField label="Full Name*" name="name" required />
-              <PillField
-                label={isSupplier ? "Company Name*" : "Organization*"}
-                name="organization"
-                required
-              />
-              <PillField label="Role / Title*" name="role" required />
-              <PillField label="Email*" name="email" type="email" required />
-            </div>
+            {isSupplier ? (
+              <>
+                <div className="grid gap-4 sm:grid-cols-2">
+                  <PillField label="Company Name*" name="company" required />
+                  <PillField label="Contact Name*" name="contact" required />
+                  <PillField label="Email*" name="email" type="email" required />
+                  <PillField label="Phone*" name="phone" type="tel" required />
+                  <PillField label="Website" name="website" type="url" />
+                  <PillField label="NAICS Codes (if known)" name="naics" />
+                </div>
 
-            <div className="mt-4">
-              <div className="mb-1 flex justify-end text-xs text-muted-foreground">
-                {messageLen} / 400
-              </div>
-              <textarea
-                name="message"
-                required
-                rows={5}
-                maxLength={400}
-                placeholder={
-                  isSupplier
-                    ? "Capabilities, certifications (MBE/WBE/etc.), and areas of interest*"
-                    : "Message*"
-                }
-                onChange={(e) => setMessageLen(e.target.value.length)}
-                className="w-full rounded-3xl border border-input bg-transparent px-5 py-4 text-sm placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 resize-y"
-              />
-            </div>
+                <div className="mt-4 grid gap-4">
+                  <PillField label="Core Services*" name="services" required />
+                  <PillField
+                    label="Certifications (MBE, WBE, SBE, DBE, SDVOB, Veteran-Owned, etc.)"
+                    name="certifications"
+                  />
+                  <PillField label="Geographic Coverage*" name="geography" required />
+                  <PillField
+                    label="Public-Sector Experience (brief summary)"
+                    name="experience"
+                  />
+                </div>
+
+                {/* Interest areas */}
+                <div className="mt-6">
+                  <p className="mb-2 text-sm font-medium text-foreground">
+                    Interest Areas
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {INTEREST_AREAS.map((area) => {
+                      const active = interests.includes(area);
+                      return (
+                        <button
+                          type="button"
+                          key={area}
+                          onClick={() => toggleInterest(area)}
+                          aria-pressed={active}
+                          className={`rounded-full border px-3 py-1.5 text-xs font-medium transition-colors ${
+                            active
+                              ? "border-primary bg-primary text-primary-foreground"
+                              : "border-border bg-transparent text-muted-foreground hover:border-primary/50 hover:text-foreground"
+                          }`}
+                        >
+                          {area}
+                        </button>
+                      );
+                    })}
+                  </div>
+                </div>
+
+                {/* Capability statement upload */}
+                <div className="mt-6">
+                  <label className="flex cursor-pointer items-center justify-between gap-3 rounded-2xl border border-dashed border-input bg-transparent px-5 py-4 text-sm hover:border-primary transition-colors">
+                    <span className="flex items-center gap-3 text-muted-foreground">
+                      <Upload className="h-4 w-4 text-primary" aria-hidden="true" />
+                      {fileName ?? "Upload Capability Statement (PDF, DOC)"}
+                    </span>
+                    <span className="text-xs font-semibold uppercase tracking-wider text-primary">
+                      {fileName ? "Replace" : "Browse"}
+                    </span>
+                    <input
+                      type="file"
+                      name="capability"
+                      accept=".pdf,.doc,.docx"
+                      className="hidden"
+                      onChange={(e) =>
+                        setFileName(e.target.files?.[0]?.name ?? null)
+                      }
+                    />
+                  </label>
+                </div>
+
+                <div className="mt-4">
+                  <div className="mb-1 flex justify-end text-xs text-muted-foreground">
+                    {messageLen} / 400
+                  </div>
+                  <textarea
+                    name="message"
+                    rows={4}
+                    maxLength={400}
+                    placeholder="Additional notes (optional)"
+                    onChange={(e) => setMessageLen(e.target.value.length)}
+                    className="w-full rounded-3xl border border-input bg-transparent px-5 py-4 text-sm placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 resize-y"
+                  />
+                </div>
+              </>
+            ) : (
+              <>
+                <div className="grid gap-4 sm:grid-cols-2">
+                  <PillField label="Full Name*" name="name" required />
+                  <PillField label="Organization*" name="organization" required />
+                  <PillField label="Role / Title*" name="role" required />
+                  <PillField label="Email*" name="email" type="email" required />
+                </div>
+
+                <div className="mt-4">
+                  <div className="mb-1 flex justify-end text-xs text-muted-foreground">
+                    {messageLen} / 400
+                  </div>
+                  <textarea
+                    name="message"
+                    required
+                    rows={5}
+                    maxLength={400}
+                    placeholder="Message*"
+                    onChange={(e) => setMessageLen(e.target.value.length)}
+                    className="w-full rounded-3xl border border-input bg-transparent px-5 py-4 text-sm placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 resize-y"
+                  />
+                </div>
+              </>
+            )}
 
             <button
               type="submit"
@@ -158,6 +285,15 @@ export function ContactSection() {
                   ? "Submit Supplier Information"
                   : "Send Inquiry"}
             </button>
+
+            {isSupplier && (
+              <p className="mt-4 text-xs leading-relaxed text-muted-foreground">
+                Submission of supplier information does not guarantee
+                subcontracting, teaming, or engagement, but allows IBC to review
+                supplier capabilities for potential alignment with future
+                opportunities.
+              </p>
+            )}
           </motion.form>
         </div>
       </div>
