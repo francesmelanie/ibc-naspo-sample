@@ -29,48 +29,67 @@ export function SupplierDiversity() {
             className="inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.18em] text-primary"
           >
             <span aria-hidden="true" className="h-[2px] w-7 bg-primary rounded-full" />
-            Supplier Diversity
+            Supplier Diversity & Partner Engagement
           </motion.span>
           <motion.h2
             variants={fadeUp}
             className="mt-4 text-3xl sm:text-[2.25rem] font-semibold tracking-tight leading-[1.15]"
           >
-            Strategic Partner & Supplier Network
+            Supplier Diversity & Partner Engagement
           </motion.h2>
-          <motion.p
-            variants={fadeUp}
-            className="mt-5 text-base md:text-lg text-muted-foreground leading-relaxed"
-          >
-            IBC maintains a scalable network of strategic partners and operational support resources
-            to assist with specialized staffing, surge operations, field deployment support, and
-            multi-jurisdiction program coordination.
+          <motion.p variants={fadeUp} className="mt-5 text-base md:text-lg text-muted-foreground leading-relaxed">
+            IBC is committed to supporting a diverse, qualified, and competitive supplier network. As a
+            minority- and woman-owned business, we understand the importance of creating practical
+            opportunities for other diverse and small businesses to participate in public-sector,
+            cooperative contracting, and client-supported work.
           </motion.p>
-          <motion.p
-            variants={fadeUp}
-            className="mt-4 text-base md:text-lg text-muted-foreground leading-relaxed"
-          >
-            This collaborative approach supports operational flexibility while enabling
-            responsiveness to varying public-sector program requirements and rapid-response
-            operational needs.
+          <motion.p variants={fadeUp} className="mt-4 text-base md:text-lg text-muted-foreground leading-relaxed">
+            Our supplier diversity efforts are incorporated into our procurement and vendor management
+            practice. This allows us to consider diverse suppliers as part of our sourcing, teaming,
+            subcontracting, vendor intake, and partner engagement process.
           </motion.p>
-          <motion.p
-            variants={fadeUp}
-            className="mt-4 text-base md:text-lg text-muted-foreground leading-relaxed"
-          >
-            IBC continues to expand its partner ecosystem to support scalable multi-jurisdictional
-            deployments and cooperative procurement initiatives. We welcome partnership discussions with
-            businesses of all sizes seeking collaborative opportunities in public-sector operations,
-            emergency response support, staffing, program management, logistics, and related service areas.
+          <motion.p variants={fadeUp} className="mt-4 text-base md:text-lg text-muted-foreground leading-relaxed">
+            IBC has established an internal supplier diversity utilization target of{" "}
+            <span className="font-semibold text-foreground">up to 5% of applicable subcontracted contract value</span>{" "}
+            being directed to qualified diverse suppliers, depending on the type of procurement, scope of
+            work, project requirements, client requirements, subcontracting opportunities, and supplier
+            availability.
           </motion.p>
-          <motion.p
-            variants={fadeUp}
-            className="mt-4 text-base md:text-lg text-muted-foreground leading-relaxed"
-          >
-            IBC also encourages participation from Minority-Owned Business Enterprises (MBEs),
-            Women-Owned Business Enterprises (WBEs/MWBEs), small businesses, and other diverse supplier
-            organizations interested in supporting public-sector initiatives through strategic partnership
-            opportunities.
+          <motion.p variants={fadeUp} className="mt-4 text-base md:text-lg text-muted-foreground leading-relaxed">
+            This target is not a quota or guarantee of utilization on every contract. Instead, it serves
+            as a practical guide for IBC's supplier outreach, sourcing, teaming, and subcontractor
+            engagement efforts.
           </motion.p>
+          <motion.p variants={fadeUp} className="mt-4 text-base md:text-lg text-muted-foreground leading-relaxed">
+            We encourage qualified diverse and small businesses — including MWBE, MBE, WBE, SBE, DBE,
+            SDVOB, veteran-owned, disadvantaged, and other certified firms — to connect with us for
+            potential teaming, subcontracting, staffing, consulting, operational support, training,
+            technology, and project-based opportunities.
+          </motion.p>
+          <motion.p variants={fadeUp} className="mt-4 text-base md:text-lg text-muted-foreground leading-relaxed">
+            IBC also recognizes that some emerging suppliers may not yet have formal public-sector
+            marketing materials. Where appropriate, IBC may help qualified providers understand how to
+            prepare a basic capability statement that highlights their services, certifications,
+            experience, geographic coverage, and readiness to support client work.
+          </motion.p>
+          <motion.p variants={fadeUp} className="mt-4 text-base md:text-lg text-muted-foreground leading-relaxed">
+            IBC is currently enhancing its Supplier Diversity Program and will continue updating this
+            page as additional supplier intake, reporting, and outreach resources become available.
+          </motion.p>
+          <motion.div variants={fadeUp} className="mt-8 rounded-2xl border border-border/70 bg-card p-6">
+            <h3 className="text-lg font-semibold">Interested in partnering with IBC?</h3>
+            <p className="mt-2 text-sm md:text-base text-muted-foreground leading-relaxed">
+              Diverse and small businesses are encouraged to contact us to share their capabilities,
+              certifications, service areas, and interest in future teaming or subcontracting
+              opportunities.
+            </p>
+            <a
+              href="#contact"
+              className="mt-4 inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground hover:bg-primary/90 transition-colors"
+            >
+              Submit Supplier Information →
+            </a>
+          </motion.div>
         </motion.div>
 
         <motion.div
