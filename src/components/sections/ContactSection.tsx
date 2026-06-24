@@ -22,8 +22,10 @@ export function ContactSection() {
   const [submitted, setSubmitted] = useState(false);
   const [inquiryType, setInquiryType] = useState<InquiryType>("client");
   const [messageLen, setMessageLen] = useState(0);
+  const [experienceLen, setExperienceLen] = useState(0);
   const [fileName, setFileName] = useState<string | null>(null);
   const [interests, setInterests] = useState<string[]>([]);
+  const [interestError, setInterestError] = useState(false);
 
   const isSupplier = inquiryType === "supplier";
 
@@ -43,10 +45,16 @@ export function ContactSection() {
     setInterests((prev) =>
       prev.includes(area) ? prev.filter((a) => a !== area) : [...prev, area],
     );
+    setInterestError(false);
   }
 
   function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    if (isSupplier && interests.length === 0) {
+      setInterestError(true);
+      return;
+    }
+    setInterestError(false);
     const fd = new FormData(e.currentTarget);
     if (isSupplier) {
       const subject = encodeURIComponent(
@@ -67,9 +75,6 @@ export function ContactSection() {
           `Public-Sector Experience: ${fd.get("experience")}`,
           `Interest Areas: ${interests.join(", ")}`,
           `Capability Statement: ${fileName ?? "Not attached"}`,
-          ``,
-          `Notes:`,
-          `${fd.get("message") ?? ""}`,
         ].join("\n"),
       );
       window.location.href = `mailto:${contact.email}?subject=${subject}&body=${body}`;
@@ -192,17 +197,28 @@ export function ContactSection() {
                     label="Certifications (MBE, WBE, SBE, DBE, SDVOB, Veteran-Owned, etc.)"
                     name="certifications"
                   />
-                  <PillField label="Geographic Coverage*" name="geography" required />
-                  <PillField
-                    label="Public-Sector Experience (brief summary)"
-                    name="experience"
-                  />
+                  <PillField label="Geographic Coverage" name="geography" />
+                  <div>
+                    <div className="mb-1 flex justify-between text-xs text-muted-foreground">
+                      <span className="text-sm font-medium text-foreground">Public-Sector Experience Summary*</span>
+                      <span>{experienceLen} / 200</span>
+                    </div>
+                    <textarea
+                      name="experience"
+                      required
+                      rows={3}
+                      maxLength={200}
+                      placeholder="Brief summary of public-sector experience"
+                      onChange={(e) => setExperienceLen(e.target.value.length)}
+                      className="w-full rounded-3xl border border-input bg-transparent px-5 py-4 text-sm placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 resize-y"
+                    />
+                  </div>
                 </div>
 
                 {/* Interest areas */}
                 <div className="mt-6">
                   <p className="mb-2 text-sm font-medium text-foreground">
-                    Interest Areas
+                    Interest Areas*
                   </p>
                   <div className="flex flex-wrap gap-2">
                     {INTEREST_AREAS.map((area) => {
@@ -216,7 +232,9 @@ export function ContactSection() {
                           className={`rounded-full border px-3 py-1.5 text-xs font-medium transition-colors ${
                             active
                               ? "border-primary bg-primary text-primary-foreground"
-                              : "border-border bg-transparent text-muted-foreground hover:border-primary/50 hover:text-foreground"
+                              : interestError
+                                ? "border-destructive bg-transparent text-muted-foreground hover:border-destructive/70 hover:text-foreground"
+                                : "border-border bg-transparent text-muted-foreground hover:border-primary/50 hover:text-foreground"
                           }`}
                         >
                           {area}
@@ -224,6 +242,11 @@ export function ContactSection() {
                       );
                     })}
                   </div>
+                  {interestError && (
+                    <p className="mt-2 text-xs text-destructive">
+                      Please select at least one interest area.
+                    </p>
+                  )}
                 </div>
 
                 {/* Capability statement upload */}
@@ -248,19 +271,6 @@ export function ContactSection() {
                   </label>
                 </div>
 
-                <div className="mt-4">
-                  <div className="mb-1 flex justify-end text-xs text-muted-foreground">
-                    {messageLen} / 400
-                  </div>
-                  <textarea
-                    name="message"
-                    rows={4}
-                    maxLength={400}
-                    placeholder="Additional notes (optional)"
-                    onChange={(e) => setMessageLen(e.target.value.length)}
-                    className="w-full rounded-3xl border border-input bg-transparent px-5 py-4 text-sm placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 resize-y"
-                  />
-                </div>
               </>
             ) : (
               <>
