@@ -45,6 +45,7 @@ export function ContactSection() {
     setInterests((prev) =>
       prev.includes(area) ? prev.filter((a) => a !== area) : [...prev, area],
     );
+    setInterestError(false);
   }
 
   function onSubmit(e: FormEvent<HTMLFormElement>) {
