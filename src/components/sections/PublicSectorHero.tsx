@@ -1,3 +1,4 @@
+import { ArrowRight, Download } from "lucide-react";
 import { capabilityStatementHref } from "@/data/publicSectorContent";
 
 export function PublicSectorHero() {
@@ -11,7 +12,6 @@ export function PublicSectorHero() {
         aria-hidden="true"
         className="pointer-events-none absolute -bottom-40 -right-32 h-[460px] w-[460px] rounded-full bg-[radial-gradient(closest-side,oklch(0.85_0.10_305/0.28),transparent_70%)] blur-3xl"
       />
-
 
       <div className="ibc-container relative">
         <div className="max-w-5xl">
@@ -32,34 +32,31 @@ export function PublicSectorHero() {
             initiatives, and cooperative purchasing environments.
           </p>
           <div
-            className="ibc-reveal mt-6 sm:mt-8 flex flex-wrap items-center gap-3 sm:gap-5"
+            className="ibc-reveal mt-8 sm:mt-10 flex flex-wrap items-center gap-4"
             style={{ animationDelay: "360ms" }}
           >
             <a
               href="#contact"
-              className="group inline-flex items-center gap-2 rounded-full bg-foreground px-4 py-2.5 sm:px-5 sm:py-3 text-xs sm:text-sm font-medium text-background hover:bg-primary transition-colors"
+              className="group inline-flex items-center gap-4 rounded-full bg-foreground px-7 py-4 text-sm font-semibold text-background hover:bg-primary transition-colors"
             >
               Connect with us
-              <span
+              <ArrowRight
+                className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
                 aria-hidden="true"
-                className="transition-transform duration-300 group-hover:translate-x-1"
-              >
-                →
-              </span>
+              />
             </a>
             <a
               href={capabilityStatementHref}
               download
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full border border-foreground/80 px-4 py-2.5 sm:px-5 sm:py-3 text-xs sm:text-sm font-medium text-foreground hover:bg-foreground hover:text-background transition-colors"
+              className="inline-flex items-center gap-3 rounded-full border border-foreground/80 px-7 py-4 text-sm font-semibold text-foreground hover:bg-foreground hover:text-background transition-colors"
             >
-              <span aria-hidden="true">↓</span>
               Capability Statement
+              <Download className="h-4 w-4" aria-hidden="true" />
             </a>
           </div>
         </div>
-
       </div>
     </section>
   );

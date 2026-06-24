@@ -24,8 +24,8 @@ export function CapabilityAreas() {
               variants={fadeUp}
               className="rounded-2xl border border-border/70 bg-card p-6 hover:border-primary/40 transition-colors"
             >
-              <div className="font-display text-xs font-semibold text-primary tabular-nums">{String(i + 1).padStart(2, "0")}</div>
-              <h3 className="mt-4 text-sm font-semibold">{title}</h3>
+              <div className="font-display text-xs font-semibold text-muted-foreground tabular-nums">{String(i + 1).padStart(2, "0")}</div>
+              <h3 className="mt-4 text-base font-semibold leading-snug">{title}</h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{description}</p>
             </motion.li>
           ))}

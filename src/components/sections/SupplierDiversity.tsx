@@ -26,9 +26,9 @@ export function SupplierDiversity() {
         >
           <motion.span
             variants={fadeUp}
-            className="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-primary"
+            className="inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.18em] text-primary"
           >
-            <span aria-hidden="true">—</span>
+            <span aria-hidden="true" className="h-[2px] w-7 bg-primary rounded-full" />
             Supplier Diversity
           </motion.span>
           <motion.h2
