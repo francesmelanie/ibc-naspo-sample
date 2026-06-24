@@ -196,11 +196,22 @@ export function ContactSection() {
                     label="Certifications (MBE, WBE, SBE, DBE, SDVOB, Veteran-Owned, etc.)"
                     name="certifications"
                   />
-                  <PillField label="Geographic Coverage*" name="geography" required />
-                  <PillField
-                    label="Public-Sector Experience (brief summary)"
-                    name="experience"
-                  />
+                  <PillField label="Geographic Coverage" name="geography" />
+                  <div>
+                    <div className="mb-1 flex justify-between text-xs text-muted-foreground">
+                      <span className="text-sm font-medium text-foreground">Public-Sector Experience Summary*</span>
+                      <span>{experienceLen} / 200</span>
+                    </div>
+                    <textarea
+                      name="experience"
+                      required
+                      rows={3}
+                      maxLength={200}
+                      placeholder="Brief summary of public-sector experience"
+                      onChange={(e) => setExperienceLen(e.target.value.length)}
+                      className="w-full rounded-3xl border border-input bg-transparent px-5 py-4 text-sm placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 resize-y"
+                    />
+                  </div>
                 </div>
 
                 {/* Interest areas */}
