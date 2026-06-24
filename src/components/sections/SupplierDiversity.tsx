@@ -35,7 +35,7 @@ export function SupplierDiversity() {
             variants={fadeUp}
             className="mt-4 text-3xl sm:text-[2.25rem] font-semibold tracking-tight leading-[1.15]"
           >
-            Supplier Diversity & Partner Engagement
+            Strategic Partner & Supplier Network
           </motion.h2>
           <motion.p variants={fadeUp} className="mt-5 text-base md:text-lg text-muted-foreground leading-relaxed">
             IBC is committed to supporting a diverse, qualified, and competitive supplier network. As a
