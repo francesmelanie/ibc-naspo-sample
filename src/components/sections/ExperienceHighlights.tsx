@@ -8,7 +8,7 @@ export function ExperienceHighlights() {
       <div className="ibc-container">
         <SectionHeader
           eyebrow="Experience"
-          title="Experience in critical public-sector environments"
+          title="Experience in Critical Public-Sector Environments"
           intro="IBC has supported high-pressure initiatives involving emergency response, public health, multi-agency coordination, public-facing digital platforms, and operational stabilization."
         />
         <motion.ol

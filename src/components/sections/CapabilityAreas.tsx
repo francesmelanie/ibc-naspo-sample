@@ -8,7 +8,7 @@ export function CapabilityAreas() {
       <div className="ibc-container">
         <SectionHeader
           eyebrow="Capabilities"
-          title="Public-sector capability areas"
+          title="Public-Sector Capability Areas"
           intro="From emergency mobilization to ongoing operational oversight, IBC provides embedded support across the program lifecycle."
         />
         <motion.ul
