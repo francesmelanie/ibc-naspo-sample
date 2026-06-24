@@ -22,8 +22,10 @@ export function ContactSection() {
   const [submitted, setSubmitted] = useState(false);
   const [inquiryType, setInquiryType] = useState<InquiryType>("client");
   const [messageLen, setMessageLen] = useState(0);
+  const [experienceLen, setExperienceLen] = useState(0);
   const [fileName, setFileName] = useState<string | null>(null);
   const [interests, setInterests] = useState<string[]>([]);
+  const [interestError, setInterestError] = useState(false);
 
   const isSupplier = inquiryType === "supplier";
 
