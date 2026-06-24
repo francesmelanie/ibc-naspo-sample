@@ -4,22 +4,30 @@ import { fadeUp, motion, staggerContainer, viewportOnce } from "@/lib/motion";
 import { contact } from "@/data/publicSectorContent";
 import { SectionHeader } from "./SectionHeader";
 
+type InquiryType = "client" | "supplier";
+
 export function ContactSection() {
   const [submitted, setSubmitted] = useState(false);
+  const [inquiryType, setInquiryType] = useState<InquiryType>("client");
+  const [messageLen, setMessageLen] = useState(0);
+
+  const isSupplier = inquiryType === "supplier";
 
   function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const fd = new FormData(e.currentTarget);
+    const prefix = isSupplier
+      ? "[Supplier / Partnership Inquiry]"
+      : "[Public-Sector Inquiry]";
     const subject = encodeURIComponent(
-      `[Public Sector Inquiry] ${fd.get("organization") ?? ""}`,
+      `${prefix} ${fd.get("organization") ?? ""}`,
     );
     const body = encodeURIComponent(
-      `Name: ${fd.get("name")}\nOrganization: ${fd.get("organization")}\nRole: ${fd.get("role")}\nEmail: ${fd.get("email")}\n\nMessage:\n${fd.get("message")}`,
+      `Inquiry Type: ${isSupplier ? "Supplier / Partnership" : "Client / Public-Sector"}\nName: ${fd.get("name")}\nOrganization: ${fd.get("organization")}\nRole: ${fd.get("role")}\nEmail: ${fd.get("email")}\n\nMessage:\n${fd.get("message")}`,
     );
     window.location.href = `mailto:${contact.email}?subject=${subject}&body=${body}`;
     setSubmitted(true);
   }
-
 
   return (
     <section id="contact" className="ibc-section bg-gradient-wash">
@@ -59,7 +67,6 @@ export function ContactSection() {
                 </a>
               </motion.li>
             </motion.ul>
-
           </motion.div>
 
           {/* Form */}
@@ -69,34 +76,88 @@ export function ContactSection() {
             whileInView="show"
             viewport={viewportOnce}
             variants={staggerContainer(0.03)}
-            className="border border-border/70 bg-card rounded-xl p-4 sm:p-7 md:p-8"
+            className="rounded-3xl bg-card shadow-[0_10px_40px_-20px_rgba(15,23,42,0.15)] p-6 sm:p-8 md:p-10"
           >
-            <div className="grid gap-3 sm:gap-5 sm:grid-cols-2">
-              <Field label="Full name" name="name" required />
-              <Field label="Organization" name="organization" required />
-              <Field label="Role / Title" name="role" />
-              <Field label="Email" name="email" type="email" required />
+            {/* Inquiry type toggle */}
+            <div
+              role="tablist"
+              aria-label="Inquiry type"
+              className="mb-6 inline-flex rounded-full border border-border/70 bg-muted/40 p-1 text-sm"
+            >
+              <button
+                type="button"
+                role="tab"
+                aria-selected={!isSupplier}
+                onClick={() => setInquiryType("client")}
+                className={`rounded-full px-4 py-2 font-medium transition-colors ${
+                  !isSupplier
+                    ? "bg-primary text-primary-foreground shadow-sm"
+                    : "text-muted-foreground hover:text-foreground"
+                }`}
+              >
+                Public-Sector Inquiry
+              </button>
+              <button
+                type="button"
+                role="tab"
+                aria-selected={isSupplier}
+                onClick={() => setInquiryType("supplier")}
+                className={`rounded-full px-4 py-2 font-medium transition-colors ${
+                  isSupplier
+                    ? "bg-primary text-primary-foreground shadow-sm"
+                    : "text-muted-foreground hover:text-foreground"
+                }`}
+              >
+                Supplier / Partner
+              </button>
             </div>
-            <div className="mt-6 flex flex-col gap-1.5">
-              <label className="text-[11px] font-semibold uppercase tracking-[0.14em] text-muted-foreground">
-                Message
-              </label>
+
+            <p className="mb-6 text-sm text-muted-foreground">
+              {isSupplier
+                ? "Share your capabilities with our partner network — for MBE/WBE, small businesses, and strategic partners interested in supporting public-sector initiatives."
+                : "For agencies, cooperatives, and public-sector teams exploring contracting, staffing, or program support."}
+            </p>
+
+            <div className="grid gap-4 sm:grid-cols-2">
+              <PillField label="Full Name*" name="name" required />
+              <PillField
+                label={isSupplier ? "Company Name*" : "Organization*"}
+                name="organization"
+                required
+              />
+              <PillField label="Role / Title*" name="role" required />
+              <PillField label="Email*" name="email" type="email" required />
+            </div>
+
+            <div className="mt-4">
+              <div className="mb-1 flex justify-end text-xs text-muted-foreground">
+                {messageLen} / 400
+              </div>
               <textarea
                 name="message"
                 required
-                rows={4}
-                className="border-b border-input bg-transparent py-2 text-sm focus:border-primary focus:outline-none resize-y"
+                rows={5}
+                maxLength={400}
+                placeholder={
+                  isSupplier
+                    ? "Capabilities, certifications (MBE/WBE/etc.), and areas of interest*"
+                    : "Message*"
+                }
+                onChange={(e) => setMessageLen(e.target.value.length)}
+                className="w-full rounded-3xl border border-input bg-transparent px-5 py-4 text-sm placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 resize-y"
               />
             </div>
 
-            <div className="mt-7 flex flex-wrap items-center justify-end gap-4">
-              <button
-                type="submit"
-                className="inline-flex items-center gap-2 rounded-full bg-foreground px-4 py-2 sm:px-5 sm:py-2.5 text-xs sm:text-sm font-medium text-background hover:bg-primary transition-colors"
-              >
-                {submitted ? "✓ Sent" : "Send inquiry →"}
-              </button>
-            </div>
+            <button
+              type="submit"
+              className="mt-6 w-full rounded-full bg-primary px-6 py-4 text-sm font-semibold text-primary-foreground hover:bg-primary/90 transition-colors"
+            >
+              {submitted
+                ? "✓ Sent"
+                : isSupplier
+                  ? "Submit Supplier Information"
+                  : "Send Inquiry"}
+            </button>
           </motion.form>
         </div>
       </div>
@@ -104,19 +165,24 @@ export function ContactSection() {
   );
 }
 
-function Field({ label, name, type = "text", required }: { label: string; name: string; type?: string; required?: boolean }) {
+function PillField({
+  label,
+  name,
+  type = "text",
+  required,
+}: {
+  label: string;
+  name: string;
+  type?: string;
+  required?: boolean;
+}) {
   return (
-    <div className="flex flex-col gap-1.5">
-      <label className="text-[11px] font-semibold uppercase tracking-[0.14em] text-muted-foreground">
-        {label}
-        {required && <span className="text-primary"> *</span>}
-      </label>
-      <input
-        name={name}
-        type={type}
-        required={required}
-        className="border-b border-input bg-transparent py-2 text-sm focus:border-primary focus:outline-none"
-      />
-    </div>
+    <input
+      name={name}
+      type={type}
+      required={required}
+      placeholder={label}
+      className="w-full rounded-full border border-input bg-transparent px-5 py-3.5 text-sm placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
+    />
   );
 }
