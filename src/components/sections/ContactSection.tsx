@@ -1,4 +1,4 @@
-import { useState, type FormEvent } from "react";
+import { useEffect, useState, type FormEvent } from "react";
 import { Mail, Phone, Upload } from "lucide-react";
 import { fadeUp, motion, staggerContainer, viewportOnce } from "@/lib/motion";
 import { contact } from "@/data/publicSectorContent";
@@ -26,6 +26,18 @@ export function ContactSection() {
   const [interests, setInterests] = useState<string[]>([]);
 
   const isSupplier = inquiryType === "supplier";
+
+  useEffect(() => {
+    function syncInquiryFromHash() {
+      if (window.location.hash === "#supplier-information") {
+        setInquiryType("supplier");
+      }
+    }
+
+    syncInquiryFromHash();
+    window.addEventListener("hashchange", syncInquiryFromHash);
+    return () => window.removeEventListener("hashchange", syncInquiryFromHash);
+  }, []);
 
   function toggleInterest(area: string) {
     setInterests((prev) =>
@@ -115,6 +127,7 @@ export function ContactSection() {
 
           {/* Form */}
           <motion.form
+            id="supplier-information"
             onSubmit={onSubmit}
             initial="hidden"
             whileInView="show"
