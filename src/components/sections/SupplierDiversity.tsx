@@ -76,20 +76,6 @@ export function SupplierDiversity() {
             IBC is currently enhancing its Supplier Diversity Program and will continue updating this
             page as additional supplier intake, reporting, and outreach resources become available.
           </motion.p>
-          <motion.div variants={fadeUp} className="mt-8 rounded-2xl border border-border/70 bg-card p-6">
-            <h3 className="text-lg font-semibold">Interested in partnering with IBC?</h3>
-            <p className="mt-2 text-sm md:text-base text-muted-foreground leading-relaxed">
-              Diverse and small businesses are encouraged to contact us to share their capabilities,
-              certifications, service areas, and interest in future teaming or subcontracting
-              opportunities.
-            </p>
-            <a
-              href="#supplier-information"
-              className="mt-4 inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground hover:bg-primary/90 transition-colors"
-            >
-              Submit Supplier Information →
-            </a>
-          </motion.div>
         </motion.div>
 
         <motion.div
@@ -124,6 +110,29 @@ export function SupplierDiversity() {
               </motion.li>
             ))}
           </motion.ul>
+        </motion.div>
+
+        <motion.div
+          initial="hidden"
+          whileInView="show"
+          viewport={viewportOnce}
+          variants={staggerContainer(0.05)}
+          className="mt-10"
+        >
+          <motion.div variants={fadeUp} className="rounded-2xl border border-border/70 bg-card p-6">
+            <h3 className="text-lg font-semibold">Interested in partnering with IBC?</h3>
+            <p className="mt-2 text-sm md:text-base text-muted-foreground leading-relaxed">
+              Diverse and small businesses are encouraged to contact us to share their capabilities,
+              certifications, service areas, and interest in future teaming or subcontracting
+              opportunities.
+            </p>
+            <a
+              href="#supplier-information"
+              className="mt-4 inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground hover:bg-primary/90 transition-colors"
+            >
+              Submit Supplier Information →
+            </a>
+          </motion.div>
         </motion.div>
       </div>
     </section>
