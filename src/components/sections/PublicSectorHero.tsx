@@ -1,19 +1,17 @@
 import { capabilityStatementHref } from "@/data/publicSectorContent";
-import { WaveAccent } from "@/components/site/WaveAccent";
 
 export function PublicSectorHero() {
   return (
-    <section className="relative isolate overflow-hidden bg-gradient-hero pt-14 pb-20 md:pt-24 md:pb-32">
-      {/* Soft animated orbs */}
+    <section className="relative isolate overflow-hidden bg-background pt-14 pb-20 md:pt-24 md:pb-32">
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -top-32 -left-24 h-[420px] w-[420px] rounded-full bg-[radial-gradient(closest-side,oklch(0.78_0.16_245/0.45),transparent_70%)] blur-2xl ibc-orb-a"
+        className="pointer-events-none absolute -top-40 -left-32 h-[460px] w-[460px] rounded-full bg-[radial-gradient(closest-side,oklch(0.85_0.10_245/0.35),transparent_70%)] blur-3xl"
       />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -bottom-32 -right-20 h-[480px] w-[480px] rounded-full bg-[radial-gradient(closest-side,oklch(0.72_0.18_305/0.40),transparent_70%)] blur-2xl ibc-orb-b"
+        className="pointer-events-none absolute -bottom-40 -right-32 h-[460px] w-[460px] rounded-full bg-[radial-gradient(closest-side,oklch(0.85_0.10_305/0.28),transparent_70%)] blur-3xl"
       />
-      <WaveAccent className="pointer-events-none absolute inset-0 h-full w-full opacity-60 ibc-wave-drift" />
+
 
       <div className="ibc-container relative">
         <div className="max-w-5xl">

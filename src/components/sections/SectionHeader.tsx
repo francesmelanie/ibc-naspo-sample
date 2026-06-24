@@ -19,7 +19,7 @@ export function SectionHeader({ eyebrow, title, intro, align = "left" }: Props) 
       {eyebrow && (
         <motion.div variants={fadeUp}>
           <span className="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-primary">
-            <span className="h-px w-6 bg-primary/60" />
+            <span aria-hidden="true">—</span>
             {eyebrow}
           </span>
         </motion.div>
