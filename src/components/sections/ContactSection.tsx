@@ -218,7 +218,7 @@ export function ContactSection() {
                 {/* Interest areas */}
                 <div className="mt-6">
                   <p className="mb-2 text-sm font-medium text-foreground">
-                    Interest Areas
+                    Interest Areas*
                   </p>
                   <div className="flex flex-wrap gap-2">
                     {INTEREST_AREAS.map((area) => {
@@ -232,7 +232,9 @@ export function ContactSection() {
                           className={`rounded-full border px-3 py-1.5 text-xs font-medium transition-colors ${
                             active
                               ? "border-primary bg-primary text-primary-foreground"
-                              : "border-border bg-transparent text-muted-foreground hover:border-primary/50 hover:text-foreground"
+                              : interestError
+                                ? "border-destructive bg-transparent text-muted-foreground hover:border-destructive/70 hover:text-foreground"
+                                : "border-border bg-transparent text-muted-foreground hover:border-primary/50 hover:text-foreground"
                           }`}
                         >
                           {area}
@@ -240,6 +242,11 @@ export function ContactSection() {
                       );
                     })}
                   </div>
+                  {interestError && (
+                    <p className="mt-2 text-xs text-destructive">
+                      Please select at least one interest area.
+                    </p>
+                  )}
                 </div>
 
                 {/* Capability statement upload */}
