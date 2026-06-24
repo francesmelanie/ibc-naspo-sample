@@ -49,6 +49,11 @@ export function ContactSection() {
 
   function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    if (isSupplier && interests.length === 0) {
+      setInterestError(true);
+      return;
+    }
+    setInterestError(false);
     const fd = new FormData(e.currentTarget);
     if (isSupplier) {
       const subject = encodeURIComponent(
@@ -69,9 +74,6 @@ export function ContactSection() {
           `Public-Sector Experience: ${fd.get("experience")}`,
           `Interest Areas: ${interests.join(", ")}`,
           `Capability Statement: ${fileName ?? "Not attached"}`,
-          ``,
-          `Notes:`,
-          `${fd.get("message") ?? ""}`,
         ].join("\n"),
       );
       window.location.href = `mailto:${contact.email}?subject=${subject}&body=${body}`;
