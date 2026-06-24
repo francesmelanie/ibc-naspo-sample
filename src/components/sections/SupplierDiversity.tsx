@@ -35,7 +35,7 @@ export function SupplierDiversity() {
             variants={fadeUp}
             className="mt-4 text-3xl sm:text-[2.25rem] font-semibold tracking-tight leading-[1.15]"
           >
-            Strategic partner & supplier network
+            Strategic Partner & Supplier Network
           </motion.h2>
           <motion.p
             variants={fadeUp}

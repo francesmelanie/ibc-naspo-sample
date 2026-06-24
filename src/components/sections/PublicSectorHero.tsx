@@ -21,7 +21,7 @@ export function PublicSectorHero() {
             className="ibc-reveal text-[2.25rem] sm:text-6xl lg:text-[5rem] font-semibold leading-[1.05] sm:leading-[1.02] tracking-tight"
             style={{ animationDelay: "60ms" }}
           >
-            Public Sector &{" "}
+            Public-Sector &{" "}
             <span className="text-gradient-brand ibc-gradient-pan inline-block">
               Cooperative Contracting
             </span>

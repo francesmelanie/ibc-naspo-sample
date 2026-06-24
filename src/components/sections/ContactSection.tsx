@@ -26,7 +26,7 @@ export function ContactSection() {
       <div className="ibc-container">
         <SectionHeader
           eyebrow="Contact Us"
-          title="Public Sector & Cooperative Contracting Inquiries"
+          title="Public-Sector & Cooperative Contracting Inquiries"
           intro="For partnership opportunities, cooperative contracting discussions, or public-sector operational support inquiries, please contact:"
         />
 
