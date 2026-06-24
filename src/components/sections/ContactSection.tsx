@@ -193,11 +193,13 @@ export function ContactSection() {
 
                 <div className="mt-4 grid gap-4">
                   <PillField label="Core Services*" name="services" required />
-                  <PillField
-                    label="Certifications (MBE, WBE, SBE, DBE, SDVOB, Veteran-Owned, etc.)"
-                    name="certifications"
-                  />
-                  <PillField label="Geographic Coverage" name="geography" />
+                  <div className="grid gap-4 sm:grid-cols-2">
+                    <PillField
+                      label="Certifications (MBE, WBE, SBE, DBE, SDVOB, Veteran-Owned, etc.)"
+                      name="certifications"
+                    />
+                    <PillField label="Geographic Coverage" name="geography" />
+                  </div>
                   <div>
                     <div className="mb-1 flex justify-between text-xs text-muted-foreground">
                       <span className="text-sm font-medium text-foreground">Public-Sector Experience Summary*</span>
