@@ -128,7 +128,7 @@ export function SupplierDiversity() {
             </p>
             <a
               href="#supplier-information"
-              className="mt-4 inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground hover:bg-primary/90 transition-colors"
+              className="mt-4 inline-flex items-center gap-2 rounded-full bg-foreground px-5 py-2.5 text-sm font-semibold text-background hover:bg-primary transition-colors"
             >
               Submit Supplier Information →
             </a>
