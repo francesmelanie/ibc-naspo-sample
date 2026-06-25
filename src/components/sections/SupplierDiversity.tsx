@@ -78,7 +78,7 @@ export function SupplierDiversity() {
         {/* Sticky scope: header + grid stick together, release before the CTA */}
         <div className="relative">
         {/* TOP HEADER — full width, sticky so cards scroll under it */}
-        <div className="sticky top-0 z-20 -mx-4 px-4 pt-6 pb-6 bg-background/95 backdrop-blur-sm">
+        <div ref={headerRef} className="sticky top-0 z-20 -mx-4 px-4 pt-6 pb-6 bg-background/95 backdrop-blur-sm">
           <motion.div
             initial="hidden"
             whileInView="show"
