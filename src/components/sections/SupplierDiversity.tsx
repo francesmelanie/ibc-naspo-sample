@@ -63,7 +63,7 @@ export function SupplierDiversity() {
     <section className="ibc-section">
       <div className="ibc-container">
         {/* Two-column layout — heading + nav sticky on left, cards scroll on right */}
-        <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,24rem)_minmax(0,1fr)] gap-10 lg:gap-14">
+        <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,28rem)_minmax(0,1fr)] gap-10 lg:gap-14">
           {/* LEFT RAIL — heading + nav, sticky together */}
           <aside className="lg:sticky lg:top-24 lg:self-start lg:max-h-[calc(100vh-7rem)] lg:overflow-y-auto">
             <motion.div
