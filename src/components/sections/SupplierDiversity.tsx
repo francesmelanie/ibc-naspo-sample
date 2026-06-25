@@ -71,7 +71,6 @@ export function SupplierDiversity() {
             whileInView="show"
             viewport={viewportOnce}
             variants={staggerContainer(0.06)}
-            className="max-w-4xl"
           >
             <motion.span
               variants={fadeUp}
