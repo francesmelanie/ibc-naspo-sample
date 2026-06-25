@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Network, HeartHandshake, Target, Users, Sparkles, BadgeCheck } from "lucide-react";
 import { fadeUp, motion, staggerContainer, viewportOnce } from "@/lib/motion";
 import portAuthority from "@/assets/certs/port-authority-mwbe.png";
