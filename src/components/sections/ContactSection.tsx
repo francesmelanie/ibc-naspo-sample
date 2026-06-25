@@ -132,9 +132,10 @@ export function ContactSection() {
           eyebrow="Contact Us"
           title="Public-Sector & Cooperative Contracting Inquiries"
           intro="For partnership opportunities, cooperative contracting discussions, or public-sector operational support inquiries, please contact:"
+          className="!max-w-none"
         />
 
-        <div className="mt-10 grid gap-10 lg:grid-cols-[0.85fr_1.15fr]">
+        <div className="mt-10 grid gap-6 lg:grid-cols-[0.75fr_1fr]">
           {/* Contact card */}
           <motion.div
             initial="hidden"
