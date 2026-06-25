@@ -37,6 +37,19 @@ const sections = [
 
 export function SupplierDiversity() {
   const [activeId, setActiveId] = useState<string>(sections[0].id);
+  const headerRef = useRef<HTMLDivElement>(null);
+  const [headerH, setHeaderH] = useState(240);
+
+  useEffect(() => {
+    if (headerRef.current) {
+      setHeaderH(headerRef.current.offsetHeight);
+    }
+    const onResize = () => {
+      if (headerRef.current) setHeaderH(headerRef.current.offsetHeight);
+    };
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
+  }, []);
 
   useEffect(() => {
     const elements = sections
