@@ -5,16 +5,17 @@ type Props = {
   title: string;
   intro?: string;
   align?: "left" | "center";
+  className?: string;
 };
 
-export function SectionHeader({ eyebrow, title, intro, align = "left" }: Props) {
+export function SectionHeader({ eyebrow, title, intro, align = "left", className }: Props) {
   return (
     <motion.div
       initial="hidden"
       whileInView="show"
       viewport={viewportOnce}
       variants={staggerContainer(0.06)}
-      className={`max-w-3xl ${align === "center" ? "mx-auto text-center" : ""}`}
+      className={`max-w-3xl ${align === "center" ? "mx-auto text-center" : ""} ${className ?? ""}`}
     >
       {eyebrow && (
         <motion.div variants={fadeUp}>
