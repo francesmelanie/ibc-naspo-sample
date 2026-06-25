@@ -151,7 +151,7 @@ export function ContactSection() {
             whileInView="show"
             viewport={viewportOnce}
             variants={staggerContainer(0.06)}
-            className="h-fit"
+            className="h-fit md:sticky md:top-[17rem]"
           >
             <motion.span variants={fadeUp} className="text-[11px] font-semibold uppercase tracking-[0.18em] text-primary">
               {contact.role}
