@@ -62,40 +62,44 @@ export function SupplierDiversity() {
   return (
     <section className="ibc-section">
       <div className="ibc-container">
-        {/* Two-column layout — heading + nav sticky on left, cards scroll on right */}
-        <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,28rem)_minmax(0,1fr)] gap-10 lg:gap-14">
-          {/* LEFT RAIL — heading + nav, sticky together */}
-          <aside className="lg:sticky lg:top-24 lg:self-start lg:max-h-[calc(100vh-7rem)] lg:overflow-y-auto">
-            <motion.div
-              initial="hidden"
-              whileInView="show"
-              viewport={viewportOnce}
-              variants={staggerContainer(0.06)}
+        {/* TOP HEADER — full width, sticky so cards scroll under it */}
+        <div className="sticky top-0 z-20 -mx-4 px-4 pt-6 pb-6 bg-background/95 backdrop-blur-sm">
+          <motion.div
+            initial="hidden"
+            whileInView="show"
+            viewport={viewportOnce}
+            variants={staggerContainer(0.06)}
+            className="max-w-4xl"
+          >
+            <motion.span
+              variants={fadeUp}
+              className="inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.18em] text-primary"
             >
-              <motion.span
-                variants={fadeUp}
-                className="inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.18em] text-primary"
-              >
-                <span aria-hidden="true" className="h-[2px] w-7 bg-primary rounded-full" />
-                Supplier Network & Partner Engagement
-              </motion.span>
-              <motion.h2
-                variants={fadeUp}
-                className="mt-4 text-3xl sm:text-[2rem] font-semibold tracking-tight leading-[1.15]"
-              >
-                Strategic Partner & Supplier Diversity Program
-              </motion.h2>
-              <motion.p
-                variants={fadeUp}
-                className="mt-4 text-base text-muted-foreground leading-relaxed"
-              >
-                A structured program that pairs IBC's operational partner network with an active
-                commitment to engaging diverse, qualified, and small businesses across public-sector
-                and cooperative work.
-              </motion.p>
-            </motion.div>
+              <span aria-hidden="true" className="h-[2px] w-7 bg-primary rounded-full" />
+              Supplier Network & Partner Engagement
+            </motion.span>
+            <motion.h2
+              variants={fadeUp}
+              className="mt-4 text-3xl sm:text-4xl lg:text-[2.5rem] font-semibold tracking-tight leading-[1.15]"
+            >
+              Strategic Partner & Supplier Diversity Program
+            </motion.h2>
+            <motion.p
+              variants={fadeUp}
+              className="mt-4 max-w-3xl text-base text-muted-foreground leading-relaxed"
+            >
+              A structured program that pairs IBC's operational partner network with an active
+              commitment to engaging diverse, qualified, and small businesses across public-sector
+              and cooperative work.
+            </motion.p>
+          </motion.div>
+        </div>
 
-            <nav aria-label="Program sections" className="hidden lg:block mt-8">
+        {/* Two-column layout — TOC sticky on left, cards scroll on right */}
+        <div className="mt-8 grid grid-cols-1 lg:grid-cols-[minmax(0,18rem)_minmax(0,1fr)] gap-10 lg:gap-20">
+          {/* LEFT RAIL — TOC sticky */}
+          <aside className="lg:sticky lg:top-[19rem] lg:self-start">
+            <nav aria-label="Program sections" className="hidden lg:block">
               <div className="text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground mb-4">
                 On this section
               </div>
@@ -128,7 +132,7 @@ export function SupplierDiversity() {
             </nav>
 
             {/* Mobile horizontal nav */}
-            <nav aria-label="Program sections" className="lg:hidden mt-8 -mx-4 px-4 overflow-x-auto">
+            <nav aria-label="Program sections" className="lg:hidden -mx-4 px-4 overflow-x-auto">
               <ul className="flex gap-2 whitespace-nowrap">
                 {sections.map((s) => (
                   <li key={s.id}>
@@ -145,9 +149,10 @@ export function SupplierDiversity() {
             </nav>
           </aside>
 
-          {/* RIGHT CONTENT — stacking sticky cards */}
+          {/* RIGHT CONTENT — cards */}
           <div className="space-y-6">
             <StickyCard id="partner-network">
+
               <SubsectionHeader number="01" label="Operational Partner Network" icon={Network} />
               <p className="mt-4 text-base text-muted-foreground leading-relaxed">
                 IBC maintains a scalable network of strategic partners and operational support resources
