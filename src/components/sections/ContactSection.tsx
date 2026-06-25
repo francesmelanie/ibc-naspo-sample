@@ -128,21 +128,23 @@ export function ContactSection() {
   return (
     <section id="contact" className="ibc-section bg-gradient-wash">
       <div className="ibc-container">
-        <SectionHeader
-          eyebrow="Contact Us"
-          title="Public-Sector & Cooperative Contracting Inquiries"
-          intro="For partnership opportunities, cooperative contracting discussions, or public-sector operational support inquiries, please contact:"
-          className="!max-w-none"
-        />
+        <div className="lg:sticky lg:top-24 z-10 bg-gradient-wash pb-8">
+          <SectionHeader
+            eyebrow="Contact Us"
+            title="Public-Sector & Cooperative Contracting Inquiries"
+            intro="For partnership opportunities, cooperative contracting discussions, or public-sector operational support inquiries, please contact:"
+            className="!max-w-none"
+          />
+        </div>
 
-        <div className="mt-10 grid gap-10 lg:grid-cols-[1fr_1.35fr] lg:items-start">
+        <div className="mt-2 grid gap-6 lg:grid-cols-[minmax(280px,0.48fr)_minmax(0,1.52fr)] lg:items-start">
           {/* Contact card */}
           <motion.div
             initial="hidden"
             whileInView="show"
             viewport={viewportOnce}
             variants={staggerContainer(0.06)}
-            className="border-t border-border/70 pt-8 h-fit lg:sticky lg:top-28"
+            className="h-fit border-t border-border/70 pt-8 lg:sticky lg:top-[17.5rem]"
           >
             <motion.span variants={fadeUp} className="text-[11px] font-semibold uppercase tracking-[0.18em] text-primary">
               {contact.role}
