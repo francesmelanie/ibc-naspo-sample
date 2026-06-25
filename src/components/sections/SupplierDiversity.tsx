@@ -262,6 +262,9 @@ export function SupplierDiversity() {
             </StickyCard>
           </div>
         </div>
+        </div>
+
+
 
         {/* Partner CTA — full width under section */}
         <motion.div
