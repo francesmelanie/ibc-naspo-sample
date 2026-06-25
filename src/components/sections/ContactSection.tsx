@@ -125,10 +125,17 @@ export function ContactSection() {
     setSubmitted(true);
   }
 
+  const stickyTop = typeof window !== "undefined" && window.matchMedia("(min-width: 768px)").matches ? 56 : 48;
+
   return (
     <section id="contact" className="ibc-section bg-background">
       <div className="ibc-container">
-        <div className="sticky top-12 md:top-14 z-[60] -mx-[max(1.25rem,calc((100vw-1180px)/2+2rem))] px-[max(1.25rem,calc((100vw-1180px)/2+2rem))] bg-background pt-8 pb-8 border-b border-border/60 shadow-[0_18px_34px_-30px_rgba(27,30,60,0.45)]">
+        <div className="relative">
+        {/* Sticky header — same pattern as SupplierDiversity */}
+        <div
+          style={{ top: `${stickyTop}px` }}
+          className="sticky z-30 -mx-4 px-4 pt-6 pb-6 bg-background/95 backdrop-blur-sm"
+        >
           <SectionHeader
             eyebrow="Contact Us"
             title="Public-Sector & Cooperative Contracting Inquiries"
@@ -137,14 +144,14 @@ export function ContactSection() {
           />
         </div>
 
-        <div className="mt-2 grid gap-6 lg:grid-cols-[minmax(280px,0.48fr)_minmax(0,1.52fr)] lg:items-start">
+        <div className="mt-8 grid gap-10 lg:grid-cols-[minmax(0,16rem)_minmax(0,1fr)] lg:items-start">
           {/* Contact card */}
           <motion.div
             initial="hidden"
             whileInView="show"
             viewport={viewportOnce}
             variants={staggerContainer(0.06)}
-            className="h-fit border-t border-border/70 pt-8 lg:sticky lg:top-[17.5rem]"
+            className="h-fit"
           >
             <motion.span variants={fadeUp} className="text-[11px] font-semibold uppercase tracking-[0.18em] text-primary">
               {contact.role}
@@ -362,6 +369,7 @@ export function ContactSection() {
               </p>
             )}
           </motion.form>
+        </div>
         </div>
       </div>
     </section>
