@@ -128,7 +128,7 @@ export function ContactSection() {
   return (
     <section id="contact" className="ibc-section bg-background">
       <div className="ibc-container">
-        <div className="lg:sticky lg:top-24 z-20 -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8 bg-background pb-8 border-b border-border/60">
+        <div className="lg:sticky lg:top-14 z-50 -mx-[max(1.25rem,calc((100vw-1180px)/2+2rem))] px-[max(1.25rem,calc((100vw-1180px)/2+2rem))] bg-background pt-8 pb-8 border-b border-border/60 shadow-[0_18px_34px_-30px_rgba(27,30,60,0.45)]">
           <SectionHeader
             eyebrow="Contact Us"
             title="Public-Sector & Cooperative Contracting Inquiries"
