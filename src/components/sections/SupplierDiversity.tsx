@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Network, HeartHandshake, Target, Users, Sparkles } from "lucide-react";
+import { Network, HeartHandshake, Target, Users, Sparkles, BadgeCheck } from "lucide-react";
 import { fadeUp, motion, staggerContainer, viewportOnce } from "@/lib/motion";
 import portAuthority from "@/assets/certs/port-authority-mwbe.png";
 import nycMwbe from "@/assets/certs/nyc-mwbe.png";
@@ -32,6 +32,7 @@ const sections = [
   { id: "utilization-target", number: "03", label: "5% Utilization Target", icon: Target },
   { id: "who-we-encourage", number: "04", label: "Who We Encourage", icon: Users },
   { id: "program-evolution", number: "05", label: "Program Evolution", icon: Sparkles },
+  { id: "certifications", number: "06", label: "Certifications", icon: BadgeCheck },
 ];
 
 export function SupplierDiversity() {
@@ -67,7 +68,6 @@ export function SupplierDiversity() {
           whileInView="show"
           viewport={viewportOnce}
           variants={staggerContainer(0.06)}
-          className="max-w-3xl"
         >
           <motion.span
             variants={fadeUp}
@@ -78,7 +78,7 @@ export function SupplierDiversity() {
           </motion.span>
           <motion.h2
             variants={fadeUp}
-            className="mt-4 text-3xl sm:text-[2.25rem] font-semibold tracking-tight leading-[1.15]"
+            className="mt-4 max-w-3xl text-3xl sm:text-[2.25rem] font-semibold tracking-tight leading-[1.15]"
           >
             Strategic Partner & Supplier Diversity Program
           </motion.h2>
@@ -92,12 +92,11 @@ export function SupplierDiversity() {
         </motion.div>
 
         {/* Two-column layout */}
-        <div className="mt-12 grid grid-cols-1 lg:grid-cols-[18rem_minmax(0,1fr)] gap-10 lg:gap-14">
-          {/* LEFT RAIL */}
-          <aside className="lg:sticky lg:top-24 lg:self-start space-y-8">
-            {/* In-page nav */}
+        <div className="mt-12 grid grid-cols-1 lg:grid-cols-[20rem_minmax(0,1fr)] gap-10 lg:gap-14">
+          {/* LEFT RAIL — nav only */}
+          <aside className="lg:sticky lg:top-24 lg:self-start">
             <nav aria-label="Program sections" className="hidden lg:block">
-              <div className="text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground mb-4">
+              <div className="text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground mb-5">
                 On this section
               </div>
               <ul className="space-y-1 border-l border-border/70">
@@ -107,7 +106,7 @@ export function SupplierDiversity() {
                     <li key={s.id}>
                       <a
                         href={`#${s.id}`}
-                        className={`relative block py-2 pl-4 text-sm transition-colors ${
+                        className={`relative block py-2.5 pl-5 text-base transition-colors ${
                           active
                             ? "text-foreground font-semibold"
                             : "text-muted-foreground hover:text-foreground"
@@ -119,7 +118,7 @@ export function SupplierDiversity() {
                             className="absolute -left-px top-0 h-full w-[2px] bg-primary"
                           />
                         )}
-                        <span className="text-[11px] font-mono mr-2 opacity-70">{s.number}</span>
+                        <span className="text-sm font-mono mr-2.5 opacity-70">{s.number}</span>
                         {s.label}
                       </a>
                     </li>
@@ -144,13 +143,100 @@ export function SupplierDiversity() {
                 ))}
               </ul>
             </nav>
+          </aside>
 
-            {/* Certifications */}
-            <div>
-              <div className="text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground mb-4">
-                Certifications
-              </div>
-              <ul className="grid grid-cols-3 gap-2">
+          {/* RIGHT CONTENT — stacking sticky cards */}
+          <div className="space-y-6">
+            <StickyCard id="partner-network">
+              <SubsectionHeader number="01" label="Operational Partner Network" icon={Network} />
+              <p className="mt-4 text-base text-muted-foreground leading-relaxed">
+                IBC maintains a scalable network of strategic partners and operational support resources
+                to assist with specialized staffing, surge operations, field deployment support, and
+                multi-jurisdiction program coordination.
+              </p>
+              <p className="mt-4 text-base text-muted-foreground leading-relaxed">
+                This collaborative approach supports operational flexibility while enabling
+                responsiveness to varying public-sector program requirements and rapid-response
+                operational needs. IBC continues to expand its partner ecosystem to support scalable
+                multi-jurisdictional deployments and cooperative procurement initiatives, welcoming
+                partnership discussions with businesses of all sizes across operations, emergency
+                response support, staffing, program management, and logistics.
+              </p>
+            </StickyCard>
+
+            <StickyCard id="diversity-commitment">
+              <SubsectionHeader number="02" label="Supplier Diversity Commitment" icon={HeartHandshake} />
+              <p className="mt-4 text-base text-muted-foreground leading-relaxed">
+                IBC is committed to supporting a diverse, qualified, and competitive supplier network.
+                As a minority- and woman-owned business, we understand the importance of creating
+                practical opportunities for other diverse and small businesses to participate in
+                public-sector, cooperative contracting, and client-supported work.
+              </p>
+              <p className="mt-4 text-base text-muted-foreground leading-relaxed">
+                Our supplier diversity efforts are incorporated into our procurement and vendor
+                management practice. This allows us to consider diverse suppliers as part of our
+                sourcing, teaming, subcontracting, vendor intake, and partner engagement process.
+              </p>
+            </StickyCard>
+
+            <StickyCard id="utilization-target">
+              <SubsectionHeader number="03" label="5% Utilization Target" icon={Target} />
+              <p className="mt-4 text-base text-muted-foreground leading-relaxed">
+                IBC has established an internal supplier diversity utilization target of up to{" "}
+                <span className="font-semibold text-foreground">
+                  5% of applicable subcontracted contract value
+                </span>{" "}
+                being directed to qualified diverse suppliers — depending on procurement type, scope of
+                work, client requirements, and supplier availability.
+              </p>
+              <p className="mt-4 text-base text-muted-foreground leading-relaxed">
+                This target is not a quota or guarantee on every contract. Instead, it serves as a
+                practical guide for IBC's supplier outreach, sourcing, teaming, and subcontractor
+                engagement efforts.
+              </p>
+            </StickyCard>
+
+            <StickyCard id="who-we-encourage">
+              <SubsectionHeader number="04" label="Who We Encourage" icon={Users} />
+              <p className="mt-4 text-base text-muted-foreground leading-relaxed">
+                We encourage qualified diverse and small businesses to connect with us for potential
+                teaming, subcontracting, staffing, consulting, operational support, training,
+                technology, and project-based opportunities.
+              </p>
+              <ul className="mt-5 flex flex-wrap gap-2">
+                {eligibleFirms.map((f) => (
+                  <li
+                    key={f}
+                    className="inline-flex items-center rounded-full border border-primary/20 bg-primary/5 px-3 py-1.5 text-xs font-semibold text-primary"
+                  >
+                    {f}
+                  </li>
+                ))}
+              </ul>
+            </StickyCard>
+
+            <StickyCard id="program-evolution">
+              <SubsectionHeader number="05" label="Program Evolution" icon={Sparkles} />
+              <p className="mt-4 text-base text-muted-foreground leading-relaxed">
+                IBC also recognizes that some emerging suppliers may not yet have formal public-sector
+                marketing materials. Where appropriate, IBC may help qualified providers understand how
+                to prepare a basic capability statement that highlights their services, certifications,
+                experience, geographic coverage, and readiness to support client work.
+              </p>
+              <p className="mt-4 text-base text-muted-foreground leading-relaxed">
+                IBC is currently enhancing its Supplier Diversity Program and will continue updating
+                this page as additional supplier intake, reporting, and outreach resources become
+                available.
+              </p>
+            </StickyCard>
+
+            <StickyCard id="certifications">
+              <SubsectionHeader number="06" label="Certifications" icon={BadgeCheck} />
+              <p className="mt-4 text-base text-muted-foreground leading-relaxed">
+                IBC holds active certifications recognized by federal, state, and regional procurement
+                authorities — supporting eligibility across public-sector and cooperative programs.
+              </p>
+              <ul className="mt-6 grid grid-cols-3 sm:grid-cols-5 gap-3">
                 {certifications.map((c) => (
                   <li
                     key={c.alt}
@@ -165,164 +251,49 @@ export function SupplierDiversity() {
                   </li>
                 ))}
               </ul>
-            </div>
-
-            {/* Partner CTA */}
-            <div className="rounded-2xl bg-ibc-navy p-6 text-primary-foreground">
-              <h3 className="text-base font-semibold">Interested in partnering with IBC?</h3>
-              <p className="mt-2 text-sm text-primary-foreground/80 leading-relaxed">
-                Share your capabilities, certifications, and service areas for future teaming or
-                subcontracting opportunities.
-              </p>
-              <a
-                href="#supplier-information"
-                className="mt-4 inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-semibold text-ibc-navy hover:bg-white/90 transition-colors"
-              >
-                Submit Supplier Information →
-              </a>
-            </div>
-          </aside>
-
-          {/* RIGHT CONTENT */}
-          <div className="space-y-6 max-w-[65ch]">
-            {/* 01 Partner Network */}
-            <motion.div
-              id="partner-network"
-              initial="hidden"
-              whileInView="show"
-              viewport={viewportOnce}
-              variants={staggerContainer(0.05)}
-              className="scroll-mt-24 rounded-2xl border border-border/70 bg-card p-6 md:p-8"
-            >
-              <SubsectionHeader number="01" label="Operational Partner Network" icon={Network} />
-              <motion.p variants={fadeUp} className="mt-4 text-base text-muted-foreground leading-relaxed">
-                IBC maintains a scalable network of strategic partners and operational support resources
-                to assist with specialized staffing, surge operations, field deployment support, and
-                multi-jurisdiction program coordination.
-              </motion.p>
-              <motion.p variants={fadeUp} className="mt-4 text-base text-muted-foreground leading-relaxed">
-                This collaborative approach supports operational flexibility while enabling
-                responsiveness to varying public-sector program requirements and rapid-response
-                operational needs. IBC continues to expand its partner ecosystem to support scalable
-                multi-jurisdictional deployments and cooperative procurement initiatives, welcoming
-                partnership discussions with businesses of all sizes across operations, emergency
-                response support, staffing, program management, and logistics.
-              </motion.p>
-            </motion.div>
-
-            {/* 02 Diversity Commitment */}
-            <motion.div
-              id="diversity-commitment"
-              initial="hidden"
-              whileInView="show"
-              viewport={viewportOnce}
-              variants={staggerContainer(0.05)}
-              className="scroll-mt-24 rounded-2xl border border-border/70 bg-card p-6 md:p-8"
-            >
-              <SubsectionHeader number="02" label="Supplier Diversity Commitment" icon={HeartHandshake} />
-              <motion.p variants={fadeUp} className="mt-4 text-base text-muted-foreground leading-relaxed">
-                IBC is committed to supporting a diverse, qualified, and competitive supplier network.
-                As a minority- and woman-owned business, we understand the importance of creating
-                practical opportunities for other diverse and small businesses to participate in
-                public-sector, cooperative contracting, and client-supported work.
-              </motion.p>
-              <motion.p variants={fadeUp} className="mt-4 text-base text-muted-foreground leading-relaxed">
-                Our supplier diversity efforts are incorporated into our procurement and vendor
-                management practice. This allows us to consider diverse suppliers as part of our
-                sourcing, teaming, subcontracting, vendor intake, and partner engagement process.
-              </motion.p>
-            </motion.div>
-
-            {/* 03 Utilization Target — stat callout */}
-            <motion.div
-              id="utilization-target"
-              initial="hidden"
-              whileInView="show"
-              viewport={viewportOnce}
-              variants={staggerContainer(0.05)}
-              className="scroll-mt-24 rounded-2xl border border-primary/20 bg-primary/5 p-6 md:p-8"
-            >
-              <SubsectionHeader number="03" label="5% Utilization Target" icon={Target} />
-              <motion.div variants={fadeUp} className="mt-5 grid grid-cols-1 sm:grid-cols-[auto_1fr] gap-5 sm:gap-6 items-start">
-                <div className="flex flex-col">
-                  <span className="text-5xl md:text-6xl font-bold text-primary leading-none tracking-tight">
-                    Up to 5%
-                  </span>
-                  <span className="mt-2 text-xs uppercase tracking-[0.15em] text-muted-foreground font-semibold">
-                    Internal utilization target
-                  </span>
-                </div>
-                <div className="space-y-3 text-base text-muted-foreground leading-relaxed">
-                  <p>
-                    IBC has established an internal supplier diversity utilization target of up to{" "}
-                    <span className="font-semibold text-foreground">
-                      5% of applicable subcontracted contract value
-                    </span>{" "}
-                    being directed to qualified diverse suppliers — depending on procurement type,
-                    scope of work, client requirements, and supplier availability.
-                  </p>
-                  <p>
-                    This target is not a quota or guarantee on every contract. Instead, it serves as a
-                    practical guide for IBC's supplier outreach, sourcing, teaming, and subcontractor
-                    engagement efforts.
-                  </p>
-                </div>
-              </motion.div>
-            </motion.div>
-
-            {/* 04 Who We Encourage — chips */}
-            <motion.div
-              id="who-we-encourage"
-              initial="hidden"
-              whileInView="show"
-              viewport={viewportOnce}
-              variants={staggerContainer(0.05)}
-              className="scroll-mt-24 rounded-2xl border border-border/70 bg-card p-6 md:p-8"
-            >
-              <SubsectionHeader number="04" label="Who We Encourage" icon={Users} />
-              <motion.p variants={fadeUp} className="mt-4 text-base text-muted-foreground leading-relaxed">
-                We encourage qualified diverse and small businesses to connect with us for potential
-                teaming, subcontracting, staffing, consulting, operational support, training,
-                technology, and project-based opportunities.
-              </motion.p>
-              <motion.ul variants={fadeUp} className="mt-5 flex flex-wrap gap-2">
-                {eligibleFirms.map((f) => (
-                  <li
-                    key={f}
-                    className="inline-flex items-center rounded-full border border-primary/20 bg-primary/5 px-3 py-1.5 text-xs font-semibold text-primary"
-                  >
-                    {f}
-                  </li>
-                ))}
-              </motion.ul>
-            </motion.div>
-
-            {/* 05 Program Evolution */}
-            <motion.div
-              id="program-evolution"
-              initial="hidden"
-              whileInView="show"
-              viewport={viewportOnce}
-              variants={staggerContainer(0.05)}
-              className="scroll-mt-24 rounded-2xl border border-border/70 bg-card p-6 md:p-8"
-            >
-              <SubsectionHeader number="05" label="Program Evolution" icon={Sparkles} />
-              <motion.p variants={fadeUp} className="mt-4 text-base text-muted-foreground leading-relaxed">
-                IBC also recognizes that some emerging suppliers may not yet have formal public-sector
-                marketing materials. Where appropriate, IBC may help qualified providers understand how
-                to prepare a basic capability statement that highlights their services, certifications,
-                experience, geographic coverage, and readiness to support client work.
-              </motion.p>
-              <motion.p variants={fadeUp} className="mt-4 text-base text-muted-foreground leading-relaxed">
-                IBC is currently enhancing its Supplier Diversity Program and will continue updating
-                this page as additional supplier intake, reporting, and outreach resources become
-                available.
-              </motion.p>
-            </motion.div>
+            </StickyCard>
           </div>
         </div>
+
+        {/* Partner CTA — full width under section */}
+        <motion.div
+          initial="hidden"
+          whileInView="show"
+          viewport={viewportOnce}
+          variants={fadeUp}
+          className="mt-12 rounded-2xl bg-ibc-navy p-8 md:p-10 text-primary-foreground flex flex-col md:flex-row md:items-center md:justify-between gap-6"
+        >
+          <div className="max-w-2xl">
+            <h3 className="text-xl md:text-2xl font-semibold">Interested in partnering with IBC?</h3>
+            <p className="mt-2 text-sm md:text-base text-primary-foreground/80 leading-relaxed">
+              Share your capabilities, certifications, and service areas for future teaming or
+              subcontracting opportunities.
+            </p>
+          </div>
+          <a
+            href="#supplier-information"
+            className="inline-flex shrink-0 items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-ibc-navy hover:bg-white/90 transition-colors"
+          >
+            Submit Supplier Information →
+          </a>
+        </motion.div>
       </div>
     </section>
+  );
+}
+
+function StickyCard({ id, children }: { id: string; children: React.ReactNode }) {
+  return (
+    <motion.div
+      id={id}
+      initial="hidden"
+      whileInView="show"
+      viewport={viewportOnce}
+      variants={staggerContainer(0.05)}
+      className="scroll-mt-24 sticky top-24 rounded-2xl border border-border/70 bg-card p-6 md:p-8 shadow-sm"
+    >
+      {children}
+    </motion.div>
   );
 }
 
