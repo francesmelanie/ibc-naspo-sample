@@ -29,15 +29,31 @@ export function SupplierDiversity() {
             className="inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.18em] text-primary"
           >
             <span aria-hidden="true" className="h-[2px] w-7 bg-primary rounded-full" />
-            Supplier Diversity & Partner Engagement
+            Supplier Network & Partner Engagement
           </motion.span>
           <motion.h2
             variants={fadeUp}
             className="mt-4 text-3xl sm:text-[2.25rem] font-semibold tracking-tight leading-[1.15]"
           >
-            Strategic Partner & Supplier Network
+            Strategic Partner & Supplier Diversity Program
           </motion.h2>
           <motion.p variants={fadeUp} className="mt-5 text-base md:text-lg text-muted-foreground leading-relaxed">
+            IBC maintains a scalable network of strategic partners and operational support resources to
+            assist with specialized staffing, surge operations, field deployment support, and
+            multi-jurisdiction program coordination.
+          </motion.p>
+          <motion.p variants={fadeUp} className="mt-4 text-base md:text-lg text-muted-foreground leading-relaxed">
+            This collaborative approach supports operational flexibility while enabling responsiveness
+            to varying public-sector program requirements and rapid-response operational needs.
+          </motion.p>
+          <motion.p variants={fadeUp} className="mt-4 text-base md:text-lg text-muted-foreground leading-relaxed">
+            IBC continues to expand its partner ecosystem to support scalable multi-jurisdictional
+            deployments and cooperative procurement initiatives. We welcome partnership discussions with
+            businesses of all sizes seeking collaborative opportunities in public-sector operations,
+            emergency response support, staffing, program management, logistics, and related service areas.
+          </motion.p>
+          <motion.div variants={fadeUp} className="mt-8" />
+          <motion.p variants={fadeUp} className="mt-4 text-base md:text-lg text-muted-foreground leading-relaxed">
             IBC is committed to supporting a diverse, qualified, and competitive supplier network. As a
             minority- and woman-owned business, we understand the importance of creating practical
             opportunities for other diverse and small businesses to participate in public-sector,
@@ -61,8 +77,8 @@ export function SupplierDiversity() {
             engagement efforts.
           </motion.p>
           <motion.p variants={fadeUp} className="mt-4 text-base md:text-lg text-muted-foreground leading-relaxed">
-            We encourage qualified diverse and small businesses — including MWBE, MBE, WBE, SBE, DBE,
-            SDVOB, veteran-owned, disadvantaged, and other certified firms — to connect with us for
+            We encourage qualified diverse and small businesses, including MWBE, MBE, WBE, SBE, DBE,
+            SDVOB, veteran-owned, disadvantaged, and other certified firms, to connect with us for
             potential teaming, subcontracting, staffing, consulting, operational support, training,
             technology, and project-based opportunities.
           </motion.p>
