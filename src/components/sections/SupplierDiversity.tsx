@@ -113,7 +113,7 @@ export function SupplierDiversity() {
         {/* Two-column layout — TOC sticky on left, cards scroll on right */}
         <div className="mt-8 grid grid-cols-1 lg:grid-cols-[minmax(0,16rem)_minmax(0,1fr)] gap-10 lg:gap-10">
           {/* LEFT RAIL — TOC sticky */}
-          <aside className="lg:sticky lg:top-[19rem] lg:self-start">
+          <aside className="lg:sticky lg:self-start" style={{ top: `${headerH + 32}px` }}>
             <nav aria-label="Program sections" className="hidden lg:block">
               <div className="text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground mb-4">
                 On this section
