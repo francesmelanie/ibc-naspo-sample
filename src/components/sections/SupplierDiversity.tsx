@@ -290,7 +290,7 @@ function StickyCard({ id, children }: { id: string; children: React.ReactNode })
       whileInView="show"
       viewport={viewportOnce}
       variants={staggerContainer(0.05)}
-      className="scroll-mt-24 sticky top-24 rounded-2xl border border-border/70 bg-card p-6 md:p-8 shadow-sm"
+      className="scroll-mt-24 rounded-2xl border border-border/70 bg-card p-6 md:p-8 shadow-sm"
     >
       {children}
     </motion.div>
