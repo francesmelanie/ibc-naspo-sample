@@ -71,7 +71,6 @@ export function SupplierDiversity() {
             whileInView="show"
             viewport={viewportOnce}
             variants={staggerContainer(0.06)}
-            className="max-w-4xl"
           >
             <motion.span
               variants={fadeUp}
@@ -99,7 +98,7 @@ export function SupplierDiversity() {
 
 
         {/* Two-column layout — TOC sticky on left, cards scroll on right */}
-        <div className="mt-8 grid grid-cols-1 lg:grid-cols-[minmax(0,18rem)_minmax(0,1fr)] gap-10 lg:gap-20">
+        <div className="mt-8 grid grid-cols-1 lg:grid-cols-[minmax(0,16rem)_minmax(0,1fr)] gap-10 lg:gap-10">
           {/* LEFT RAIL — TOC sticky */}
           <aside className="lg:sticky lg:top-[19rem] lg:self-start">
             <nav aria-label="Program sections" className="hidden lg:block">
