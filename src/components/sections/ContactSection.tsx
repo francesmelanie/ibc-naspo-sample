@@ -370,6 +370,7 @@ export function ContactSection() {
             )}
           </motion.form>
         </div>
+        </div>
       </div>
     </section>
   );
