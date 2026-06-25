@@ -261,11 +261,11 @@ export function SupplierDiversity() {
           whileInView="show"
           viewport={viewportOnce}
           variants={fadeUp}
-          className="mt-12 rounded-2xl bg-ibc-navy p-8 md:p-10 text-primary-foreground flex flex-col md:flex-row md:items-center md:justify-between gap-6"
+          className="mt-12 rounded-2xl bg-ibc-navy p-8 md:p-10 flex flex-col md:flex-row md:items-center md:justify-between gap-6"
         >
           <div className="max-w-2xl">
-            <h3 className="text-xl md:text-2xl font-semibold">Interested in partnering with IBC?</h3>
-            <p className="mt-2 text-sm md:text-base text-primary-foreground/80 leading-relaxed">
+            <h3 className="text-xl md:text-2xl font-semibold text-white">Interested in partnering with IBC?</h3>
+            <p className="mt-2 text-sm md:text-base text-white/80 leading-relaxed">
               Share your capabilities, certifications, and service areas for future teaming or
               subcontracting opportunities.
             </p>
@@ -290,7 +290,7 @@ function StickyCard({ id, children }: { id: string; children: React.ReactNode })
       whileInView="show"
       viewport={viewportOnce}
       variants={staggerContainer(0.05)}
-      className="scroll-mt-24 sticky top-24 rounded-2xl border border-border/70 bg-card p-6 md:p-8 shadow-sm"
+      className="scroll-mt-24 rounded-2xl border border-border/70 bg-card p-6 md:p-8 shadow-sm"
     >
       {children}
     </motion.div>
