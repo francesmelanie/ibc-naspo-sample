@@ -115,10 +115,6 @@ export function SupplierDiversity() {
           {/* LEFT RAIL — eyebrow + TOC sticky */}
           <aside className="lg:sticky lg:self-start" style={{ top: `${headerH + 32}px` }}>
             <nav aria-label="Program sections" className="hidden lg:block">
-              <div className="inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.18em] text-primary mb-6">
-                <span aria-hidden="true" className="h-[2px] w-7 bg-primary rounded-full" />
-                Supplier Network & Partner Engagement
-              </div>
               <div className="text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground mb-4">
                 On this section
               </div>
