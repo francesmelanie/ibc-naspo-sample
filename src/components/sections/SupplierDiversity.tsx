@@ -62,6 +62,8 @@ export function SupplierDiversity() {
   return (
     <section className="ibc-section">
       <div className="ibc-container">
+        {/* Sticky scope: header + grid stick together, release before the CTA */}
+        <div className="relative">
         {/* TOP HEADER — full width, sticky so cards scroll under it */}
         <div className="sticky top-0 z-20 -mx-4 px-4 pt-6 pb-6 bg-background/95 backdrop-blur-sm">
           <motion.div
@@ -94,6 +96,7 @@ export function SupplierDiversity() {
             </motion.p>
           </motion.div>
         </div>
+
 
         {/* Two-column layout — TOC sticky on left, cards scroll on right */}
         <div className="mt-8 grid grid-cols-1 lg:grid-cols-[minmax(0,18rem)_minmax(0,1fr)] gap-10 lg:gap-20">
