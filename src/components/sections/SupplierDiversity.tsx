@@ -39,17 +39,27 @@ export function SupplierDiversity() {
   const [activeId, setActiveId] = useState<string>(sections[0].id);
   const headerRef = useRef<HTMLDivElement>(null);
   const [headerH, setHeaderH] = useState(240);
+  const [stickyTop, setStickyTop] = useState(56);
+
+  useEffect(() => {
+    const updateMeasurements = () => {
+      const navOffset = window.matchMedia("(min-width: 768px)").matches ? 56 : 48;
+      setStickyTop(navOffset);
+
+      if (headerRef.current) setHeaderH(headerRef.current.offsetHeight);
+    };
+
+    updateMeasurements();
+    window.addEventListener("resize", updateMeasurements);
+
+    return () => window.removeEventListener("resize", updateMeasurements);
+  }, []);
 
   useEffect(() => {
     if (headerRef.current) {
       setHeaderH(headerRef.current.offsetHeight);
     }
-    const onResize = () => {
-      if (headerRef.current) setHeaderH(headerRef.current.offsetHeight);
-    };
-    window.addEventListener("resize", onResize);
-    return () => window.removeEventListener("resize", onResize);
-  }, []);
+  }, [stickyTop]);
 
   useEffect(() => {
     const elements = sections
@@ -78,7 +88,11 @@ export function SupplierDiversity() {
         {/* Sticky scope: header + grid stick together, release before the CTA */}
         <div className="relative">
         {/* TOP HEADER — full width, sticky so cards scroll under it */}
-        <div ref={headerRef} className="sticky top-0 z-20 -mx-4 px-4 pt-6 pb-6 bg-background/95 backdrop-blur-sm">
+        <div
+          ref={headerRef}
+          style={{ top: `${stickyTop}px` }}
+          className="sticky z-30 -mx-4 px-4 pt-6 pb-6 bg-background/95 backdrop-blur-sm"
+        >
           <motion.div
             initial="hidden"
             whileInView="show"
@@ -113,7 +127,7 @@ export function SupplierDiversity() {
         {/* Two-column layout — TOC sticky on left, cards scroll on right */}
         <div className="mt-8 grid grid-cols-1 lg:grid-cols-[minmax(0,16rem)_minmax(0,1fr)] gap-10 lg:gap-10">
           {/* LEFT RAIL — eyebrow + TOC sticky */}
-          <aside className="lg:sticky lg:self-start" style={{ top: `${headerH + 32}px` }}>
+          <aside className="lg:sticky lg:self-start" style={{ top: `${stickyTop + headerH + 32}px` }}>
             <nav aria-label="Program sections" className="hidden lg:block">
               <div className="text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground mb-4">
                 On this section
