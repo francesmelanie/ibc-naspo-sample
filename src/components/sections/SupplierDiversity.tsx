@@ -62,41 +62,41 @@ export function SupplierDiversity() {
   return (
     <section className="ibc-section">
       <div className="ibc-container">
-        {/* Section header */}
-        <motion.div
-          initial="hidden"
-          whileInView="show"
-          viewport={viewportOnce}
-          variants={staggerContainer(0.06)}
-        >
-          <motion.span
-            variants={fadeUp}
-            className="inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.18em] text-primary"
-          >
-            <span aria-hidden="true" className="h-[2px] w-7 bg-primary rounded-full" />
-            Supplier Network & Partner Engagement
-          </motion.span>
-          <motion.h2
-            variants={fadeUp}
-            className="mt-4 max-w-3xl text-3xl sm:text-[2.25rem] font-semibold tracking-tight leading-[1.15]"
-          >
-            Strategic Partner & Supplier Diversity Program
-          </motion.h2>
-          <motion.p
-            variants={fadeUp}
-            className="mt-5 text-base md:text-lg text-muted-foreground leading-relaxed"
-          >
-            A structured program that pairs IBC's operational partner network with an active commitment
-            to engaging diverse, qualified, and small businesses across public-sector and cooperative work.
-          </motion.p>
-        </motion.div>
+        {/* Two-column layout — heading + nav sticky on left, cards scroll on right */}
+        <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,24rem)_minmax(0,1fr)] gap-10 lg:gap-14">
+          {/* LEFT RAIL — heading + nav, sticky together */}
+          <aside className="lg:sticky lg:top-24 lg:self-start lg:max-h-[calc(100vh-7rem)] lg:overflow-y-auto">
+            <motion.div
+              initial="hidden"
+              whileInView="show"
+              viewport={viewportOnce}
+              variants={staggerContainer(0.06)}
+            >
+              <motion.span
+                variants={fadeUp}
+                className="inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.18em] text-primary"
+              >
+                <span aria-hidden="true" className="h-[2px] w-7 bg-primary rounded-full" />
+                Supplier Network & Partner Engagement
+              </motion.span>
+              <motion.h2
+                variants={fadeUp}
+                className="mt-4 text-3xl sm:text-[2rem] font-semibold tracking-tight leading-[1.15]"
+              >
+                Strategic Partner & Supplier Diversity Program
+              </motion.h2>
+              <motion.p
+                variants={fadeUp}
+                className="mt-4 text-base text-muted-foreground leading-relaxed"
+              >
+                A structured program that pairs IBC's operational partner network with an active
+                commitment to engaging diverse, qualified, and small businesses across public-sector
+                and cooperative work.
+              </motion.p>
+            </motion.div>
 
-        {/* Two-column layout */}
-        <div className="mt-12 grid grid-cols-1 lg:grid-cols-[20rem_minmax(0,1fr)] gap-10 lg:gap-14">
-          {/* LEFT RAIL — nav only */}
-          <aside className="lg:sticky lg:top-24 lg:self-start">
-            <nav aria-label="Program sections" className="hidden lg:block">
-              <div className="text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground mb-5">
+            <nav aria-label="Program sections" className="hidden lg:block mt-8">
+              <div className="text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground mb-4">
                 On this section
               </div>
               <ul className="space-y-1 border-l border-border/70">
@@ -128,7 +128,7 @@ export function SupplierDiversity() {
             </nav>
 
             {/* Mobile horizontal nav */}
-            <nav aria-label="Program sections" className="lg:hidden -mx-4 px-4 overflow-x-auto">
+            <nav aria-label="Program sections" className="lg:hidden mt-8 -mx-4 px-4 overflow-x-auto">
               <ul className="flex gap-2 whitespace-nowrap">
                 {sections.map((s) => (
                   <li key={s.id}>
