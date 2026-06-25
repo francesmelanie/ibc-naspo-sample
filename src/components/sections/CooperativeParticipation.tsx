@@ -9,7 +9,7 @@ export function CooperativeParticipation() {
           whileInView="show"
           viewport={viewportOnce}
           variants={staggerContainer(0.05)}
-          className="max-w-4xl"
+          className=""
         >
           <motion.div
             variants={fadeUp}
