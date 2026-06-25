@@ -186,7 +186,7 @@ export function SupplierDiversity() {
           {/* RIGHT CONTENT */}
           <div className="space-y-6 max-w-[65ch]">
             {/* 01 Partner Network */}
-            <motion.article
+            <motion.div
               id="partner-network"
               initial="hidden"
               whileInView="show"
@@ -208,10 +208,10 @@ export function SupplierDiversity() {
                 partnership discussions with businesses of all sizes across operations, emergency
                 response support, staffing, program management, and logistics.
               </motion.p>
-            </motion.article>
+            </motion.div>
 
             {/* 02 Diversity Commitment */}
-            <motion.article
+            <motion.div
               id="diversity-commitment"
               initial="hidden"
               whileInView="show"
@@ -231,10 +231,10 @@ export function SupplierDiversity() {
                 management practice. This allows us to consider diverse suppliers as part of our
                 sourcing, teaming, subcontracting, vendor intake, and partner engagement process.
               </motion.p>
-            </motion.article>
+            </motion.div>
 
             {/* 03 Utilization Target — stat callout */}
-            <motion.article
+            <motion.div
               id="utilization-target"
               initial="hidden"
               whileInView="show"
@@ -268,10 +268,10 @@ export function SupplierDiversity() {
                   </p>
                 </div>
               </motion.div>
-            </motion.article>
+            </motion.div>
 
             {/* 04 Who We Encourage — chips */}
-            <motion.article
+            <motion.div
               id="who-we-encourage"
               initial="hidden"
               whileInView="show"
@@ -295,10 +295,10 @@ export function SupplierDiversity() {
                   </li>
                 ))}
               </motion.ul>
-            </motion.article>
+            </motion.div>
 
             {/* 05 Program Evolution */}
-            <motion.article
+            <motion.div
               id="program-evolution"
               initial="hidden"
               whileInView="show"
@@ -318,7 +318,7 @@ export function SupplierDiversity() {
                 this page as additional supplier intake, reporting, and outreach resources become
                 available.
               </motion.p>
-            </motion.article>
+            </motion.div>
           </div>
         </div>
       </div>
