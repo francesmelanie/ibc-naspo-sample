@@ -135,14 +135,14 @@ export function ContactSection() {
           className="!max-w-none"
         />
 
-        <div className="mt-10 grid gap-6 lg:grid-cols-[0.75fr_1fr]">
+        <div className="mt-10 grid gap-10 lg:grid-cols-[1fr_1.35fr] lg:items-start">
           {/* Contact card */}
           <motion.div
             initial="hidden"
             whileInView="show"
             viewport={viewportOnce}
             variants={staggerContainer(0.06)}
-            className="border-t border-border/70 pt-8 h-fit"
+            className="border-t border-border/70 pt-8 h-fit lg:sticky lg:top-28"
           >
             <motion.span variants={fadeUp} className="text-[11px] font-semibold uppercase tracking-[0.18em] text-primary">
               {contact.role}
