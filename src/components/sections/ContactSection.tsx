@@ -18,6 +18,32 @@ const INTEREST_AREAS = [
   "Other",
 ];
 
+const FREE_EMAIL_DOMAINS = new Set([
+  "gmail.com",
+  "yahoo.com",
+  "hotmail.com",
+  "outlook.com",
+  "live.com",
+  "msn.com",
+  "aol.com",
+  "icloud.com",
+  "me.com",
+  "mac.com",
+  "protonmail.com",
+  "zoho.com",
+  "yandex.com",
+  "mail.com",
+  "gmx.com",
+  "fastmail.com",
+  "tutanota.com",
+]);
+
+function isCompanyEmail(email: string): boolean {
+  const domain = email.split("@")[1]?.toLowerCase();
+  if (!domain) return false;
+  return !FREE_EMAIL_DOMAINS.has(domain);
+}
+
 export function ContactSection() {
   const [submitted, setSubmitted] = useState(false);
   const [inquiryType, setInquiryType] = useState<InquiryType>("client");
@@ -26,6 +52,7 @@ export function ContactSection() {
   const [fileName, setFileName] = useState<string | null>(null);
   const [interests, setInterests] = useState<string[]>([]);
   const [interestError, setInterestError] = useState(false);
+  const [emailError, setEmailError] = useState(false);
 
   const isSupplier = inquiryType === "supplier";
 
@@ -50,13 +77,21 @@ export function ContactSection() {
 
   function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    setEmailError(false);
     if (isSupplier && interests.length === 0) {
       setInterestError(true);
       return;
     }
     setInterestError(false);
     const fd = new FormData(e.currentTarget);
+
     if (isSupplier) {
+      const email = String(fd.get("email") ?? "");
+      if (!isCompanyEmail(email)) {
+        setEmailError(true);
+        return;
+      }
+
       const subject = encodeURIComponent(
         `[Supplier / Partnership Submission] ${fd.get("company") ?? ""}`,
       );
@@ -64,14 +99,14 @@ export function ContactSection() {
         [
           `Inquiry Type: Supplier / Partnership`,
           `Company: ${fd.get("company")}`,
-          `Contact Name: ${fd.get("contact")}`,
+          `First Name: ${fd.get("firstName")}`,
+          `Last Name: ${fd.get("lastName")}`,
           `Email: ${fd.get("email")}`,
           `Phone: ${fd.get("phone")}`,
           `Website: ${fd.get("website")}`,
           `Core Services: ${fd.get("services")}`,
           `Certifications: ${fd.get("certifications")}`,
           `NAICS Codes: ${fd.get("naics")}`,
-          `Geographic Coverage: ${fd.get("geography")}`,
           `Public-Sector Experience: ${fd.get("experience")}`,
           `Interest Areas: ${interests.join(", ")}`,
           `Capability Statement: ${fileName ?? "Not attached"}`,
@@ -182,24 +217,28 @@ export function ContactSection() {
 
             {isSupplier ? (
               <>
-                <div className="grid gap-4 sm:grid-cols-2">
+                <div className="grid gap-4">
                   <PillField label="Company Name*" name="company" required />
-                  <PillField label="Contact Name*" name="contact" required />
+                </div>
+
+                <div className="mt-4 grid gap-4 sm:grid-cols-2">
+                  <PillField label="First Name*" name="firstName" required />
+                  <PillField label="Last Name*" name="lastName" required />
                   <PillField label="Email*" name="email" type="email" required />
                   <PillField label="Phone*" name="phone" type="tel" required />
                   <PillField label="Website" name="website" type="url" />
                   <PillField label="NAICS Codes (if known)" name="naics" />
                 </div>
 
+                {emailError && (
+                  <p className="mt-2 text-xs text-destructive">
+                    Please use a company email address.
+                  </p>
+                )}
+
                 <div className="mt-4 grid gap-4">
                   <PillField label="Core Services*" name="services" required />
-                  <div className="grid gap-4 sm:grid-cols-2">
-                    <PillField
-                      label="Certifications (MBE, WBE, SBE, DBE, SDVOB, Veteran-Owned, etc.)"
-                      name="certifications"
-                    />
-                    <PillField label="Geographic Coverage" name="geography" />
-                  </div>
+                  <PillField label="Certifications (MBE, WBE, SBE, DBE, SDVOB, Veteran-Owned, etc.)*" name="certifications" required />
                   <div>
                     <div className="mb-1 flex justify-between text-xs text-muted-foreground">
                       <span className="text-sm font-medium text-foreground">Public-Sector Experience Summary*</span>
